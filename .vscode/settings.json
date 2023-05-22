@@ -1,0 +1,21 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.defaultInterpreterPath": "/opt/conda/envs/web_env/bin/python",
+    "robot.lint.variables": false,
+    "robot.language-server.python": "/opt/conda/bin/python",
+    "robot.libraries.libdoc.needsArgs": [
+        "remote",
+        "fakerlib"
+    ],
+    "python.linting.pylintArgs": [
+        "--disable=C0111,C0413,C0209,C0103,C0303,W0703,C0111,C0413,C0103,E0402",
+        "--generated-members"
+    ],
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.gitkeep": true,
+        "**/*.egg-info": true
+    }
+}
