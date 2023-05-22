@@ -1,20 +1,18 @@
 version: '3.7'
 services:
-  ciclozero:
+  ciclozero_prod:
     build:
-      context: ..
+      context: ../..
       dockerfile: .devcontainer/Dockerfile
       args:
         USER_ID: ${USER_ID}
         GROUP_ID: ${GROUP_ID}
         GITHUB_TOKEN: ${GITHUB_TOKEN}
-      target: base
-    container_name: ciclozero
+      target: prod
+    container_name: ciclozero_prod
     user: vscode
     volumes:
-      - ..:/workspaces/CicloZero:cached
-      - ${HOME}/.ssh:/home/vscode/.ssh:cached
-      - ${HOME}/.cloudflared:/home/vscode/.cloudflared:cached
+      - ${HOST_HOME}/.cloudflared:/home/vscode/.cloudflared:cached
     cap_add:
       - SYS_ADMIN
     shm_size: '2gb'

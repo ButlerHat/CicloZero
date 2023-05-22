@@ -56,7 +56,7 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "conda init bash && rfbrowser init && sudo service cron start"
+	"postCreateCommand": "bash /workspaces/CicloZero/.devcontainer/postCreateCommand.sh"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

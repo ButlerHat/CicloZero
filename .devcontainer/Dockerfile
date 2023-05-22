@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/miniconda:0-3
+FROM mcr.microsoft.com/devcontainers/miniconda:0-3 AS base
 
 ARG UNAME=vscode
 ARG USER_ID=1000
@@ -12,8 +12,6 @@ USER root
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends poppler-utils ffmpeg libsm6 libxext6 cron
-
-RUN wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared-linux-amd64.deb
 
 ENV PATH=/home/$UNAME/.local/bin:$PATH
 
@@ -38,3 +36,16 @@ ENV TZ='/usr/share/zoneinfo/Europe/Madrid'
 
 # Run cron service after container is started. sudo service cron start
 # RUN sudo service cron start
+
+
+FROM base AS prod 
+
+# Install cloudflared
+USER root
+RUN wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared-linux-amd64.deb
+USER $UNAME
+
+# Copy CicloZero files
+COPY . /workspaces/CicloZero
+
+WORKDIR /workspaces/CicloZero
