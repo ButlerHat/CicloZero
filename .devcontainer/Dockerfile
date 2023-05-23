@@ -44,9 +44,12 @@ FROM base AS prod
 USER root
 RUN wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared-linux-amd64.deb
 RUN chmod -R 777 /opt/conda
-USER $UNAME
 
 # Copy CicloZero files
 COPY . /workspaces/CicloZero
 WORKDIR /workspaces/CicloZero
+# This is needed to avoid permissions errors when clonning with actions
+RUN chown -R $UNAME:$UNAME /workspaces/CicloZero
+
+USER $UNAME
 CMD ["bash", "./.devcontainer/postCreateCommand.sh"]
