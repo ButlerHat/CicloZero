@@ -2,7 +2,7 @@ version: '3.7'
 services:
   ciclozero_prod:
     build:
-      context: ../..
+      context: ..
       dockerfile: .devcontainer/Dockerfile
       args:
         USER_ID: ${USER_ID}
