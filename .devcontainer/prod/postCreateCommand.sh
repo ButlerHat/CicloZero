@@ -24,4 +24,5 @@ fi
 cloudflared tunnel run ciclozero_bridge &
 
 # Start streamlit application. The port is fixed to 8501 due to cloudflare tunnel
-/opt/conda/envs/web_env/bin/python /opt/conda/envs/web_env/bin/streamlit run web/app.py --server.port 8501 --server.headless True
+cd web
+/opt/conda/envs/web_env/bin/python /opt/conda/envs/web_env/bin/streamlit run app.py --server.port 8501 --server.headless True
