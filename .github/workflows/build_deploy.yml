@@ -32,8 +32,8 @@ jobs:
     - name: Pre-build image and run postCreateCommand.sh
       uses: devcontainers/ci@v0.3
       with:
-        imageName: butlerhat/ciclozero_prod:latest
-        cacheFrom: butlerhat/ciclozero_prod:latest
+        imageName: butlerhat/ciclozero_prod
+        cacheFrom: butlerhat/ciclozero_prod
         push: always
         runCmd: bash /workspaces/CicloZero/.devcontainer/postCreateCommand.sh
       
