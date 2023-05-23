@@ -6,6 +6,7 @@ rfbrowser init
 # Init Cron
 sudo service cron start
 # Init VNC
+/usr/local/share/desktop-init.sh
 xrandr -s 1920x1080
 
 

@@ -51,5 +51,14 @@ WORKDIR /workspaces/CicloZero
 # This is needed to avoid permissions errors when clonning with actions
 RUN chown -R $UNAME:$UNAME /workspaces/CicloZero
 
+ENV DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
+    VNC_RESOLUTION="1440x768x16" \
+    VNC_DPI="96" \
+    VNC_PORT="5901" \
+    NOVNC_PORT="6080" \
+    DISPLAY=":1" \
+    LANG="en_US.UTF-8" \
+    LANGUAGE="en_US.UTF-8"
+
 USER $UNAME
 CMD ["bash", "./.devcontainer/postCreateCommand.sh"]

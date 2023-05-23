@@ -10,11 +10,15 @@ services:
         GITHUB_TOKEN: ${GITHUB_TOKEN}
       target: base
     container_name: ciclozero
+    init: true
     user: vscode
     volumes:
       - ..:/workspaces/CicloZero:cached
       - ${HOME}/.ssh:/home/vscode/.ssh:cached
       - ${HOME}/.cloudflared:/home/vscode/.cloudflared:cached
+      - ${HOME}/data/CicloZero/results:/workspaces/CicloZero/results:cached
+      - ${HOME}/data/CicloZero/downloads:/workspaces/CicloZero/downloads:cached
+      - ${HOME}/data/CicloZero/data:/workspaces/CicloZero/data:cached
     cap_add:
       - SYS_ADMIN
     shm_size: '2gb'

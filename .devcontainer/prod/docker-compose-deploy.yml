@@ -4,8 +4,12 @@ services:
     image: butlerhat/ciclozero_prod:latest
     container_name: ciclozero_prod
     user: vscode
+    init: true
     volumes:
       - ${HOST_HOME}/.cloudflared:/home/vscode/.cloudflared:cached
+      - ${HOST_HOME}/data/CicloZero/results:/workspaces/CicloZero/results:cached
+      - ${HOST_HOME}/data/CicloZero/downloads:/workspaces/CicloZero/downloads:cached
+      - ${HOST_HOME}/data/CicloZero/data:/workspaces/CicloZero/data:cached
     cap_add:
       - SYS_ADMIN
     shm_size: '2gb'
