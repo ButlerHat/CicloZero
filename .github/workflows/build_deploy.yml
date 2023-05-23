@@ -14,7 +14,8 @@ jobs:
     - name: Set prod devcontainer
       run: |
         cp .devcontainer/prod/devcontainer.json .devcontainer/
-        cp .devcontainer/prod/docker-compose.yml .devcontainer/
+        cp .devcontainer/prod/docker-compose-build.yml .devcontainer/
+        cp .devcontainer/prod/docker-compose-deploy.yml .devcontainer/
         cp .devcontainer/prod/postCreateCommand.sh .devcontainer/
         echo "USER_ID=1000" >> .devcontainer/.env
         echo "GROUP_ID=1000" >> .devcontainer/.env
