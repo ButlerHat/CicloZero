@@ -29,11 +29,14 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Pre-build image and run postCreateCommand.sh
+    - name: Pre-build image
       uses: devcontainers/ci@v0.3
       with:
         imageName: butlerhat/ciclozero_prod
         cacheFrom: butlerhat/ciclozero_prod
         push: always
-        runCmd: bash /workspaces/CicloZero/.devcontainer/postCreateCommand.sh
+
+    - name: Deploy
+      run: |
+        docker compose -f .devcontainer/docker-compose-deploy.yml up -d
       

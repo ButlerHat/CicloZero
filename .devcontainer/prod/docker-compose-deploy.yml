@@ -1,14 +1,7 @@
 version: '3.7'
 services:
   ciclozero_prod:
-    build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
-      args:
-        USER_ID: ${USER_ID}
-        GROUP_ID: ${GROUP_ID}
-        GITHUB_TOKEN: ${GITHUB_TOKEN}
-      target: prod
+    image: butlerhat/ciclozero_prod:latest
     container_name: ciclozero_prod
     user: vscode
     volumes:
@@ -21,7 +14,7 @@ services:
     environment:
       - ROBOT_CICLOZERO_PASS=${ROBOT_CICLOZERO_PASS:-0}
       - DEVELOPMENT_SERVER=${DEVELOPMENT_SERVER:-0}
-    command: /bin/sh -c "while sleep 1000; do :; done"
+    command: bash .devcontainer/postCreateCommand.sh
 
 networks:
   external:

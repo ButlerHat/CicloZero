@@ -43,9 +43,10 @@ FROM base AS prod
 # Install cloudflared
 USER root
 RUN wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared-linux-amd64.deb
+RUN chmod -R 777 /opt/conda
 USER $UNAME
 
 # Copy CicloZero files
 COPY . /workspaces/CicloZero
-
 WORKDIR /workspaces/CicloZero
+CMD ["bash", "./.devcontainer/postCreateCommand.sh"]

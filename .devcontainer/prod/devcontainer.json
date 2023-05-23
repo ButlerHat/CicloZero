@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/miniconda
 {
 	"name": "Ciclozero (Miniconda)",
-	"dockerComposeFile": "./docker-compose.yml",
+	"dockerComposeFile": "./docker-compose-build.yml",
 	"service": "ciclozero_prod",
 	"workspaceFolder": "/workspaces/CicloZero",
 

@@ -21,7 +21,7 @@ if [ ! -f ~/.cloudflared/cert.pem ]; then
 fi
 
 # Start the tunnel
-cloudflared tunnel run ciclozero_bridge
+cloudflared tunnel run ciclozero_bridge &
 
 # Start streamlit application
-/opt/conda/envs/web_env/bin/python /opt/conda/envs/web_env/bin/streamlit run web/app.py 
+/opt/conda/envs/web_env/bin/python /opt/conda/envs/web_env/bin/streamlit run web/app.py
