@@ -1,7 +1,7 @@
-name: Build and deploy streamlit app
+name: Prueba
 on:
   push:
-    branches: [ master ]
+    branches: [ action_delete ]
   workflow_dispatch: # manual trigger
 
 jobs:
@@ -13,7 +13,9 @@ jobs:
         echo "USER_ID=1000" >> /tmp/.env
         echo "GROUP_ID=1000" >> /tmp/.env
         echo "HOST_HOME=/home/david" >> /tmp/.env
-        echo "ROBOT_CICLOZERO_PASS='${{ secrets.ROBOT_CICLOZERO_PASS }}'" >> /tmp/.env
+        echo "ROBOT_CICLOZERO_PASS='${{ env.ROBOT_CICLOZERO_PASS }}'" >> /tmp/.env
         echo "GITHUB_TOKEN='${{ secrets.TOKEN_GITHUB }}'" >> /tmp/.env
         echo "DEVELOPMENT_SERVER=1" >> /tmp/.env
+      env:
+          ROBOT_CICLOZERO_PASS: ${{ secrets.ROBOT_CICLOZERO_PASS }}
         
