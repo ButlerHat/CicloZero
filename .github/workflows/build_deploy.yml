@@ -20,8 +20,8 @@ jobs:
         echo 'USER_ID=1000' >> .devcontainer/.env
         echo 'GROUP_ID=1000' >> .devcontainer/.env
         echo 'HOST_HOME=/home/david' >> .devcontainer/.env
-        echo 'ROBOT_CICLOZERO_PASS=${{ secrets.ROBOT_CICLOZERO_PASS }}' >> .devcontainer/.env
-        echo 'GITHUB_TOKEN=${{ secrets.TOKEN_GITHUB }}' >> .devcontainer/.env
+        echo 'ROBOT_CICLOZERO_PASS='"'"'${{ secrets.ROBOT_CICLOZERO_PASS }}'"'"'' >> .devcontainer/.env
+        echo 'GITHUB_TOKEN='"'"'${{ secrets.TOKEN_GITHUB }}'"'"'' >> .devcontainer/.env
         echo 'DEVELOPMENT_SERVER=1' >> .devcontainer/.env
 
     - name: Log in to Docker registry
