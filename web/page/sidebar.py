@@ -24,7 +24,7 @@ def sidebar_menu():
         # Create a dropdown menu
         with st.expander('CiclAI', expanded=True):
             
-            options = {"Stock": "box-seam", "Price": "cash-coin"}
+            options = {"Stock": "box-seam", "Price": "cash-coin", "Automations": "robot"}
             default_index = 0
             
             page_task = option_menu(

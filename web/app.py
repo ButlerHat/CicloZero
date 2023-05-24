@@ -2,6 +2,7 @@ import streamlit as st
 from page.sidebar import sidebar_header, sidebar_menu
 from page.ciclai_stock import ciclai_stock
 from page.ciclai_price import ciclai_price
+from page.ciclai_orders import ciclai_orders
 from page.auth import login, auth_header
 
 
@@ -38,4 +39,7 @@ if authentication_status:
 
     if page_task == 'Price':
         ciclai_price()
+    
+    if page_task == 'Automations':
+        ciclai_orders()
 
