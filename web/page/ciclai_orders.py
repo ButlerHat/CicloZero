@@ -20,14 +20,26 @@ def ciclai_orders():
 
     """)
 
-    
-    # Download button
-    if not os.path.exists(st.secrets.paths.orders_zip):
-        st.error('No se ha encontrado el archivo CiclAI Orders. Contacta con el administrador.')
-        return
-    
-    with open(st.secrets.paths.orders_zip, 'rb') as f:
-        st.download_button(label='Descargar CiclAI Orders', data=f, file_name='CiclAiOrders.zip')
+    col1, col2 = st.columns(2)
+
+    with col1:
+        # Download button
+        if not os.path.exists(st.secrets.paths.orders_windows):
+            st.error('No se ha encontrado el archivo CiclAI Orders. Contacta con el administrador.')
+            return
+        
+        with open(st.secrets.paths.orders_windows, 'rb') as f:
+            st.download_button(label='Windows: Descargar CiclAI Orders', data=f, file_name='CiclAiOrders_windows.zip')
+
+    with col2:
+        # Download button
+        if not os.path.exists(st.secrets.paths.orders_linux):
+            st.error('No se ha encontrado el archivo CiclAI Orders. Contacta con el administrador.')
+            return
+        
+        with open(st.secrets.paths.orders_linux, 'rb') as f:
+            st.download_button(label='Linux: Descargar CiclAI Orders', data=f, file_name='CiclAiOrders_linux.zip')
+
 
     st.markdown("""
 
@@ -35,7 +47,7 @@ def ciclai_orders():
 
 1. Click derecho en el explorador de archivos dentro de la carpeta
 2. Abrir con terminal
-3. Ejecutar comando: `rcc run`
+3. Ejecutar comando: `rcc run` en linux, `rcc.exe run` en windows
 
 ### Funcionamiento CiclAI Orders
 Cada vez que se ejecute el comando, se abrirá un nuevo navegador en incógnito. Se automatiza el proceso de 

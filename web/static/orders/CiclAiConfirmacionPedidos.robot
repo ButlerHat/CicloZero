@@ -4,6 +4,7 @@ Library    Dialogs
 Resource   .${/}CrawlOdoo.resource
 Variables  .${/}credentials.py
 Suite Setup  Browser.Add Task Library    CrawlOdoo
+Suite Teardown  Run Keyword If Any Tests Failed    Pause Execution    Algo salió mal. Para más información, abra en el navegador el fichero 'log.html' dentro de la carpeta.
 
 
 *** Variables ***
@@ -47,4 +48,3 @@ Confirmacion pedidos
     Click on "Publicar" at the top
     Click on "Registrar pago" at the top
     Click on "Validar" on the popup
-    
