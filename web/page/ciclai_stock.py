@@ -38,6 +38,9 @@ def ciclai_stock():
         # Place script in robot folder / jobs
         robot_command = robot_handler.get_robot_command("stock", args, "CiclAiStock.robot")
         script_robot = robot_command + f' > {os.path.join(st.secrets.paths.robot, "jobs", "cron.log")} 2>&1'
+        # Create jobs folder
+        if not os.path.exists(os.path.join(st.secrets.paths.robot, "jobs")):
+            os.makedirs(os.path.join(st.secrets.paths.robot, "jobs"))
         cron_script_path = os.path.join(st.secrets.paths.robot, "jobs", "stock.sh")
         with open(cron_script_path, 'w') as f:
             f.write("#!/bin/bash\n")
