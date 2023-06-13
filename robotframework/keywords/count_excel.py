@@ -79,7 +79,8 @@ def get_attributes_from_sku(sku: str) -> dict[str, str]:
         "B": "NUEVO",
         "C": "MEDIO",
         "D": "BAJO",
-        "ASIS": "IGNORE"
+        "ASIS": "IGNORE",
+        "SC": "IGNORE"
     }
 
     attributes = sku.split("-")
