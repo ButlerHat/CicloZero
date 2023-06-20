@@ -53,7 +53,11 @@ CiclAI Amazon Pendientes
         ${qty_sku}  Which quantity has the order with sku ${sku}?
 
         ${NEXT_OBSERVATION}  Set Variable  The order is under the order with SKU ${sku}
-        ${sku_count}  Get From Dictionary  ${orders_sku}  ${sku}  0
+        TRY
+            ${sku_count}  Get From Dictionary  ${orders_sku}  ${sku}
+        EXCEPT 
+            ${sku_count}  Set Variable  0
+        END
         ${new_sku_count}  Evaluate  ${sku_count} + ${qty_sku}
         Set To Dictionary    ${orders_sku}    ${sku}    ${new_sku_count}
     END

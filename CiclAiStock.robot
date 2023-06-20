@@ -178,7 +178,11 @@ Get Pending Amazon
 
         ${NEXT_OBSERVATION}  Set Variable  The order is under the ${2nd_col_num} order
         Set Global Variable    ${NEXT_OBSERVATION}
-        ${sku_count}  Get From Dictionary  ${orders_sku}  ${sku}  0
+        TRY
+            ${sku_count}  Get From Dictionary  ${orders_sku}  ${sku}
+        EXCEPT
+            ${sku_count}  Set Variable  0
+        END
         ${new_sku_count}  Evaluate  ${sku_count} + ${qty_sku}
         Set To Dictionary    ${orders_sku}    ${sku}    ${new_sku_count}
     END
