@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  ciclozero:
+  ciclozero_dev:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
