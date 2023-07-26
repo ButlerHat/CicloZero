@@ -39,10 +39,10 @@ def _save_dataframe_to_excel(dataframe: pd.DataFrame, file_path: str):
 
 def _add_total_column_to_dataframe(dataframe: pd.DataFrame, column_name: str):
     """
-    Add a column to a pandas dataframe with the formula "=B2-C2-D2-E2"
+    Add a column to a pandas dataframe with the formula "=B2-C2-D2-E2-F2"
     """
     for i in range(len(dataframe)):
-        dataframe.loc[i, column_name] = f"=B{i+2}-C{i+2}-D{i+2}-E{i+2}"
+        dataframe.loc[i, column_name] = f"=B{i+2}-C{i+2}-D{i+2}-E{i+2}-F{i+2}"
 
 def _add_attributes_columns(dataframe: pd.DataFrame):
     """
@@ -101,7 +101,7 @@ def get_attributes_from_sku(sku: str) -> dict[str, str]:
 def create_excel(count_excel_path: str, output_excel_path: str):
     """
     Create an excel file with the count of the same values in a column:
-    Columns: "prod", "count", "amz unshipped", "amz pending", "flend", "Total", "id_modelo", "color", "almacenamiento", "calidad", "reacondicionado"
+    Columns: "prod", "count", "amz unshipped", "amz pending", "woocom processing", "flend", "Total", "id_modelo", "color", "almacenamiento", "calidad", "reacondicionado"
     """
 
     df = _load_excel_file(count_excel_path)
@@ -111,12 +111,13 @@ def create_excel(count_excel_path: str, output_excel_path: str):
     model_count = model_count.to_frame().reset_index()
     model_count.columns = ["prod", "count"]
 
-    # Add empty column "amz unshipped", "amz pending" "flend"
+    # Add empty column "amz unshipped", "amz pending", "woocom processing", "flend"
     _add_empty_column_to_dataframe(model_count, "amz unshipped")
     _add_empty_column_to_dataframe(model_count, "amz pending")
+    _add_empty_column_to_dataframe(model_count, "woocom processing")
     _add_empty_column_to_dataframe(model_count, "flend")
 
-    # Add column "Total" with "Cantidad" - "amz unshipped" - "amz pending" - "flend". Values must be calculated with excel formulas (=Bi-Ci-Di-Ei)
+    # Add column "Total" with "Cantidad" - "amz unshipped" - "amz pending" - "woocom processing" - "flend". Values must be calculated with excel formulas (=Bi-Ci-Di-Ei-Fi)
     _add_total_column_to_dataframe(model_count, "Total")
     _add_attributes_columns(model_count)
     _save_dataframe_to_excel(model_count, output_excel_path)
@@ -167,7 +168,7 @@ def append_tsv_to_main_excel(tsv_path: str, excel_path:str, output_excel_path: s
     return excel_df
 
 
-def append_dict_to_main_excel(order_count_dict: dict, excel_path:str, output_excel_path: str):
+def append_dict_to_main_excel(order_count_dict: dict, excel_path:str, output_excel_path: str, coulumn: str = "amz pending"):
     excel_df = _load_excel_file(excel_path)
 
     for prod, count in order_count_dict.items():
@@ -184,16 +185,19 @@ def append_dict_to_main_excel(order_count_dict: dict, excel_path:str, output_exc
 
             if len(matched_id_reacondicionado) == 1:
                 print(f'Sku "{prod}" matched with "{matched_id_reacondicionado.iloc[0]["prod"]}" ignoring calidad')
-                excel_df.loc[matched_id_reacondicionado.index, "amz pending"] = count
+                excel_df.loc[matched_id_reacondicionado.index, coulumn] = count
             elif len(matched_id_reacondicionado) > 1:
                 # Assign to the one with calidad = A
                 print(f'Sku "{prod}" matched with "{matched_id_reacondicionado.iloc[0]["prod"]}" ignoring calidad')
-                excel_df.loc[matched_id_calidad[matched_id_calidad["calidad"] == 'A'].index, "amz pending"] = count
+                excel_df.loc[matched_id_calidad[matched_id_calidad["calidad"] == 'A'].index, coulumn] = count
             else:
-                new_row = [prod, "", "", count] + [""] * (len(excel_df.columns) - 4)
+                # Get column position of coulumn
+                column_position = excel_df.columns.get_loc(coulumn)
+                new_row = [prod] + [""] * (len(excel_df.columns) - 1)
+                new_row[column_position] = count
                 excel_df.loc[len(excel_df)] = new_row # type: ignore
         else:
-            excel_df.loc[excel_row.index, "amz pending"] = count # type: ignore
+            excel_df.loc[excel_row.index, coulumn] = count # type: ignore
 
     _add_total_column_to_dataframe(excel_df, "Total")
     _add_attributes_columns(excel_df)
@@ -291,6 +295,7 @@ if __name__ == "__main__":
     res_stock_excel_path = os.path.join(workdir, "deb.stock.quant.result.xlsx")
     tsv_path = os.path.join(workdir, "unshipped.tsv")
     pending_unshipped_path = os.path.join(workdir, "stock.quant.amz.unshipped.result.xlsx")
+    wodoo_processing_path = os.path.join(workdir, "stock.quant.result.xlsx")
     res_full_excel_path = os.path.join(workdir, "deb.full.result.xlsx")
 
     # create_excel(stock_excel_path, res_stock_excel_path)
@@ -304,6 +309,6 @@ if __name__ == "__main__":
         'iP13-BL-128-B -R': 1, 
         'iP12PR-SL-128-B -R': 1, 
         'iP12PR-GRT-128-A -R': 1
-        }, pending_unshipped_path, res_full_excel_path)
+        }, wodoo_processing_path, res_full_excel_path, "woocom processing")
 
     print(f"Excel file saved in {res_full_excel_path}")

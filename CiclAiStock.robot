@@ -1,13 +1,14 @@
 *** Settings ***
-Library    ButlerRobot.AIBrowserLibrary  record=${False}  presentation_mode=${True}  fix_bbox=${TRUE}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
+Library    ButlerRobot.AIBrowserLibrary  record=${False}  console=${False}  presentation_mode=${True}  fix_bbox=${TRUE}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
 Library    ./robotframework/keywords/count_excel.py
 Library    OTP
 Library    Collections
 Library    OperatingSystem
 Resource   ./robotframework/modeling/resources/CrawlOdoo.resource
 Resource   ./robotframework/modeling/resources/CrawlAmazon.resource
+Resource   ./robotframework/modeling/resources/CrawlWoocommerce.resource
 Variables  ./robotframework/variables/credentials.py
-Suite Setup  Browser.Add Task Library    CrawlAmazon  CrawlOdoo
+Suite Setup  Browser.Add Task Library    CrawlAmazon  CrawlOdoo  CrawlWoocommerce
 
 
 *** Variables ***
@@ -16,9 +17,15 @@ ${DEFAULT_AI_MODE}  Flexible
 ${BROWSER_WAIT}  2
 
 ${URL_AMAZON}  https://sellercentral.amazon.es/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fsellercentral.amazon.es%2Fhome&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=sc_es_amazon_v2&openid.mode=checkid_setup&language=es_ES&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=sc_es_amazon_v2&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&ssoResponse=eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.u8j_3kfAPRO9oea7TATYwCAdOKehZfRhKktBjgJlntMm6nulCn1qEg.B2O2NQ1GNLUmz9NH.cjghNVWhLvzDMxogLdKHIvb87caY5OMLYZheHT6HHz3k088JtfZnEGHu8fk8e_IFDIpVNxqqHzR8JcyQjX1b5SwxquNbOpmt5cnMPZ5pgqpf0pbcHi8-TrhHtZ2XJjSDaSwqYkPTP6oEJKgc6fDOGcJsXOPPXTJc6ZT71ZHEX1R8j94ipHBM6qer4vruZRBYMAdZVaFP.K5bI5NZ7lJG0ObtQQymgtA
+${URL_EBAY}  https://signin.ebay.com
+${URL_WOOCOMERCE}  https://ciclozero.com/wp-admin/admin.php?page=stock-manager
 
 ${RESULT_EXCEL_PATH_ODOO}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.result.xlsx
 ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.amz.unshipped.result.xlsx
+${RESULT_EXCEL_PATH_AMAZON}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.amz.result.xlsx
+${RESULT_EXCEL_PATH_EBAY_UNSHIPPED}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.ebay.unshipped.result.xlsx
+${RESULT_EXCEL_PATH_EBAY}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.ebay.result.xlsx
+${RESULT_EXCEL_PATH_WOOCOMMERCE}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.woocommerce.result.xlsx
 ${RESULT_EXCEL_PATH}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.full.result.xlsx
 
 
@@ -38,13 +45,16 @@ CiclAI Stock
     ELSE
         Append Tsv To Main Excel    ${amazon_tsv_obj.saveAs}    ${RESULT_EXCEL_PATH_ODOO}    ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}
     END
-    Log  Excel creado satisfactoriamente en ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}  console=${TRUE}
+    Log  Excel de pending creado satisfactoriamente en ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}  console=${TRUE}
 
     # ================== Amazon Unshipped ==================
     ${amazon_dict_obj}  Get Pending Amazon
-    Append Dict To Main Excel    ${amazon_dict_obj}    ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}    ${RESULT_EXCEL_PATH}
-    Log  Excel creado satisfactoriamente en ${RESULT_EXCEL_PATH}  console=${TRUE}
-    
+    Append Dict To Main Excel     ${amazon_dict_obj}    ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}    ${RESULT_EXCEL_PATH_AMAZON}   amz pending
+    Log  Excel de amazon creado satisfactoriamente en ${RESULT_EXCEL_PATH_AMAZON}  console=${TRUE}
+
+    # ================== Woocommerce ==================
+    ${woocommerce_dict_obj}  Get Processing Woocommerce
+    Append Dict To Main Excel    ${woocommerce_dict_obj}    ${RESULT_EXCEL_PATH_ODOO}    ${RESULT_EXCEL_PATH_WOOCOMMERCE}  woocom processing
 
 *** Keywords ***
 Get Stocks Odoo
@@ -188,3 +198,18 @@ Get Pending Amazon
     END
 
     RETURN  ${orders_sku}
+
+Get Processing Woocommerce
+    Comment  Obtener los unshipped de Woocommerce
+    New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
+    New Context    acceptDownloads=${TRUE}
+    Wait New Page   ${URL_WOOCOMERCE}  wait=${1}
+
+    CrawlWoocommerce.Login with user ${woocommerce_user} and pass ${woocommerce_pass}
+    CrawlWoocommerce.Click on WooCommerce in the menu
+    CrawlWoocommerce.Go to Pedidos under WooCommerce
+    CrawlWoocommerce.Click on procesando
+    CrawlWoocommerce.Get bounding box of the count of procesando
+    ${dict_sku_count}  CrawlWoocommerce.Get all skus from the table
+
+    RETURN  ${dict_sku_count}
