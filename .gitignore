@@ -1,6 +1,7 @@
 .DS_Store
 
 # RobotFramework
+desktop/
 conda_pass.yml
 crawl_amazon_data/
 logfile_out*
