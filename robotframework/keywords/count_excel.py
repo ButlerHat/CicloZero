@@ -7,6 +7,14 @@ import pandas as pd
 import openpyxl
 
 
+SELLERS = [
+    "amz unshipped", 
+    "amz pending", 
+    "woocom processing", 
+    "flend"
+]
+
+
 def _load_excel_file(file_path: str) -> pd.DataFrame:
     """
     Load an excel file and return a pandas dataframe. The first row is used as the header
@@ -112,10 +120,8 @@ def create_excel(count_excel_path: str, output_excel_path: str):
     model_count.columns = ["prod", "count"]
 
     # Add empty column "amz unshipped", "amz pending", "woocom processing", "flend"
-    _add_empty_column_to_dataframe(model_count, "amz unshipped")
-    _add_empty_column_to_dataframe(model_count, "amz pending")
-    _add_empty_column_to_dataframe(model_count, "woocom processing")
-    _add_empty_column_to_dataframe(model_count, "flend")
+    for seller in SELLERS:
+        _add_empty_column_to_dataframe(model_count, seller)
 
     # Add column "Total" with "Cantidad" - "amz unshipped" - "amz pending" - "woocom processing" - "flend". Values must be calculated with excel formulas (=Bi-Ci-Di-Ei-Fi)
     _add_total_column_to_dataframe(model_count, "Total")
@@ -263,6 +269,7 @@ def add_prices_by_sku_and_market(excel_path: str, sku: str, marketplace: str, st
     # Save
     wb.save(excel_path)
 
+
 def add_label_by_sku(excel_path: str, sku: str, marketplace: str, status: str, label: str, self_price:str, url: str):
     wb = openpyxl.load_workbook(excel_path)
     sheet = wb[sku]
@@ -287,6 +294,35 @@ def add_label_by_sku(excel_path: str, sku: str, marketplace: str, status: str, l
     wb.save(excel_path)
 
 
+def get_all_sku_and_total(excel_path: str) -> dict[str, int]:
+    """
+    Get all sku and total from an excel file. Ignore all rows where count is nan or 0.
+    """
+    df = _load_excel_file(excel_path)
+    # Remove columns where count is nan or 0
+    df = df[df["count"].notna()]
+    
+    actual_sellers = [seller for seller in SELLERS if seller in df.columns]
+    for seller in actual_sellers:
+        df[seller] = df[seller].fillna(0)
+    # Get all sku
+    sku_list = df["prod"].tolist()
+    # Convert product to sku
+    for i in range(len(sku_list)):
+        prod = sku_list[i]
+        if "[" in prod:
+            sku_list[i] = prod[prod.find("[") + 1:prod.find("]")]
+        else:
+            sku_list[i] = prod
+    
+    # Get total. count - (sum of all sellers)
+    total_list = df["count"].tolist()
+    for seller in actual_sellers:
+        total_list = [int(total_list[i] - df[seller].tolist()[i]) for i in range(len(total_list))]
+    
+    return dict(zip(sku_list, total_list))
+
+
 if __name__ == "__main__":
     import os 
 
@@ -295,8 +331,8 @@ if __name__ == "__main__":
     res_stock_excel_path = os.path.join(workdir, "deb.stock.quant.result.xlsx")
     tsv_path = os.path.join(workdir, "unshipped.tsv")
     pending_unshipped_path = os.path.join(workdir, "stock.quant.amz.unshipped.result.xlsx")
-    wodoo_processing_path = os.path.join(workdir, "stock.quant.result.xlsx")
-    res_full_excel_path = os.path.join(workdir, "deb.full.result.xlsx")
+    wodoo_processing_path = os.path.join(workdir, "stock.quant.woocommerce.result.xlsx")
+    res_full_excel_path = os.path.join(workdir, "stock.quant.full.result.xlsx")
 
     # create_excel(stock_excel_path, res_stock_excel_path)
     # append_tsv_to_main_excel(tsv_path, res_stock_excel_path, res_full_excel_path)
@@ -312,3 +348,6 @@ if __name__ == "__main__":
         }, wodoo_processing_path, res_full_excel_path, "woocom processing")
 
     print(f"Excel file saved in {res_full_excel_path}")
+
+    sku_total = get_all_sku_and_total(res_full_excel_path)
+    print(f"Total: {sku_total}")

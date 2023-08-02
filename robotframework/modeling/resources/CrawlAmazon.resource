@@ -170,6 +170,10 @@ Search for SKU ${sku}
     Keyboard Input    type    ${sku}
     Click  //*[@id='myitable-search-button-announce']
 
+Delete search box
+    Click  //*[@id='myitable-search']
+    Keyboard Key    Control+A+Delete
+
 Click at marketplaces button for sku ${sku}
     Click  //table//tr[contains(.,"${sku}")]//input[./..//span[contains(text(),'marketplaces')]]
 
@@ -224,16 +228,47 @@ Get Element Bounding Box of the price of the ${market} row
     RETURN  ${bbox}
 
 
+# ========== Update stock ==========
+Delete the input of available column for ${sku}
+    Click  //table//tr[contains(.,"${sku}")]/td[@data-column="quantity"]//input
+    Keyboard Key    Control+A+Delete
+
+Write ${stock} in available column for ${sku} row
+    Click  //table//tr[contains(.,"${sku}")]/td[@data-column="quantity"]//input
+    Keyboard Input    type    ${stock}
+
+Check if save button exists for sku ${sku}
+    [Tags]  no_record
+    ${status}  ${msg}  Run Keyword And Ignore Error  Wait For Elements State  //table//tr[contains(.,"${sku}")]/td[@data-column="action"]//button[contains(.,'Save')]  visible  2
+    IF  '${status}' == 'PASS'  
+        RETURN  ${TRUE}
+    ELSE
+        RETURN  ${FALSE}
+    END
+
+Click on save in the ${sku} row
+    Click  //table//tr[contains(.,"${sku}")]/td[@data-column="action"]//button[contains(.,'Save')]
+
+Check if update success for sku ${sku}
+    [Tags]  no_record
+    ${status}  ${msg}  Run Keyword And Ignore Error  Wait For Elements State  //table//tr[contains(.,"${sku}")]/td[@data-column="quantity"]//div[contains(@class,'success')]  visible  5
+    IF  '${status}' == 'PASS'  
+        Log  Saved ${sku} stock
+    ELSE
+        Log  Update failed for sku ${sku}  level=WARN
+    END
+
 # ========== Amazon Public ==========
-Accept cookies
-    Click  //*[@id='sp-cc-accept']
+# Accept cookies
+#     Click  //*[@id='sp-cc-accept']
 
-Search ${product}
-    Click  //*[@id='twotabsearchtextbox']
-    Keyboard Input    type    ${product}
+# Search ${product}
+#     Click  //*[@id='twotabsearchtextbox']
+#     Keyboard Input    type    ${product}
 
-Click on search icon
-    Click  //*[@id='nav-search-submit-button']
+# Click on search icon
+#     Click  //*[@id='nav-search-submit-button']
+# ^ This is not used anywhere
 
 See Renewed at the right above sell on Amazon
     Click  //div[@class='a-box-inner'][.//div[@class='olp-text-box']]
