@@ -4,7 +4,7 @@
 	"name": "Ciclozero (Miniconda)",
 	"dockerComposeFile": "./docker-compose.yml",
 	"service": "ciclozero_dev",
-	"workspaceFolder": "/workspaces/CicloZero",
+	"workspaceFolder": "/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero",
 
 	"features": {
 		"ghcr.io/devcontainers/features/desktop-lite:1": {}
@@ -56,7 +56,7 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash /workspaces/CicloZero/.devcontainer/postCreateCommand.sh"
+	"postCreateCommand": "bash /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/.devcontainer/postCreateCommand.sh"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

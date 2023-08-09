@@ -7,9 +7,9 @@ services:
     init: true
     volumes:
       - ${HOST_HOME}/.cloudflared:/home/vscode/.cloudflared:cached
-      - ${HOST_HOME}/data/CicloZero/results:/workspaces/CicloZero/results:cached
-      - ${HOST_HOME}/data/CicloZero/downloads:/workspaces/CicloZero/downloads:cached
-      - ${HOST_HOME}/data/CicloZero/data:/workspaces/CicloZero/data:cached
+      - ${HOST_HOME}/data/CicloZero/results:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/results:cached
+      - ${HOST_HOME}/data/CicloZero/downloads:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/downloads:cached
+      - ${HOST_HOME}/data/CicloZero/data:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/data:cached
     cap_add:
       - SYS_ADMIN
     shm_size: '2gb'
