@@ -18,10 +18,11 @@ ${STOCK_EXCEL_PATH}  ${OUTPUT_DIR}${/}downloads${/}CiclAiStock_00-45_11-05-2023.
 
 *** Test Cases ***
 
-ComparePrices
+UpdateAmazon
     Comment  Obtener inventario de Odoo
     New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
     New Context    acceptDownloads=${TRUE}
+    Set Browser Timeout  60
     New Page   ${URL_AMAZON}
 
     Login with user ${amazon_user} and pass ${amazon_pass}
@@ -43,8 +44,8 @@ ComparePrices
     &{sku_total}  Get All Sku And Total    excel_path=${STOCK_EXCEL_PATH}
     FOR  ${sku}  ${total}  IN  &{sku_total}
         # Debugging
-        # ${sku}  Set Variable  iP13PR-SRBL-128-C -R
-        # ${total}  Set Variable  9
+        ${sku}  Set Variable  iP13PR-SRBL-128-C -R
+        ${total}  Set Variable  8
         # Debugging
 
         Search for SKU ${sku}

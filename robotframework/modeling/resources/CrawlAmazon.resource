@@ -1,5 +1,5 @@
 *** Settings ***
-Library   ButlerRobot.AIBrowserLibrary  fix_bbox=${TRUE}  output_path=${OUTPUT_DIR}/crawl_amazon_data  WITH NAME  Browser
+Library   ButlerRobot.AIBrowserLibrary  presentation_mode=${True}  record=${False}  fix_bbox=${TRUE}  output_path=${OUTPUT_DIR}/crawl_amazon_data  WITH NAME  Browser
 Library   Collections
 Library   ../../keywords/utils.py
 Library    OperatingSystem
@@ -35,11 +35,33 @@ Click on "Select Account"
 
 Click on menu icon at top left
     Click  //div[@role='button']
+    Sleep  1
 
 Click on "Orders" menu at the left
     AI.Click on "Orders" menu at the left
     # Only works in flendu
     # Click  //html/body/div/div[1]/div/div[1]/div[3]/div[3]/div/div[1]/div[2]/div/div[4]
+
+Click on available column
+    Click  //th[@id="quantity"]//a
+    Sleep  2
+
+Set 0 to skus where have quantity and not in Stock
+    [Arguments]  @{skus_in_stock}
+    [Tags]  only_substeps
+    ${skus_el}  Get Elements    //td[@data-column="sku"][./../td[@data-column="quantity"]//input[not(@value="0")]]//a  
+    
+    FOR  ${sku_el}  IN  @{skus_el}
+        ${sku}  Get Text  ${sku_el}
+        IF  "${sku}" not in "@{skus_in_stock}"
+            ${status}  ${msg}  Run Keyword And Ignore Error  File Should Exist    ${RETURN_FILE}
+            IF  "${status}"=="PASS"  Append To File    ${RETURN_FILE}    ${sku},${SPACE}
+            Log  Updating ${sku} to 0  console=${True}
+            # Delete the input of available column for ${sku}
+            # Write 0 in available column for ${sku} row
+            # Click on save in the ${sku} row
+        END
+    END
 
 Click on "Order Reports" submenu
     Click  //a[@href='/order-reports-and-feeds/reports/ref=xx_orderrpt_dnav_xx']
@@ -107,6 +129,61 @@ Remove Warnings In Table
     ...    row.parentNode.removeChild(row);
     ...    }});
 
+Duplicate td in double orders
+    [Tags]  no_record
+    Evaluate JavaScript  ${None}    const table = document.getElementById('orders-table');
+    ...    let rows = table.querySelectorAll('tr');
+
+    ...    let tdsWithRowspan = table.querySelectorAll('td[rowspan="2"]');
+    ...    
+    ...    tdsWithRowspan.forEach(td => {
+    ...        // Remove the rowspan attribute
+    ...        td.removeAttribute('rowspan');
+    ...    });
+    ...    
+    ...    // Step 2: Convert NodeList to array
+    ...    let rowsArray = Array.from(rows);
+    ...    
+    ...    // Step 3: Filter rows based on number of <td> children
+    ...    let filteredRows = rowsArray.filter(row => row.querySelectorAll('td').length < 4);
+    ...    
+    ...    // Step 4: Exclude the first result
+    ...    filteredRows = filteredRows.slice(1);
+    ...    
+    ...    // Step 5: Iterate over the filtered rows
+    ...    filteredRows.forEach(row => {
+    ...        // Get the row above (previous sibling)
+    ...        let previousRow = row.previousElementSibling;
+    ...        
+    ...        // If the previous row exists
+    ...        if (previousRow) {
+    ...            // Get the first three <td> elements from the previous row
+    ...            let tdsToInsert = Array.from(previousRow.querySelectorAll('td')).slice(0, 3);
+    ...            
+    ...            // Insert these <td> elements at the beginning of the current row
+    ...            tdsToInsert.reverse().forEach(td => {
+    ...                let clonedTd = td.cloneNode(true);
+    ...                
+    ...                row.insertBefore(td.cloneNode(true), row.firstChild);
+    ...                last_insert = row.firstChild;
+    ...                // Check if the clonedTd contains an <a> element and modify its text
+    ...                let aElem = last_insert.querySelector('a');
+    ...                let aElem2 = td.querySelector('a');
+    ...                console.log(aElem)
+    ...                console.log(last_insert)
+    ...                if (aElem && aElem.textContent.trim() !== "") {
+    ...                    console.log('updating conetnt ' + aElem.textContent)
+    ...                    aElem.textContent += ".2";
+    ...                    aElem2.textContent += ".1";
+    ...                }
+    ...            });
+    ...        }
+    ...    });
+
+Wait for spinner
+    [Tags]  no_record
+    Sleep  0.5
+    Wait For Condition    Style  //div[@class="mt-loading-overlay"]  display  !=  block
 
 Which is the number of the second column of the ${ord_num} row?
     [Documentation]  The pending tab must be active. Obtain text with the locator, not AI
@@ -118,7 +195,11 @@ Get element bounding box of the second column of the ${ord_num} order
     [Documentation]  Get the element second column bounding box. If you want to give a clue to the AI you can set "${NEXT_OBSERVATION}" variable.
     IF  "${NEXT_OBSERVATION}"  Observation  ${NEXT_OBSERVATION}
     ${num}  Get Cardinal  ${ord_num}
-    ${bbox}  Element Bbox  //*[@id='orders-table']//tr[${num}]//td[3]
+    TRY
+        ${bbox}  Element Bbox  //*[@id='orders-table']//tr[${num}]//td[3]
+    EXCEPT
+        Fail  Check if is a triple order. This script is not ready.
+    END
     RETURN  ${bbox}
 
 Which is the SKU of the order ${2nd_col_num}?
@@ -165,13 +246,16 @@ Go to "Inventory" at the left
 Go to "Manage All Inventory" submenu
     Click  //*[text()='Manage All Inventory']
 
+Select SKU radio button in filter
+    Click  //li[@id="SearchType_SECTION"]//span[contains(text(),"SKU")][not(contains(text(),"FN"))]
+
 Search for SKU ${sku}
     Click  //*[@id='myitable-search']
     Keyboard Input    type    ${sku}
     Click  //*[@id='myitable-search-button-announce']
 
 Delete search box
-    Click  //*[@id='myitable-search']
+    Wait Until Keyword Succeeds  10  1  Click  //*[@id='myitable-search']
     Keyboard Key    Control+A+Delete
 
 Click at marketplaces button for sku ${sku}
@@ -230,7 +314,7 @@ Get Element Bounding Box of the price of the ${market} row
 
 # ========== Update stock ==========
 Delete the input of available column for ${sku}
-    Click  //table//tr[contains(.,"${sku}")]/td[@data-column="quantity"]//input
+    Wait Until Keyword Succeeds  10  1  Click  //table//tr[contains(.,"${sku}")]/td[@data-column="quantity"]//input
     Keyboard Key    Control+A+Delete
 
 Write ${stock} in available column for ${sku} row

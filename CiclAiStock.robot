@@ -25,7 +25,7 @@ ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.am
 ${RESULT_EXCEL_PATH_AMAZON}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.amz.result.xlsx
 ${RESULT_EXCEL_PATH_EBAY_UNSHIPPED}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.ebay.unshipped.result.xlsx
 ${RESULT_EXCEL_PATH_EBAY}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.ebay.result.xlsx
-${RESULT_EXCEL_PATH_WOOCOMMERCE}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.woocommerce.result.xlsx
+# ${RESULT_EXCEL_PATH_WOOCOMMERCE}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.woocommerce.result.xlsx
 ${RESULT_EXCEL_PATH}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.full.result.xlsx
 
 
@@ -54,14 +54,17 @@ CiclAI Stock
 
     # ================== Woocommerce ==================
     ${woocommerce_dict_obj}  Get Processing Woocommerce
-    Append Dict To Main Excel    ${woocommerce_dict_obj}    ${RESULT_EXCEL_PATH_ODOO}    ${RESULT_EXCEL_PATH_WOOCOMMERCE}  woocom processing
+    Append Dict To Main Excel    ${woocommerce_dict_obj}    ${RESULT_EXCEL_PATH_AMAZON}    ${RESULT_EXCEL_PATH}  woocom processing
+    Log  Excel de woocommerce creado satisfactoriamente en ${RESULT_EXCEL_PATH}  console=${TRUE}
 
 *** Keywords ***
 Get Stocks Odoo
     Comment  Obtener inventario de Odoo
     New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
     New Context    acceptDownloads=${TRUE}
+    ${old_timeout}  Set Browser Timeout    timeout=${20}
     Wait New Page       https://backoffice.ciclozero.com/  wait=${3}
+    Set Browser Timeout    timeout=${old_timeout}
     
     Comment  Acceder a informe de inventario
     Click on "Identificarse"
@@ -82,6 +85,9 @@ Get Stocks Odoo
     ${dl_promise}  Promise To Wait For Download    saveAs=${OUTPUT_DIR}${/}downloads${/}stock.quant.xlsx
     Click to download icon above the table
     ${odoo_excel_obj}  Wait For  ${dl_promise}
+
+    Comment  Close browser
+    Close Browser
 
     RETURN  ${odoo_excel_obj.saveAs}
 
@@ -140,6 +146,9 @@ Get Unshipped Amazon
     Comment  Descargar tsv. Esperar a que se descargue
     ${amazon_tsv_obj}  Wait For  ${dl_promise}
 
+    Comment  Close browser
+    Close Browser
+
     RETURN  ${amazon_tsv_obj}
 
 
@@ -177,8 +186,10 @@ Get Pending Amazon
     Set Global Variable    ${NEXT_OBSERVATION}
     ${num_pending}  Evaluate  ${num_pending} +1
 
-    # This Javascript is for removing warning in the table
+    # This Javascript is for removing warning in the table and remove double orders
     Remove Warnings In Table
+    Duplicate td in double orders
+    Sleep  1
 
     FOR  ${i}  IN RANGE  1  ${num_pending}
         ${ord_num}  Get Ordinal    number=${i}
@@ -197,6 +208,9 @@ Get Pending Amazon
         Set To Dictionary    ${orders_sku}    ${sku}    ${new_sku_count}
     END
 
+    Comment  Close browser
+    Close Browser
+
     RETURN  ${orders_sku}
 
 Get Processing Woocommerce
@@ -208,8 +222,16 @@ Get Processing Woocommerce
     CrawlWoocommerce.Login with user ${woocommerce_user} and pass ${woocommerce_pass}
     CrawlWoocommerce.Click on WooCommerce in the menu
     CrawlWoocommerce.Go to Pedidos under WooCommerce
-    CrawlWoocommerce.Click on procesando
-    CrawlWoocommerce.Get bounding box of the count of procesando
-    ${dict_sku_count}  CrawlWoocommerce.Get all skus from the table
+    
+    ${any_to_process}  CrawlWoocommerce.Check if there are orders to process
+    &{dict_sku_count}  Create Dictionary
+    IF  ${any_to_process}  
+        CrawlWoocommerce.Click on procesando
+        CrawlWoocommerce.Get bounding box of the count of procesando
+        ${dict_sku_count}  CrawlWoocommerce.Get all skus from the table
+    END
+
+    Comment  Close browser
+    Close Browser
 
     RETURN  ${dict_sku_count}

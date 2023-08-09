@@ -14,8 +14,24 @@ Login with user ${user} and pass ${password}
 Click on WooCommerce in the menu
     Click  //a[./*[text()="WooCommerce"]]
 
+Click on Gestor de existencias in the menu
+    Click  //a[./*[text()="Gestor de existencias"]]
+
 Go to Pedidos under WooCommerce
     Click  //li[.//*[text()="WooCommerce"]]//a[contains(.,"Pedidos")]
+
+Go to Importar/Exportar under Gestor de existencias
+    Click  //li[.//*[text()="Gestor de existencias"]]//a[contains(.,"Importar/Exportar")]
+
+Check if there are orders to process
+    [Documentation]  Returns the number of orders to process
+    [Tags]  no_record
+    ${status}  ${msg}  Run Keyword And Ignore Error  Wait For Elements State  //ul//a[contains(.,"Procesando")]  visible  5s
+    IF  "${status}" == "FAIL"
+        Log  No orders to process  level=WARN
+        RETURN  ${False}
+    END
+    RETURN  ${True}
 
 Click on procesando
     Click  //ul//a[contains(.,"Procesando")]
@@ -113,4 +129,12 @@ Get Bounding box of cantidad of sku ${sku}
 
 Close the popup
     Click  //button[contains(@class,"modal-close")]
+
+Upload inventory file
+    [Documentation]  Uploads the inventory file
+    [Arguments]  ${file_path}
+    ${promise}=    Promise To Upload File  ${file_path}
+    Click  //input[@name="uploadFile"]
+    ${upload_result}=    Wait For    ${promise}
+    Log  ${upload_result}  console=${True}
     

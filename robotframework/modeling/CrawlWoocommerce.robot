@@ -12,7 +12,8 @@ ${URL_WOOCOMERCE}  https://ciclozero.com/wp-admin/admin.php?page=stock-manager
 *** Tasks ***
 Test Woocommerce Stock
     [Documentation]  Creacion de excel para hacer el control de stock en woocommerce
-    Get Processing Woocommerce 
+    ${dict}  Get Processing Woocommerce 
+    Log  Dictionary ${dict}  console=${True}
 
 
 *** Keywords ***
@@ -25,8 +26,14 @@ Get Processing Woocommerce
     CrawlWoocommerce.Login with user ${woocommerce_user} and pass ${woocommerce_pass}
     CrawlWoocommerce.Click on WooCommerce in the menu
     CrawlWoocommerce.Go to Pedidos under WooCommerce
-    CrawlWoocommerce.Click on procesando
-    CrawlWoocommerce.Get bounding box of the count of procesando
-    ${dict_sku_count}  CrawlWoocommerce.Get all skus from the table
+    
+    ${any_to_process}  CrawlWoocommerce.Check if there are orders to process
+    &{dict_sku_count}  Create Dictionary
+    IF  ${any_to_process}  
+        CrawlWoocommerce.Click on procesando
+        CrawlWoocommerce.Get bounding box of the count of procesando
+        ${dict_sku_count}  CrawlWoocommerce.Get all skus from the table
+    END
 
     RETURN  ${dict_sku_count}
+    

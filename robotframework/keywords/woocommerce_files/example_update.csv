@@ -1,0 +1,535 @@
+Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
+9709.0,AWTSE2G-ALUSL-40-A+ -R,40 MM Aluminio Silver Premium,TRUE,instock,no,21.0,product-variant,9656.0
+9705.0,AWTSE2G-ALUMD-40-A+ -R,40 MM Aluminio Midnight Premium,TRUE,instock,no,11.0,product-variant,9656.0
+,iP13PR-SRBL-128-C -R,,TRUE,instock,no,9.0,product-variant,
+,iP13PR-DES-256-ASIS-R,,TRUE,instock,no,9.0,product-variant,
+,iP13PR-DES-128-ASIS-R,,TRUE,instock,no,7.0,product-variant,
+,iP13PR-SL-128-C -R,,TRUE,instock,no,6.0,product-variant,
+8394.0,iP12-BL-128-A -R,128 GB Blue Excelente,TRUE,instock,no,1.0,product-variant,8311.0
+,iP13PR-SRBL-256-C -R,,TRUE,instock,no,5.0,product-variant,
+8410.0,iP12-MV-256-A -R,256 GB Malva Excelente,TRUE,instock,no,4.0,product-variant,8311.0
+,iPXS-DES-256-SC-R,,TRUE,instock,no,3.0,product-variant,
+9003.0,iPXS-SG-256-A -R,256 GB Space gray Excelente,TRUE,instock,no,2.0,product-variant,8961.0
+9015.0,iPXS-SG-512-A -R,512 GB Space gray Excelente,TRUE,instock,no,2.0,product-variant,8961.0
+,iP13PR-SRBL-128-B -R,,TRUE,outofstock,no,0.0,product-variant,
+8995.0,iPXS-GD-256-A -R,256 GB Gold Excelente,TRUE,instock,no,1.0,product-variant,8961.0
+8390.0,iP12-BK-128-A -R,128 GB Black Excelente,TRUE,instock,no,2.0,product-variant,8311.0
+,iP13PR-SRBL-256-B -R,,TRUE,instock,no,2.0,product-variant,
+8886.0,iP11PR-MDGR-256-A -R,256 GB Midnight Green Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8454.0,iP12-WT-64-A -R,64 GB White Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+9713.0,AWTSE2G-ALUSTR-40-A+ -R,40 MM Aluminio Starlight Premium,TRUE,instock,no,1.0,product-variant,9656.0
+8393.0,iP12-BL-128-B -R,128 GB Blue Muy bueno,TRUE,instock,no,1.0,product-variant,8311.0
+8406.0,iP12-WT-128-A -R,128 GB White Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+9635.0,AWT7G-ALUSTR-41-A+ -R,41 MM Aluminio Starlight Premium,TRUE,instock,no,1.0,product-variant,9541.0
+9954.0,iP12PR-GRT-512-B -R,512 GB Graphite Muy bueno,TRUE,instock,no,1.0,product-variant,8912.0
+9002.0,iPXS-SG-256-B -R,256 GB Space gray Muy bueno,TRUE,instock,no,1.0,product-variant,8961.0
+9646.0,AWT7G-ALUMD-45-A -R,45 MM Aluminio Midnight Excelente,TRUE,instock,no,1.0,product-variant,9541.0
+8418.0,iP12-BL-256-A -R,256 GB Blue Excelente,TRUE,instock,no,1.0,product-variant,8311.0
+,iPXS-DES-64-SC-R,,TRUE,instock,no,1.0,product-variant,
+9955.0,iP12PR-GRT-512-A -R,512 GB Graphite Excelente,TRUE,instock,no,1.0,product-variant,8912.0
+8430.0,iP12-WT-256-A -R,256 GB White Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8999.0,iPXS-SL-256-A -R,256 GB Silver Excelente,TRUE,instock,no,1.0,product-variant,8961.0
+8428.0,iP12-WT-256-C -R,256 GB White Bueno,TRUE,instock,no,1.0,product-variant,8311.0
+,iP12-DES-256-ASIS-R,,TRUE,instock,no,1.0,product-variant,
+9011.0,iPXS-SL-512-A -R,512 GB Silver Excelente,TRUE,instock,no,1.0,product-variant,8961.0
+8981.0,iPXS-GD-64-C -R,64 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+8982.0,iPXS-GD-64-B -R,64 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+8983.0,iPXS-GD-64-A -R,64 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,8961.0
+8984.0,iPXS-GD-64-A+ -R,64 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,8961.0
+8985.0,iPXS-SL-64-C -R,64 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+8986.0,iPXS-SL-64-B -R,64 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+8987.0,iPXS-SL-64-A -R,64 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,8961.0
+8988.0,iPXS-SL-64-A+ -R,64 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8961.0
+8989.0,iPXS-SG-64-C -R,64 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+8990.0,iPXS-SG-64-B -R,64 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+8991.0,iPXS-SG-64-A -R,64 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,8961.0
+8992.0,iPXS-SG-64-A+ -R,64 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,8961.0
+8993.0,iPXS-GD-256-C -R,256 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+8994.0,iPXS-GD-256-B -R,256 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+8996.0,iPXS-GD-256-A+ -R,256 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,8961.0
+8997.0,iPXS-SL-256-C -R,256 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+8998.0,iPXS-SL-256-B -R,256 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+9000.0,iPXS-SL-256-A+ -R,256 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8961.0
+9001.0,iPXS-SG-256-C -R,256 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+9004.0,iPXS-SG-256-A+ -R,256 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,8961.0
+9005.0,iPXS-GD-512-C -R,512 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+9006.0,iPXS-GD-512-B -R,512 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+9007.0,iPXS-GD-512-A -R,512 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,8961.0
+9008.0,iPXS-GD-512-A+ -R,512 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,8961.0
+9009.0,iPXS-SL-512-C -R,512 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+9010.0,iPXS-SL-512-B -R,512 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+9012.0,iPXS-SL-512-A+ -R,512 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8961.0
+9013.0,iPXS-SG-512-C -R,512 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+9014.0,iPXS-SG-512-B -R,512 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,8961.0
+9016.0,iPXS-SG-512-A+ -R,512 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,8961.0
+9018.0,iP11PRMX-GD-64-C -R,64 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9019.0,iP11PRMX-GD-64-B -R,64 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9020.0,iP11PRMX-GD-64-A -R,64 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9021.0,iP11PRMX-GD-64-A+ -R,64 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9022.0,iP11PRMX-MG-64-C -R,64 GB Midnight Green Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9023.0,iP11PRMX-MG-64-B -R,64 GB Midnight Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9024.0,iP11PRMX-MG-64-A -R,64 GB Midnight Green Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9025.0,iP11PRMX-MG-64-A+ -R,64 GB Midnight Green Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9026.0,iP11PRMX-SL-64-C -R,64 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9027.0,iP11PRMX-SL-64-B -R,64 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9028.0,iP11PRMX-SL-64-A -R,64 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9029.0,iP11PRMX-SL-64-A+ -R,64 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9030.0,iP11PRMX-SG-64-C -R,64 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9031.0,iP11PRMX-SG-64-B -R,64 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9032.0,iP11PRMX-SG-64-A -R,64 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9033.0,iP11PRMX-SG-64-A+ -R,64 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9034.0,iP11PRMX-GD-256-C -R,256 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9035.0,iP11PRMX-GD-256-B -R,256 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9036.0,iP11PRMX-GD-256-A -R,256 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9037.0,iP11PRMX-GD-256-A+ -R,256 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9038.0,iP11PRMX-MG-256-C -R,256 GB Midnight Green Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9039.0,iP11PRMX-MG-256-B -R,256 GB Midnight Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9040.0,iP11PRMX-MG-256-A -R,256 GB Midnight Green Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9041.0,iP11PRMX-MG-256-A+ -R,256 GB Midnight Green Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9042.0,iP11PRMX-SL-256-C -R,256 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9043.0,iP11PRMX-SL-256-B -R,256 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9044.0,iP11PRMX-SL-256-A -R,256 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9045.0,iP11PRMX-SL-256-A+ -R,256 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9046.0,iP11PRMX-SG-256-C -R,256 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9047.0,iP11PRMX-SG-256-B -R,256 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9048.0,iP11PRMX-SG-256-A -R,256 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9049.0,iP11PRMX-SG-256-A+ -R,256 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9050.0,iP11PRMX-GD-512-C -R,512 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9051.0,iP11PRMX-GD-512-B -R,512 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9052.0,iP11PRMX-GD-512-A -R,512 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9053.0,iP11PRMX-GD-512-A+ -R,512 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9054.0,iP11PRMX-MG-512-C -R,512 GB Midnight Green Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9055.0,iP11PRMX-MG-512-B -R,512 GB Midnight Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9056.0,iP11PRMX-MG-512-A -R,512 GB Midnight Green Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9057.0,iP11PRMX-MG-512-A+ -R,512 GB Midnight Green Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9058.0,iP11PRMX-SL-512-C -R,512 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9059.0,iP11PRMX-SL-512-B -R,512 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9060.0,iP11PRMX-SL-512-A -R,512 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9061.0,iP11PRMX-SL-512-A+ -R,512 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9062.0,iP11PRMX-SG-512-C -R,512 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9063.0,iP11PRMX-SG-512-B -R,512 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,9017.0
+9064.0,iP11PRMX-SG-512-A -R,512 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,9017.0
+9065.0,iP11PRMX-SG-512-A+ -R,512 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,9017.0
+9070.0,iP12PRMX-GD-64-C -R,64 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9071.0,iP12PRMX-GD-64-B -R,64 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9072.0,iP12PRMX-GD-64-A -R,64 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9073.0,iP12PRMX-GD-64-A+ -R,64 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9074.0,iP12PRMX-MG-64-C -R,64 GB Midnight Green Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9075.0,iP12PRMX-MG-64-B -R,64 GB Midnight Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9076.0,iP12PRMX-MG-64-A -R,64 GB Midnight Green Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9077.0,iP12PRMX-MG-64-A+ -R,64 GB Midnight Green Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9078.0,iP12PRMX-SL-64-C -R,64 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9079.0,iP12PRMX-SL-64-B -R,64 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9080.0,iP12PRMX-SL-64-A -R,64 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9081.0,iP12PRMX-SL-64-A+ -R,64 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9082.0,iP12PRMX-SG-64-C -R,64 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9083.0,iP12PRMX-SG-64-B -R,64 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9084.0,iP12PRMX-SG-64-A -R,64 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9085.0,iP12PRMX-SG-64-A+ -R,64 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9086.0,iP12PRMX-GD-256-C -R,256 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9087.0,iP12PRMX-GD-256-B -R,256 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9088.0,iP12PRMX-GD-256-A -R,256 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9089.0,iP12PRMX-GD-256-A+ -R,256 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9090.0,iP12PRMX-MG-256-C -R,256 GB Midnight Green Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9091.0,iP12PRMX-MG-256-B -R,256 GB Midnight Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9092.0,iP12PRMX-MG-256-A -R,256 GB Midnight Green Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9093.0,iP12PRMX-MG-256-A+ -R,256 GB Midnight Green Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9094.0,iP12PRMX-SL-256-C -R,256 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9095.0,iP12PRMX-SL-256-B -R,256 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9096.0,iP12PRMX-SL-256-A -R,256 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9097.0,iP12PRMX-SL-256-A+ -R,256 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9098.0,iP12PRMX-SG-256-C -R,256 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9099.0,iP12PRMX-SG-256-B -R,256 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9100.0,iP12PRMX-SG-256-A -R,256 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9101.0,iP12PRMX-SG-256-A+ -R,256 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9102.0,iP12PRMX-GD-512-C -R,512 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9103.0,iP12PRMX-GD-512-B -R,512 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9104.0,iP12PRMX-GD-512-A -R,512 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9105.0,iP12PRMX-GD-512-A+ -R,512 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9106.0,iP12PRMX-MG-512-C -R,512 GB Midnight Green Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9107.0,iP12PRMX-MG-512-B -R,512 GB Midnight Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9108.0,iP12PRMX-MG-512-A -R,512 GB Midnight Green Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9109.0,iP12PRMX-MG-512-A+ -R,512 GB Midnight Green Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9110.0,iP12PRMX-SL-512-C -R,512 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9111.0,iP12PRMX-SL-512-B -R,512 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9112.0,iP12PRMX-SL-512-A -R,512 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9113.0,iP12PRMX-SL-512-A+ -R,512 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9114.0,iP12PRMX-SG-512-C -R,512 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9115.0,iP12PRMX-SG-512-B -R,512 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,9069.0
+9116.0,iP12PRMX-SG-512-A -R,512 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,9069.0
+9117.0,iP12PRMX-SG-512-A+ -R,512 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,9069.0
+9616.0,AWT7G-ALUBL-41-C -R,41 MM Aluminio Blue Bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9617.0,AWT7G-ALUBL-41-B -R,41 MM Aluminio Blue Muy bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9618.0,AWT7G-ALUBL-41-A -R,41 MM Aluminio Blue Excelente,TRUE,outofstock,no,0.0,product-variant,9541.0
+9619.0,AWT7G-ALUBL-41-A+ -R,41 MM Aluminio Blue Premium,TRUE,outofstock,no,0.0,product-variant,9541.0
+9620.0,AWT7G-ALUGR-41-C -R,41 MM Aluminio Green Bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9621.0,AWT7G-ALUGR-41-B -R,41 MM Aluminio Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9622.0,AWT7G-ALUGR-41-A -R,41 MM Aluminio Green Excelente,TRUE,outofstock,no,0.0,product-variant,9541.0
+9623.0,AWT7G-ALUGR-41-A+ -R,41 MM Aluminio Green Premium,TRUE,outofstock,no,0.0,product-variant,9541.0
+9624.0,AWT7G-ALUMD-41-C -R,41 MM Aluminio Midnight Bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9625.0,AWT7G-ALUMD-41-B -R,41 MM Aluminio Midnight Muy bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9626.0,AWT7G-ALUMD-41-A -R,41 MM Aluminio Midnight Excelente,TRUE,outofstock,no,0.0,product-variant,9541.0
+9627.0,AWT7G-ALUMD-41-A+ -R,41 MM Aluminio Midnight Premium,TRUE,outofstock,no,0.0,product-variant,9541.0
+9628.0,AWT7G-ALURD-41-C -R,41 MM Aluminio Red Bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9629.0,AWT7G-ALURD-41-B -R,41 MM Aluminio Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9630.0,AWT7G-ALURD-41-A -R,41 MM Aluminio Red Excelente,TRUE,outofstock,no,0.0,product-variant,9541.0
+9631.0,AWT7G-ALURD-41-A+ -R,41 MM Aluminio Red Premium,TRUE,outofstock,no,0.0,product-variant,9541.0
+9632.0,AWT7G-ALUSTR-41-C -R,41 MM Aluminio Starlight Bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9633.0,AWT7G-ALUSTR-41-B -R,41 MM Aluminio Starlight Muy bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9634.0,AWT7G-ALUSTR-41-A -R,41 MM Aluminio Starlight Excelente,TRUE,outofstock,no,0.0,product-variant,9541.0
+9636.0,AWT7G-ALUBL-45-C -R,45 MM Aluminio Blue Bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9637.0,AWT7G-ALUBL-45-B -R,45 MM Aluminio Blue Muy bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9638.0,AWT7G-ALUBL-45-A -R,45 MM Aluminio Blue Excelente,TRUE,outofstock,no,0.0,product-variant,9541.0
+9639.0,AWT7G-ALUBL-45-A+ -R,45 MM Aluminio Blue Premium,TRUE,outofstock,no,0.0,product-variant,9541.0
+9640.0,AWT7G-ALUGR-45-C -R,45 MM Aluminio Green Bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9641.0,AWT7G-ALUGR-45-B -R,45 MM Aluminio Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9642.0,AWT7G-ALUGR-45-A -R,45 MM Aluminio Green Excelente,TRUE,outofstock,no,0.0,product-variant,9541.0
+9643.0,AWT7G-ALUGR-45-A+ -R,45 MM Aluminio Green Premium,TRUE,outofstock,no,0.0,product-variant,9541.0
+9644.0,AWT7G-ALUMD-45-C -R,45 MM Aluminio Midnight Bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9645.0,AWT7G-ALUMD-45-B -R,45 MM Aluminio Midnight Muy bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9647.0,AWT7G-ALUMD-45-A+ -R,45 MM Aluminio Midnight Premium,TRUE,outofstock,no,0.0,product-variant,9541.0
+9648.0,AWT7G-ALURD-45-C -R,45 MM Aluminio Red Bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9649.0,AWT7G-ALURD-45-B -R,45 MM Aluminio Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9650.0,AWT7G-ALURD-45-A -R,45 MM Aluminio Red Excelente,TRUE,outofstock,no,0.0,product-variant,9541.0
+9651.0,AWT7G-ALURD-45-A+ -R,45 MM Aluminio Red Premium,TRUE,outofstock,no,0.0,product-variant,9541.0
+9652.0,AWT7G-ALUSTR-45-C -R,45 MM Aluminio Starlight Bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9653.0,AWT7G-ALUSTR-45-B -R,45 MM Aluminio Starlight Muy bueno,TRUE,outofstock,no,0.0,product-variant,9541.0
+9654.0,AWT7G-ALUSTR-45-A -R,45 MM Aluminio Starlight Excelente,TRUE,outofstock,no,0.0,product-variant,9541.0
+9655.0,AWT7G-ALUSTR-45-A+ -R,45 MM Aluminio Starlight Premium,TRUE,outofstock,no,0.0,product-variant,9541.0
+9702.0,AWTSE2G-ALUMD-40-C -R,40 MM Aluminio Midnight Bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9703.0,AWTSE2G-ALUMD-40-B -R,40 MM Aluminio Midnight Muy bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9704.0,AWTSE2G-ALUMD-40-A -R,40 MM Aluminio Midnight Excelente,TRUE,outofstock,no,0.0,product-variant,9656.0
+9706.0,AWTSE2G-ALUSL-40-C -R,40 MM Aluminio Silver Bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9707.0,AWTSE2G-ALUSL-40-B -R,40 MM Aluminio Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9708.0,AWTSE2G-ALUSL-40-A -R,40 MM Aluminio Silver Excelente,TRUE,outofstock,no,0.0,product-variant,9656.0
+9710.0,AWTSE2G-ALUSTR-40-C -R,40 MM Aluminio Starlight Bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9711.0,AWTSE2G-ALUSTR-40-B -R,40 MM Aluminio Starlight Muy bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9712.0,AWTSE2G-ALUSTR-40-A -R,40 MM Aluminio Starlight Excelente,TRUE,outofstock,no,0.0,product-variant,9656.0
+9714.0,AWTSE2G-ALUMD-44-C -R,44 MM Aluminio Midnight Bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9715.0,AWTSE2G-ALUMD-44-B -R,44 MM Aluminio Midnight Muy bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9716.0,AWTSE2G-ALUMD-44-A -R,44 MM Aluminio Midnight Excelente,TRUE,outofstock,no,0.0,product-variant,9656.0
+9717.0,AWTSE2G-ALUMD-44-A+ -R,44 MM Aluminio Midnight Premium,TRUE,outofstock,no,0.0,product-variant,9656.0
+9718.0,AWTSE2G-ALUSL-44-C -R,44 MM Aluminio Silver Bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9719.0,AWTSE2G-ALUSL-44-B -R,44 MM Aluminio Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9720.0,AWTSE2G-ALUSL-44-A -R,44 MM Aluminio Silver Excelente,TRUE,outofstock,no,0.0,product-variant,9656.0
+9721.0,AWTSE2G-ALUSL-44-A+ -R,44 MM Aluminio Silver Premium,TRUE,outofstock,no,0.0,product-variant,9656.0
+9722.0,AWTSE2G-ALUSTR-44-C -R,44 MM Aluminio Starlight Bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9723.0,AWTSE2G-ALUSTR-44-B -R,44 MM Aluminio Starlight Muy bueno,TRUE,outofstock,no,0.0,product-variant,9656.0
+9724.0,AWTSE2G-ALUSTR-44-A -R,44 MM Aluminio Starlight Excelente,TRUE,outofstock,no,0.0,product-variant,9656.0
+9725.0,AWTSE2G-ALUSTR-44-A+ -R,44 MM Aluminio Starlight Premium,TRUE,outofstock,no,0.0,product-variant,9656.0
+9917.0,iP12PR-GD-128-C -R,128 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9918.0,iP12PR-GD-128-B -R,128 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9919.0,iP12PR-GD-128-A -R,128 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9920.0,iP12PR-GD-128-A+-R,128 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9921.0,iP12PR-GRT-128-C -R,128 GB Graphite Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9922.0,iP12PR-GRT-128-B -R,128 GB Graphite Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9923.0,iP12PR-GRT-128-A -R,128 GB Graphite Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9924.0,iP12PR-GRT-RP-128-A+-R,128 GB Graphite Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9925.0,iP12PR-PCBL-128-C -R,128 GB Pacific Blue Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9926.0,iP12PR-PCBL-128-B -R,128 GB Pacific Blue Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9927.0,iP12PR-PCBL-128-A -R,128 GB Pacific Blue Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9928.0,iP12PR-PCBL-128-A+-R,128 GB Pacific Blue Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9929.0,iP12PR-SL-128-C -R,128 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9930.0,iP12PR-SL-128-B -R,128 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9931.0,iP12PR-SL-128-A -R,128 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9932.0,iP12PR-SL-128-A+-R,128 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9933.0,iP12PR-GD-256-C -R,256 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9934.0,iP12PR-GD-256-B -R,256 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9935.0,iP12PR-GD-256-A -R,256 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9936.0,iP12PR-GD-256-A+-R,256 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9937.0,iP12PR-GRT-256-C -R,256 GB Graphite Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9938.0,iP12PR-GRT-256-B -R,256 GB Graphite Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9939.0,iP12PR-GRT-256-A -R,256 GB Graphite Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9940.0,iP12PR-GRT-256-A+-R,256 GB Graphite Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9941.0,iP12PR-PCBL-256-C -R,256 GB Pacific Blue Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9942.0,iP12PR-PCBL-256-B -R,256 GB Pacific Blue Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9943.0,iP12PR-PCBL-256-A -R,256 GB Pacific Blue Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9944.0,iP12PR-PCBL-256-A+-R,256 GB Pacific Blue Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9945.0,iP12PR-SL-256-C -R,256 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9946.0,iP12PR-SL-256-B -R,256 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9947.0,iP12PR-SL-256-A -R,256 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9948.0,iP12PR-SL-256-A+-R,256 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9949.0,iP12PR-GD-512-C -R,512 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9950.0,iP12PR-GD-512-B -R,512 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9951.0,iP12PR-GD-512-A -R,512 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9952.0,iP12PR-GD-512-A+-R,512 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9953.0,iP12PR-GRT-512-C -R,512 GB Graphite Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9956.0,iP12PR-GRT-512-A+-R,512 GB Graphite Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9957.0,iP12PR-PCBL-512-C -R,512 GB Pacific Blue Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9958.0,iP12PR-PCBL-512-B -R,512 GB Pacific Blue Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9959.0,iP12PR-PCBL-512-A -R,512 GB Pacific Blue Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9960.0,iP12PR-PCBL-512-A+-R,512 GB Pacific Blue Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+9961.0,iP12PR-SL-512-C -R,512 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9962.0,iP12PR-SL-512-B -R,512 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8912.0
+9963.0,iP12PR-SL-512-A -R,512 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,8912.0
+9964.0,iP12PR-SL-512-A+-R,512 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8912.0
+7928.0,iP13-BL-128-C -R,128 GB Blue Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7929.0,iP13-BL-128-A -R,128 GB Blue Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7930.0,iP13-BL-128-B -R,128 GB Blue Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7931.0,iP13-BL-128-A+ -R,128 GB Blue Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7932.0,iP13-GR-128-C -R,128 GB Green Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7933.0,iP13-GR-128-A -R,128 GB Green Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7934.0,iP13-GR-128-B -R,128 GB Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7935.0,iP13-GR-128-A+ -R,128 GB Green Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7936.0,iP13-MD-128-C -R,128 GB Midnight Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7937.0,iP13-MD-128-A -R,128 GB Midnight Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7938.0,iP13-MD-128-B -R,128 GB Midnight Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7939.0,iP13-MD-128-A+ -R,128 GB Midnight Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7940.0,iP13-PK-128-C -R,128 GB Pink Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7941.0,iP13-PK-128-A -R,128 GB Pink Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7942.0,iP13-PK-128-B -R,128 GB Pink Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7943.0,iP13-PK-128-A+ -R,128 GB Pink Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7944.0,iP13-RD-128-C -R,128 GB Red Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7945.0,iP13-RD-128-A -R,128 GB Red Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7946.0,iP13-RD-128-B -R,128 GB Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7947.0,iP13-RD-128-A+ -R,128 GB Red Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7948.0,iP13-STR-128-C -R,128 GB Starlight Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7949.0,iP13-STR-128-A -R,128 GB Starlight Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7950.0,iP13-STR-128-B -R,128 GB Starlight Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7951.0,iP13-STR-128-A+ -R,128 GB Starlight Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7952.0,iP13-BL-256-C -R,256 GB Blue Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7953.0,iP13-BL-256-A -R,256 GB Blue Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7954.0,iP13-BL-256-B -R,256 GB Blue Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7955.0,iP13-BL-256-A+ -R,256 GB Blue Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7956.0,iP13-GR-256-C -R,256 GB Green Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7957.0,iP13-GR-256-A -R,256 GB Green Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7958.0,iP13-GR-256-B -R,256 GB Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7959.0,iP13-GR-256-A+ -R,256 GB Green Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7960.0,iP13-MD-256-C -R,256 GB Midnight Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7961.0,iP13-MD-256-A -R,256 GB Midnight Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7962.0,iP13-MD-256-B -R,256 GB Midnight Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7963.0,iP13-MD-256-A+ -R,256 GB Midnight Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7964.0,iP13-PK-256-C -R,256 GB Pink Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7965.0,iP13-PK-256-A -R,256 GB Pink Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7966.0,iP13-PK-256-B -R,256 GB Pink Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7967.0,iP13-PK-256-A+ -R,256 GB Pink Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7968.0,iP13-RD-256-C -R,256 GB Red Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7969.0,iP13-RD-256-A -R,256 GB Red Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7970.0,iP13-RD-256-B -R,256 GB Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7971.0,iP13-RD-256-A+ -R,256 GB Red Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7972.0,iP13-STR-256-C -R,256 GB Starlight Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7973.0,iP13-STR-256-A -R,256 GB Starlight Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7974.0,iP13-STR-256-B -R,256 GB Starlight Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7975.0,iP13-STR-256-A+ -R,256 GB Starlight Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7976.0,iP13-BL-512-C -R,512 GB Blue Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7977.0,iP13-BL-512-A -R,512 GB Blue Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7978.0,iP13-BL-512-B -R,512 GB Blue Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7979.0,iP13-BL-512-A+ -R,512 GB Blue Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7980.0,iP13-GR-512-C -R,512 GB Green Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7981.0,iP13-GR-512-A -R,512 GB Green Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7982.0,iP13-GR-512-B -R,512 GB Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7983.0,iP13-GR-512-A+ -R,512 GB Green Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7984.0,iP13-MD-512-C -R,512 GB Midnight Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7985.0,iP13-MD-512-A -R,512 GB Midnight Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7986.0,iP13-MD-512-B -R,512 GB Midnight Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7987.0,iP13-MD-512-A+ -R,512 GB Midnight Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7988.0,iP13-PK-512-C -R,512 GB Pink Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7989.0,iP13-PK-512-A -R,512 GB Pink Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7990.0,iP13-PK-512-B -R,512 GB Pink Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7991.0,iP13-PK-512-A+ -R,512 GB Pink Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7992.0,iP13-RD-512-C -R,512 GB Red Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7993.0,iP13-RD-512-A -R,512 GB Red Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7994.0,iP13-RD-512-B -R,512 GB Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7995.0,iP13-RD-512-A+ -R,512 GB Red Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+7996.0,iP13-STR-512-C -R,512 GB Starlight Bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7997.0,iP13-STR-512-A -R,512 GB Starlight Excelente,TRUE,outofstock,no,0.0,product-variant,36.0
+7998.0,iP13-STR-512-B -R,512 GB Starlight Muy bueno,TRUE,outofstock,no,0.0,product-variant,36.0
+7999.0,iP13-STR-512-A+ -R,512 GB Starlight Premium,TRUE,outofstock,no,0.0,product-variant,36.0
+8384.0,iP12-MV-128-C -R,128 GB Malva Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8385.0,iP12-MV-128-B -R,128 GB Malva Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8386.0,iP12-MV-128-A -R,128 GB Malva Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8387.0,iP12-MV-128-A+ -R,128 GB Malva Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8388.0,iP12-BK-128-C -R,128 GB Black Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8389.0,iP12-BK-128-B -R,128 GB Black Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8391.0,iP12-BK-128-A+ -R,128 GB Black Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8392.0,iP12-BL-128-C -R,128 GB Blue Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8395.0,iP12-BL-128-A+ -R,128 GB Blue Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8396.0,iP12-GR-128-C -R,128 GB Green Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8397.0,iP12-GR-128-B -R,128 GB Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8398.0,iP12-GR-128-A -R,128 GB Green Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8399.0,iP12-GR-128-A+ -R,128 GB Green Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8400.0,iP12-RD-128-C -R,128 GB Red Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8401.0,iP12-RD-128-B -R,128 GB Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8402.0,iP12-RD-128-A -R,128 GB Red Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8403.0,iP12-RD-128-A+ -R,128 GB Red Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8404.0,iP12-WT-128-C -R,128 GB White Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8405.0,iP12-WT-128-B -R,128 GB White Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8407.0,iP12-WT-128-A+ -R,128 GB White Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8408.0,iP12-MV-256-C -R,256 GB Malva Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8409.0,iP12-MV-256-B -R,256 GB Malva Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8411.0,iP12-MV-256-A+ -R,256 GB Malva Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8412.0,iP12-BK-256-C -R,256 GB Black Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8413.0,iP12-BK-256-B -R,256 GB Black Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8414.0,iP12-BK-256-A -R,256 GB Black Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8415.0,iP12-BK-256-A+ -R,256 GB Black Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8416.0,iP12-BL-256-C -R,256 GB Blue Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8417.0,iP12-BL-256-B -R,256 GB Blue Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8419.0,iP12-BL-256-A+ -R,256 GB Blue Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8420.0,iP12-GR-256-C -R,256 GB Green Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8421.0,iP12-GR-256-B -R,256 GB Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8422.0,iP12-GR-256-A -R,256 GB Green Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8423.0,iP12-GR-256-A+ -R,256 GB Green Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8424.0,iP12-RD-256-C -R,256 GB Red Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8425.0,iP12-RD-256-B -R,256 GB Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8426.0,iP12-RD-256-A -R,256 GB Red Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8427.0,iP12-RD-256-A+ -R,256 GB Red Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8429.0,iP12-WT-256-B -R,256 GB White Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8431.0,iP12-WT-256-A+ -R,256 GB White Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8432.0,iP12-MV-64-C -R,64 GB Malva Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8433.0,iP12-MV-64-B -R,64 GB Malva Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8434.0,iP12-MV-64-A -R,64 GB Malva Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8435.0,iP12-MV-64-A+ -R,64 GB Malva Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8436.0,iP12-BK-64-C -R,64 GB Black Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8437.0,iP12-BK-64-B -R,64 GB Black Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8438.0,iP12-BK-64-A -R,64 GB Black Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8439.0,iP12-BK-64-A+ -R,64 GB Black Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8440.0,iP12-BL-64-C -R,64 GB Blue Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8441.0,iP12-BL-64-B -R,64 GB Blue Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8442.0,iP12-BL-64-A -R,64 GB Blue Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8443.0,iP12-BL-64-A+ -R,64 GB Blue Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8444.0,iP12-GR-64-C -R,64 GB Green Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8445.0,iP12-GR-64-B -R,64 GB Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8446.0,iP12-GR-64-A -R,64 GB Green Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8447.0,iP12-GR-64-A+ -R,64 GB Green Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8448.0,iP12-RD-64-C -R,64 GB Red Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8449.0,iP12-RD-64-B -R,64 GB Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8450.0,iP12-RD-64-A -R,64 GB Red Excelente,TRUE,outofstock,no,0.0,product-variant,8311.0
+8451.0,iP12-RD-64-A+ -R,64 GB Red Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8452.0,iP12-WT-64-C -R,64 GB White Bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8453.0,iP12-WT-64-B -R,64 GB White Muy bueno,TRUE,outofstock,no,0.0,product-variant,8311.0
+8455.0,iP12-WT-64-A+ -R,64 GB White Premium,TRUE,outofstock,no,0.0,product-variant,8311.0
+8529.0,iP11-MV-128-C -R,128 GB Malva Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8530.0,iP11-MV-128-B -R,128 GB Malva Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8531.0,iP11-MV-128-A -R,128 GB Malva Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8532.0,iP11-MV-128-A+ -R,128 GB Malva Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8533.0,iP11-BK-128-C -R,128 GB Black Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8534.0,iP11-BK-128-B -R,128 GB Black Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8535.0,iP11-BK-128-A -R,128 GB Black Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8536.0,iP11-BK-128-A+ -R,128 GB Black Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8537.0,iP11-GR-128-C -R,128 GB Green Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8538.0,iP11-GR-128-B -R,128 GB Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8539.0,iP11-GR-128-A -R,128 GB Green Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8540.0,iP11-GR-128-A+ -R,128 GB Green Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8541.0,iP11-RD-128-C -R,128 GB Red Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8542.0,iP11-RD-128-B -R,128 GB Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8543.0,iP11-RD-128-A -R,128 GB Red Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8544.0,iP11-RD-128-A+ -R,128 GB Red Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8545.0,iP11-WT-128-C -R,128 GB White Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8546.0,iP11-WT-128-B -R,128 GB White Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8547.0,iP11-WT-128-A -R,128 GB White Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8548.0,iP11-WT-128-A+ -R,128 GB White Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8549.0,iP11-YW-128-C -R,128 GB Yellow Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8550.0,iP11-YW-128-B -R,128 GB Yellow Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8551.0,iP11-YW-128-A -R,128 GB Yellow Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8552.0,iP11-YW-128-A+ -R,128 GB Yellow Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8553.0,iP11-MV-256-C -R,256 GB Malva Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8554.0,iP11-MV-256-B -R,256 GB Malva Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8555.0,iP11-MV-256-A -R,256 GB Malva Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8556.0,iP11-MV-256-A+ -R,256 GB Malva Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8557.0,iP11-BK-256-C -R,256 GB Black Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8558.0,iP11-BK-256-B -R,256 GB Black Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8559.0,iP11-BK-256-A -R,256 GB Black Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8560.0,iP11-BK-256-A+ -R,256 GB Black Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8561.0,iP11-GR-256-C -R,256 GB Green Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8562.0,iP11-GR-256-B -R,256 GB Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8563.0,iP11-GR-256-A -R,256 GB Green Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8564.0,iP11-GR-256-A+ -R,256 GB Green Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8565.0,iP11-RD-256-C -R,256 GB Red Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8566.0,iP11-RD-256-B -R,256 GB Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8567.0,iP11-RD-256-A -R,256 GB Red Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8568.0,iP11-RD-256-A+ -R,256 GB Red Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8569.0,iP11-WT-256-C -R,256 GB White Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8570.0,iP11-WT-256-B -R,256 GB White Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8571.0,iP11-WT-256-A -R,256 GB White Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8572.0,iP11-WT-256-A+ -R,256 GB White Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8573.0,iP11-YW-256-C -R,256 GB Yellow Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8574.0,iP11-YW-256-B -R,256 GB Yellow Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8575.0,iP11-YW-256-A -R,256 GB Yellow Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8576.0,iP11-YW-256-A+ -R,256 GB Yellow Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8577.0,iP11-MV-64-C -R,64 GB Malva Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8578.0,iP11-MV-64-B -R,64 GB Malva Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8579.0,iP11-MV-64-A -R,64 GB Malva Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8580.0,iP11-MV-64-A+ -R,64 GB Malva Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8581.0,iP11-BK-64-C -R,64 GB Black Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8582.0,iP11-BK-64-B -R,64 GB Black Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8583.0,iP11-BK-64-A -R,64 GB Black Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8584.0,iP11-BK-64-A+ -R,64 GB Black Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8585.0,iP11-GR-64-C -R,64 GB Green Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8586.0,iP11-GR-64-B -R,64 GB Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8587.0,iP11-GR-64-A -R,64 GB Green Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8588.0,iP11-GR-64-A+ -R,64 GB Green Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8589.0,iP11-RD-64-C -R,64 GB Red Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8590.0,iP11-iP11-RD-64-B -REC,64 GB Red Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8591.0,iP11-RD-64-A -R,64 GB Red Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8592.0,iP11-RD-64-A+ -R,64 GB Red Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8593.0,iP11-WT-64-C -R,64 GB White Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8594.0,iP11-WT-64-B -R,64 GB White Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8595.0,iP11-WT-64-A -R,64 GB White Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8596.0,iP11-WT-64-A+ -R,64 GB White Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8597.0,iP11-YW-64-C -R,64 GB Yellow Bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8598.0,iP11-YW-64-B -R,64 GB Yellow Muy bueno,TRUE,outofstock,no,0.0,product-variant,8456.0
+8599.0,iP11-YW-64-A -R,64 GB Yellow Excelente,TRUE,outofstock,no,0.0,product-variant,8456.0
+8600.0,iP11-YW-64-A+ -R,64 GB Yellow Premium,TRUE,outofstock,no,0.0,product-variant,8456.0
+8674.0,iPX-SL-64-C -R,64 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8601.0
+8675.0,iPX-SL-64-B -R,64 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8601.0
+8676.0,iPX-SL-64-A -R,64 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,8601.0
+8677.0,iPX-SL-64-A+ -R,64 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8601.0
+8678.0,iPX-SG-64-C -R,64 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,8601.0
+8679.0,iPX-SG-64-B -R,64 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,8601.0
+8680.0,iPX-SG-64-A -R,64 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,8601.0
+8681.0,iPX-SG-64-A+ -R,64 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,8601.0
+8682.0,iPX-SL-256-C -R,256 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8601.0
+8683.0,iPX-SL-256-B -R,256 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8601.0
+8684.0,iPX-SL-256-A -R,256 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,8601.0
+8685.0,iPX-SL-256-A+ -R,256 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8601.0
+8686.0,iPX-SG-256-C -R,256 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,8601.0
+8687.0,iPX-SG-256-B -R,256 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,8601.0
+8688.0,iPX-SG-256-A -R,256 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,8601.0
+8689.0,iPX-SG-256-A+ -R,256 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,8601.0
+8864.0,iP11PR-GD-64-C -R,64 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8865.0,iP11PR-GD-64-B -R,64 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8866.0,iP11PR-GD-64-A -R,64 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8867.0,iP11PR-GD-64-A+-R,64 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8868.0,iP11PR-MDGR-64-C -R,64 GB Midnight Green Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8869.0,iP11PR-MDGR-64-B -R,64 GB Midnight Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8870.0,iP11PR-MDGR-64-A -R,64 GB Midnight Green Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8871.0,iP11PR-MDGR-64-A+-R,64 GB Midnight Green Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8872.0,iP11PR-SL-64-C -R,64 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8873.0,iP11PR-SL-64-B -R,64 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8874.0,iP11PR-SL-64-A -R,64 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8875.0,iP11PR-SL-64-A+-R,64 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8876.0,iP11PR-SG-64-C -R,64 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8877.0,iP11PR-SG-64-B -R,64 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8878.0,iP11PR-SG-64-A -R,64 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8879.0,iP11PR-SG-64-A+-R,64 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8880.0,iP11PR-GD-256-C -R,256 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8881.0,iP11PR-GD-256-B -R,256 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8882.0,iP11PR-GD-256-A -R,256 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8883.0,iP11PR-GD-256-A+-R,256 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8884.0,iP11PR-MDGR-256-C -R,256 GB Midnight Green Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8885.0,iP11PR-MDGR-256-B -R,256 GB Midnight Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8887.0,iP11PR-MDGR-256-A+-R,256 GB Midnight Green Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8888.0,iP11PR-SL-256-C -R,256 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8889.0,iP11PR-SL-256-B -R,256 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8890.0,iP11PR-SL-256-A -R,256 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8891.0,iP11PR-SL-256-A+-R,256 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8892.0,iP11PR-SG-256-C -R,256 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8893.0,iP11PR-SG-256-B -R,256 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8894.0,iP11PR-SG-256-A -R,256 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8895.0,iP11PR-SG-256-A+-R,256 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8896.0,iP11PR-GD-512-C -R,512 GB Gold Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8897.0,iP11PR-GD-512-B -R,512 GB Gold Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8898.0,iP11PR-GD-512-A -R,512 GB Gold Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8899.0,iP11PR-GD-512-A+-R,512 GB Gold Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8900.0,iP11PR-MDGR-512-C -R,512 GB Midnight Green Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8901.0,iP11PR-MDGR-512-B -R,512 GB Midnight Green Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8902.0,iP11PR-MDGR-512-A -R,512 GB Midnight Green Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8903.0,iP11PR-MDGR-512-A+-R,512 GB Midnight Green Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8904.0,iP11PR-SL-512-C -R,512 GB Silver Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8905.0,iP11PR-SL-512-B -R,512 GB Silver Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8906.0,iP11PR-SL-512-A -R,512 GB Silver Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8907.0,iP11PR-SL-512-A+-R,512 GB Silver Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
+8908.0,iP11PR-SG-512-C -R,512 GB Space gray Bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8909.0,iP11PR-SG-512-B -R,512 GB Space gray Muy bueno,TRUE,outofstock,no,0.0,product-variant,8791.0
+8910.0,iP11PR-SG-512-A -R,512 GB Space gray Excelente,TRUE,outofstock,no,0.0,product-variant,8791.0
+8911.0,iP11PR-SG-512-A+-R,512 GB Space gray Premium,TRUE,outofstock,no,0.0,product-variant,8791.0
