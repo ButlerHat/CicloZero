@@ -84,6 +84,7 @@ UpdateAmazon
         
     END
 
+    ${content}    Get File    path=${RETURN_FILE}
     ${status}  ${msg}   Run Keyword And Ignore Error  Should Be Equal As Strings    ${content}    Warning:${SPACE}
     IF  "${status}"=="PASS"
         Remove File  ${RETURN_FILE}
