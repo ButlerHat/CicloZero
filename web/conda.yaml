@@ -21,3 +21,4 @@ dependencies:
       - plotly
       - streamlit-authenticator
       - ipywidgets
+      - cffi

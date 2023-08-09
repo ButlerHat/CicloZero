@@ -64,7 +64,16 @@ def ciclai_price():
             st.markdown(f"### SKUs: {len(skus)}")
             if st.form_submit_button("Run", type="primary"):
                 with st.spinner("Running robot, launching every 40 seconds to avoid OTP conflicts..."):
-                    asyncio.run(run_robots(uploaded_file, skus))
+                    price_path = st.secrets.paths.price_excel
+                    id_args = {}
+                    for sku in skus:
+                        id_args[sku] = [
+                            f'SKU:"{sku}"',
+                            f'STOCK_EXCEL_PATH:"{uploaded_file}"',
+                            f'SKU_EXCEL_PATH:"{os.path.join(price_path, sku + ".xlsx")}"',
+                        ]
+                     
+                    asyncio.run(robot_handler.run_robots(id_args, ["CiclAiPrices.robot"]))
     
     # Show prices
     st.markdown("# Show prices")
@@ -82,21 +91,6 @@ def ciclai_price():
         st.info("The following statistics are calculated only for products where the best price is greater than the self price")
         show_statistics_pie(df_prices)
         show_statistics_pie_per_sku(df_prices)
-
-
-async def run_robots(uploaded_file, skus):
-    price_path = st.secrets.paths.price_excel
-    tasks = []
-    for sku in skus:
-        args = [
-            f'SKU:"{sku}"',
-            f'STOCK_EXCEL_PATH:"{uploaded_file}"',
-            f'SKU_EXCEL_PATH:"{os.path.join(price_path, sku + ".xlsx")}"',
-        ]
-        tasks.append(asyncio.create_task(robot_handler.run_robot(sku, args, "CiclAiPrices.robot", msg=f"Running {sku}")))
-        await asyncio.sleep(40)
-
-    await asyncio.gather(*tasks)
 
 def show_prices(stock_df: pd.DataFrame):
     # Get excels from price folder

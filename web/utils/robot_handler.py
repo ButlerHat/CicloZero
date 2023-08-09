@@ -13,7 +13,25 @@ def get_robot_command(id, vars, robot):
     return robot_command
 
 
+async def run_robots(ids_args: dict, robot_files: list, timeout=40):
+    assert len(ids_args) == len(robot_files) or len(robot_files) == 1, "Number of robots and number of files must be the same"
+    tasks = []
+    for (id, args), robot_file in zip(ids_args.items(), robot_files):
+        tasks.append(asyncio.create_task(run_robot(id, args, robot_file, msg=f"Running {id}")))
+        await asyncio.sleep(timeout)
+
+    await asyncio.gather(*tasks)
+
+
 async def run_robot(id: str, vars: list, robot: str, msg=None):
+    """
+    Run robot specified in robot variable
+    params:
+        id: str - folder where store results
+        vars: list - list of variables to pass to robot
+        robot: str - robot name
+        msg: str - message to show in spinner
+    """
     robot_path = st.secrets.paths.robot
     result_path = os.path.join(robot_path, "results", id)
     # If directory does not exist, create it
@@ -49,8 +67,8 @@ async def run_robot(id: str, vars: list, robot: str, msg=None):
             else:
                 st.error(msg_)
         # Delete the file
-        os.remove(msg_path)
-        return
+        # os.remove(msg_path)
+        return ret_val
 
     if ret_val != 0:
         msg_ = f"Robot failed with return code {ret_val}" if not msg else f'Fail {ret_val}: {id}'
@@ -59,3 +77,5 @@ async def run_robot(id: str, vars: list, robot: str, msg=None):
     else:
         msg_ = f"Robot finished successfully" if not msg else f'Success: {id}'
         st.success(msg_)
+
+    return ret_val

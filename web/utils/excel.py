@@ -2,6 +2,7 @@
 Load and create a pandas dataframe from an excel file
 """
 import re
+import io
 import pandas as pd
 import openpyxl
 
@@ -11,6 +12,14 @@ def load_excel_file(file_path: str, sheet: str | int = 0) -> pd.DataFrame:
     Load an excel file and return a pandas dataframe. The first row is used as the header
     """
     return pd.read_excel(file_path, header=0, sheet_name=sheet)
+
+def file_to_excel(file: io.BytesIO, excel_path: str):
+    """
+    Convert the file (excel) to an excel file
+    """
+    # Save the file
+    with open(excel_path, 'wb') as f:
+        f.write(file.getbuffer())
 
 # Get the list of prod rows
 def get_skus(excel_path) -> list[str]:
