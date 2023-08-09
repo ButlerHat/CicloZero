@@ -11,7 +11,7 @@
             "program": "/opt/conda/envs/web_env/bin/streamlit",
             "python": "/opt/conda/envs/web_env/bin/python",
             "console": "integratedTerminal",
-            "cwd": "/workspaces/CicloZero/web",
+            "cwd": "/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/web",
             "args": [
                 // "run", "-n", "web_env", "",
                 "run",
