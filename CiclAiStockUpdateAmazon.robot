@@ -35,7 +35,7 @@ UpdateAmazon
     ${otp_key}=    Get OTP    ${otp_amazon}
     Should Match Regexp       ${otp_key}        \\d{6}
     Type number "${otp_key}" in field Indicar contraseña de un solo uso
-    Check "No vuelvas a pedir un codigo en este navegador"
+    # Check "No vuelvas a pedir un codigo en este navegador"
     Click on "Iniciar sesion"
     Scroll in Select Account until "Spain" is visible and click
     Click on "Select Account"
@@ -63,9 +63,8 @@ UpdateAmazon
         Wait for spinner
         Select SKU radio button in filter
         TRY
-            Delete the input of available column for ${sku}
-
             ${previous_total}  Get text from available column for ${sku}
+            Delete the input of available column for ${sku}
             IF  "${previous_total}"=="0" and "${total}"!="0"
                 Log  SKU ${sku} was 0 in Amazon, change to ${total}.  console=${True}
                 Append To File  path=${RETURN_FILE}    content=Sku ${sku} was 0 in Amazon, change to ${total}.${SPACE}
