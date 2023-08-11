@@ -7,6 +7,7 @@ import utils.robot_handler as robot_handler
 import utils.robot_results as robot_results
 import utils.excel as excel
 import utils.vnc as vnc
+from utils.robot_results import RobotStatus
 
 
 PAGES = {
@@ -219,16 +220,20 @@ def display_last_run_info(id_workflow: str):
         st.error(f"Not results file (output.xml) found in {result_path}")
         return
     
-    start_time_status: tuple[str, str, bool] = robot_results.get_start_time(output_xml_path)
-    if start_time_status[2]:
-        # If true, print a green success message with markdown
-        status_msg = f"<span style='color:green'>Success</span>"
-    else:
-        # If false, print a red error message with markdown
-        status_msg = f"<span style='color:red'>Failed</span>"
-
+    start_time_status: tuple[str, str, RobotStatus] = robot_results.get_start_time(output_xml_path)
     main_color = st.secrets.theme.primaryColor
     run_time = f"<span style='color:{main_color}'>{start_time_status[0]}, duration {start_time_status[1]}</span>"
+    if start_time_status[2] == RobotStatus.PASS:
+        # If true, print a green success message with markdown
+        status_msg = f"<span style='color:green'>Success</span>"
+
+    elif start_time_status[2] == RobotStatus.FAIL:
+        # If false, print a red error message with markdown
+        status_msg = f"<span style='color:red'>Failed</span>"
+    else:
+        status_msg = f"<span style='color:orange'>In progress</span>"
+        run_time = f"<span style='color:{main_color}'>(Wait for the end of the run)</span>"
+    
     # duration = f"<span style='color:{main_color}'>{start_time_status[1]}</span>"
     st.markdown(f"### {status_msg}: Last {id_workflow} run {run_time}", unsafe_allow_html=True)
 

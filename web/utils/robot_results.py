@@ -1,16 +1,29 @@
 from datetime import datetime
+from enum import Enum
 from xml.etree import ElementTree
 
 
-def get_start_time(output_xml_path: str) -> tuple[str, str, bool]:
+class RobotStatus(Enum):
+    """
+    Enum class for robot status
+    """
+    PASS = 1
+    FAIL = 2
+    PROGRESS = 3
+
+
+def get_start_time(output_xml_path: str) -> tuple[str, str, RobotStatus]:
     """
     Get start time from output.xml and the status
     """
-    tree = ElementTree.parse(output_xml_path)
-    root = tree.getroot()
+    try:
+        tree = ElementTree.parse(output_xml_path)
+        root = tree.getroot()
 
-    # Find the 'status' element with attribute 'status' set to 'PASS'
-    status_element = root.find('.//suite/status')
+        # Find the 'status' element with attribute 'status' set to 'PASS'
+        status_element = root.find('.//suite/status')
+    except Exception as e:
+        return ("Still in progress", "", RobotStatus.PROGRESS)
 
     # Extract the starttime attribute value
     start_time_str = status_element.get('starttime') if status_element is not None else None
@@ -20,7 +33,7 @@ def get_start_time(output_xml_path: str) -> tuple[str, str, bool]:
     
     # Extract status attribute value
     status = status_element.get('status') if status_element is not None else 'FAIL'
-    status = True if status == 'PASS' else False
+    status = RobotStatus.PASS if status == 'PASS' else RobotStatus.FAIL
 
     if start_time_str is None or end_time_str is None:
         return ("Error getting start time", "", status)
