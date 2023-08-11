@@ -66,8 +66,6 @@ async def run_robot(id: str, vars: list, robot: str, msg=None):
                 st.success(msg_)
             else:
                 st.error(msg_)
-        # Delete the file
-        # os.remove(msg_path)
         return ret_val
 
     if ret_val != 0:

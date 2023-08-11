@@ -16,6 +16,8 @@ dependencies:
       - robotframework-dist-butlerhat[browser] @ git+https://{GITHUB_ACCESS_TOKEN}@github.com/ButlerHat/robotframework-dist-butlerhat.git
       - robotframework-otp
       - pyotp
+      - pandas
+      - openpyxl
 
 rccPostInstall:
   - rfbrowser init                    # Initialize Playwright

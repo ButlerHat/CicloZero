@@ -14,6 +14,7 @@ services:
     cap_add:
       - SYS_ADMIN
     shm_size: '2gb'
+    restart: unless-stopped
     networks:
       - external
     environment:

@@ -4,6 +4,7 @@ import datetime
 import streamlit as st
 import utils.cron as cron
 import utils.robot_handler as robot_handler
+import utils.robot_results as robot_results
 import utils.excel as excel
 import utils.vnc as vnc
 
@@ -77,7 +78,8 @@ def ciclai_stock():
     run_get_stock()
 
     # Show excel
-    st.markdown("## Download last excel")
+    st.markdown("---")
+    st.markdown("# Download last excel")
     option = get_last_excel()
 
     if option is None:
@@ -112,7 +114,8 @@ def run_get_stock():
     stock_path = st.secrets.paths.stock_excel
 
     # Run button
-    st.markdown("## Get stock")
+    st.markdown("---")
+    st.markdown("# Get stock")
     col1, col2 = st.columns([1, 2])
 
     # VNC
@@ -158,9 +161,12 @@ def run_get_stock():
                 st.download_button(label=excel_name, data=f, file_name=excel_name, key='stock_excel')
         else:
             st.info(f"Excel not generated")
+    
+    display_last_run_info('stock')
 
     # Update stock
-    st.markdown("### Update stock")
+    st.markdown("---")
+    st.markdown("# Update stock")
     
     with st.form("Update stock"):
         update_pages = st.multiselect("Select pages to update", PAGES.keys(), PAGES.keys())
@@ -194,4 +200,68 @@ def run_get_stock():
                     f"STOCK_EXCEL_PATH:{file_path}"
                 ]
             asyncio.run(robot_handler.run_robots(ids_args, robot_files, timeout=2))
+    
+    # Display last run time and message
+    for page in update_pages:
+        display_last_run_info(page)
+
+
+def display_last_run_info(id_workflow: str):
+    robot_path = st.secrets.paths.robot
+    result_path = os.path.join(robot_path, "results", id_workflow)
+    if not os.path.exists(result_path):
+        st.error(f"Workflow {id_workflow} not found")
+        return
+
+    # Get start time last run
+    output_xml_path = os.path.join(result_path, "output.xml")
+    if not os.path.exists(output_xml_path):
+        st.error(f"Not results file (output.xml) found in {result_path}")
+        return
+    
+    start_time_status: tuple[str, str, bool] = robot_results.get_start_time(output_xml_path)
+    if start_time_status[2]:
+        # If true, print a green success message with markdown
+        status_msg = f"<span style='color:green'>Success</span>"
+    else:
+        # If false, print a red error message with markdown
+        status_msg = f"<span style='color:red'>Failed</span>"
+
+    main_color = st.secrets.theme.primaryColor
+    run_time = f"<span style='color:{main_color}'>{start_time_status[0]}, duration {start_time_status[1]}</span>"
+    # duration = f"<span style='color:{main_color}'>{start_time_status[1]}</span>"
+    st.markdown(f"### {status_msg}: Last {id_workflow} run {run_time}", unsafe_allow_html=True)
+
+    # Get message last run
+    msg_path = os.path.join(result_path, "return_msg.txt")
+    if not os.path.exists(msg_path):
+        st.info(f"Not message file (return_msg.txt)")
+    else:
+        with open(msg_path, 'r') as f:
+            msg_ = f.read()
+            if 'warn' in msg_.lower():
+                st.warning(msg_)
+            elif 'success' in msg_.lower():
+                st.success(msg_)
+            else:
+                st.error(msg_)
+
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        with st.expander("Show results", expanded=False):
+            log_file_out = os.path.join(result_path, f'logfile_out_{id_workflow}.txt')
+            if not os.path.exists(log_file_out):
+                st.info(f"Not log file (logfile_out_{id_workflow}.txt)")
+            else:
+                with open(log_file_out, 'r') as f:
+                    st.code(f.read(), language='text')
+
+    with col2:
+        # Download log.html
+        log_html_path = os.path.join(result_path, "log.html")
+        if not os.path.exists(log_html_path):
+            st.info(f"Not log file (log.html)")
+        else:
+            with open(log_html_path, 'rb') as f:
+                st.download_button(label="Download log.html", data=f, file_name="log.html")
 
