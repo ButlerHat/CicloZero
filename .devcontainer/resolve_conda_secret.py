@@ -19,7 +19,7 @@ replacements = {
     "{GITHUB_ACCESS_TOKEN}": args.token
 }
 
-with open("conda.yaml", "r") as infile, open("conda_pass.yaml", "w") as outfile:
+with open("conda-prod.yaml", "r") as infile, open("conda_pass.yaml", "w") as outfile:
     # Read the content of the input file
     filedata = infile.read()
     # Replace the variables with their values
