@@ -10,6 +10,7 @@ services:
       - ${HOST_HOME}/data/CicloZero/results:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/results:cached
       - ${HOST_HOME}/data/CicloZero/downloads:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/downloads:cached
       - ${HOST_HOME}/data/CicloZero/data:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/data:cached
+      - cron_volume:/var/spool/cron/crontabs:cached
     cap_add:
       - SYS_ADMIN
     shm_size: '2gb'
@@ -19,6 +20,10 @@ services:
       - ROBOT_CICLOZERO_PASS=${ROBOT_CICLOZERO_PASS:-0}
       - DEVELOPMENT_SERVER=${DEVELOPMENT_SERVER:-0}
     command: bash .devcontainer/postCreateCommand.sh
+
+volumes:
+  cron_volume:
+    driver: local
 
 networks:
   external:

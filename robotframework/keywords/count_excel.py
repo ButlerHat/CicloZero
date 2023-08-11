@@ -149,7 +149,7 @@ def append_tsv_to_main_excel(tsv_path: str, excel_path:str, output_excel_path: s
             attributes = get_attributes_from_sku(str(prod))
             matched_id_modelo = excel_df[excel_df["id_modelo"] == attributes["id_modelo"]]
             matched_id_color = matched_id_modelo[matched_id_modelo["color"] == attributes["color"]]
-            matched_id_almacenamiento = matched_id_color[matched_id_color["almacenamiento"] == attributes["almacenamiento"]]
+            matched_id_almacenamiento = matched_id_color[matched_id_color["almacenamiento"] == int(attributes["almacenamiento"])]
             matched_id_calidad = matched_id_almacenamiento[matched_id_almacenamiento["estado"] == attributes["estado"]]
             matched_id_reacondicionado = matched_id_calidad[matched_id_calidad["reacondicionado"] == attributes["reacondicionado"]]
 

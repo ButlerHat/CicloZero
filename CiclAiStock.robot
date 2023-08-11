@@ -36,6 +36,8 @@ CiclAI Stock
     ${return_excel}  Get Stocks Odoo
     Create Excel    ${return_excel}    ${RESULT_EXCEL_PATH_ODOO}
     Log  Excel creado satisfactoriamente en ${RESULT_EXCEL_PATH_ODOO}  console=${TRUE}
+    Comment  Close browser
+    Close Browser
     
     # ================== Amazon Unshipped ==================
     ${amazon_tsv_obj}  Get Unshipped Amazon
@@ -46,16 +48,22 @@ CiclAI Stock
         Append Tsv To Main Excel    ${amazon_tsv_obj.saveAs}    ${RESULT_EXCEL_PATH_ODOO}    ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}
     END
     Log  Excel de pending creado satisfactoriamente en ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}  console=${TRUE}
+    Comment  Close browser
+    Close Browser
 
     # ================== Amazon Unshipped ==================
     ${amazon_dict_obj}  Get Pending Amazon
     Append Dict To Main Excel     ${amazon_dict_obj}    ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}    ${RESULT_EXCEL_PATH_AMAZON}   amz pending
     Log  Excel de amazon creado satisfactoriamente en ${RESULT_EXCEL_PATH_AMAZON}  console=${TRUE}
+    Comment  Close browser
+    Close Browser
 
     # ================== Woocommerce ==================
     ${woocommerce_dict_obj}  Get Processing Woocommerce
     Append Dict To Main Excel    ${woocommerce_dict_obj}    ${RESULT_EXCEL_PATH_AMAZON}    ${RESULT_EXCEL_PATH}  woocom processing
     Log  Excel de woocommerce creado satisfactoriamente en ${RESULT_EXCEL_PATH}  console=${TRUE}
+    Comment  Close browser
+    Close Browser
 
 *** Keywords ***
 Get Stocks Odoo
@@ -85,9 +93,6 @@ Get Stocks Odoo
     ${dl_promise}  Promise To Wait For Download    saveAs=${OUTPUT_DIR}${/}downloads${/}stock.quant.xlsx
     Click to download icon above the table
     ${odoo_excel_obj}  Wait For  ${dl_promise}
-
-    Comment  Close browser
-    Close Browser
 
     RETURN  ${odoo_excel_obj.saveAs}
 
@@ -146,9 +151,6 @@ Get Unshipped Amazon
     Comment  Descargar tsv. Esperar a que se descargue
     ${amazon_tsv_obj}  Wait For  ${dl_promise}
 
-    Comment  Close browser
-    Close Browser
-
     RETURN  ${amazon_tsv_obj}
 
 
@@ -178,7 +180,10 @@ Get Pending Amazon
     Change Results per page to 100
     
     Set Browser Wait Time  0
-    ${num_pending}  How many orders are Pending?
+    # For recording
+    ${tmp}  How many orders are Pending?
+    # Counting rows, not orders
+    ${num_pending}  How many phones are there?
 
     Comment  Count number of times that appears each SKU
     &{orders_sku}  Create Dictionary
@@ -208,9 +213,6 @@ Get Pending Amazon
         Set To Dictionary    ${orders_sku}    ${sku}    ${new_sku_count}
     END
 
-    Comment  Close browser
-    Close Browser
-
     RETURN  ${orders_sku}
 
 Get Processing Woocommerce
@@ -230,8 +232,5 @@ Get Processing Woocommerce
         CrawlWoocommerce.Get bounding box of the count of procesando
         ${dict_sku_count}  CrawlWoocommerce.Get all skus from the table
     END
-
-    Comment  Close browser
-    Close Browser
 
     RETURN  ${dict_sku_count}

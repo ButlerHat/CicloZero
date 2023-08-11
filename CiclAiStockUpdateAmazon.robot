@@ -53,33 +53,43 @@ UpdateAmazon
     ${content}    Get File    path=${RETURN_FILE}
     ${status}  ${msg}   Run Keyword And Ignore Error  Should Be Equal As Strings    ${content}    Warning:${SPACE}
     IF  "${status}"!="PASS"
-        Append To File  path=${RETURN_FILE}    content= are set to 0 on Amazon because are not in stock. Check if have different name in stock and Amazon. ${\n}
+        Append To File  path=${RETURN_FILE}    content=are set to 0 on Amazon because are not in stock. Check if have different name in stock and Amazon.${\n}${\n}
     END
 
     FOR  ${sku}  ${total}  IN  &{sku_total}
-        # Debugging
         Log  Updating ${sku} to ${total}  console=${True}
-        # Debugging
 
         Search for SKU ${sku}
         Wait for spinner
         Select SKU radio button in filter
         TRY
             Delete the input of available column for ${sku}
+
+            ${previous_total}  Get text from available column for ${sku}
+            IF  "${previous_total}"=="0" and "${total}"!="0"
+                Log  SKU ${sku} was 0 in Amazon, change to ${total}.  console=${True}
+                Append To File  path=${RETURN_FILE}    content=Sku ${sku} was 0 in Amazon, change to ${total}.${SPACE}
+            END
         EXCEPT
             Log  No sku ${sku} in Amazon (Skipping).  console=${True}  level=WARN
-            Append To File  path=${RETURN_FILE}    content=${SPACE}No sku ${sku} in Amazon (Skipping).
+            Append To File  path=${RETURN_FILE}    content=No ${sku} in Amazon (Skipping).${SPACE}
             Delete search box
             CONTINUE
         END
-        # Write ${total} in available column for ${sku} row
-        # ${can_save}  Check if save button exists for sku ${sku}
-        # IF  ${can_save}  
-        #     Click on save in the ${sku} row
-        #     Check if update success for sku ${sku}
-        # ELSE
-        #     Log  No save button for ${sku}. Skipping
-        # END
+        Write ${total} in available column for ${sku} row
+        ${can_save}  Check if save button exists for sku ${sku}
+        IF  ${can_save}  
+            Click on save in the ${sku} row
+            TRY
+                Check if update success for sku ${sku}
+            EXCEPT
+                Log  No success message for ${sku} CHECK!.  console=${True}  level=WARN
+                Append To File  path=${RETURN_FILE}    content=No success message for ${sku} CHECK!.${SPACE}
+            END
+            Log  Changed ${sku}.  console=${True}  level=INFO
+        ELSE
+            Log  No save button for ${sku}. Skipping
+        END
         Delete search box
         
     END

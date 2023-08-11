@@ -57,9 +57,9 @@ Set 0 to skus where have quantity and not in Stock
             ${status}  ${msg}  Run Keyword And Ignore Error  File Should Exist    ${RETURN_FILE}
             IF  "${status}"=="PASS"  Append To File    ${RETURN_FILE}    ${sku},${SPACE}
             Log  Updating ${sku} to 0  console=${True}
-            # Delete the input of available column for ${sku}
-            # Write 0 in available column for ${sku} row
-            # Click on save in the ${sku} row
+            Delete the input of available column for ${sku}
+            Write 0 in available column for ${sku} row
+            Click on save in the ${sku} row
         END
     END
 
@@ -112,6 +112,15 @@ How many orders are Pending?
     ${bbox}  Get Element Bounding Box of the "Pending" tab    
     ${txt}  Get Text From Bbox    selector_bbox=${bbox}
     RETURN  ${txt.split(' ')[0].strip()}
+
+How many phones are there?
+    [Documentation]  No same name of orders as phones
+    [Tags]  no_record
+    # Get number of rows in the table
+    ${num_rows}  Get Element Count  //table[@id='orders-table']//tr
+    ${num_rows}  Evaluate  ${num_rows} - 1
+    RETURN  ${num_rows}
+
 
 Get Element Bounding Box of the "Pending" tab
     ${bbox}  Element Bbox  //div[contains(@class, 'active')]
@@ -313,8 +322,13 @@ Get Element Bounding Box of the price of the ${market} row
 
 
 # ========== Update stock ==========
+Get text from available column for ${sku}
+    [Tags]  no_record
+    ${before}  Browser.Get attribute  //table//tr[contains(.,"${sku}")]/td[@data-column="quantity"]//input  value
+    RETURN  ${before}
+
 Delete the input of available column for ${sku}
-    Wait Until Keyword Succeeds  10  1  Click  //table//tr[contains(.,"${sku}")]/td[@data-column="quantity"]//input
+    Wait Until Keyword Succeeds  5  1  Click  //table//tr[contains(.,"${sku}")]/td[@data-column="quantity"]//input
     Keyboard Key    Control+A+Delete
 
 Write ${stock} in available column for ${sku} row

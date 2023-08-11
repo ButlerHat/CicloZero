@@ -137,4 +137,11 @@ Upload inventory file
     Click  //input[@name="uploadFile"]
     ${upload_result}=    Wait For    ${promise}
     Log  ${upload_result}  console=${True}
+
+Click on subir
+    Click  //form[.//input[@name="uploadFile"]]//input[@type='submit']
+
+Check if ${file} is uploaded
+    [Tags]  no_record
+    Wait For Elements State    //form[.//input[@name="uploadFile"]]/../..//*[contains(.,"${file}")]  visible  timeout=1m
     

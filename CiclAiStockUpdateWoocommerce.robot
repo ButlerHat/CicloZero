@@ -21,7 +21,8 @@ ${RETURN_FILE}  ${OUTPUT_DIR}${/}return_msg.txt
 ${URL_WOOCOMERCE}  https://ciclozero.com/wp-admin/admin.php?page=stock-manager
 
 ${PRODUCTS_CSV}  ${FILE_DIR}${/}robotframework${/}keywords${/}woocommerce_files${/}data_woocommerce_products.csv
-${OUTPUT_CSV}    ${FILE_DIR}${/}robotframework${/}keywords${/}woocommerce_files${/}data_woocommerce_products_updated.csv
+${OUTPUT_CSV_FILE}  data_woocommerce_products_updated.csv
+${OUTPUT_CSV}    ${OUTPUT_DIR}${/}${OUTPUT_CSV_FILE}
 
 
 *** Test Cases ***
@@ -40,4 +41,8 @@ Update Woocommerce Stock
     CrawlWoocommerce.Login with user ${woocommerce_user} and pass ${woocommerce_pass}
     CrawlWoocommerce.Click on Gestor de existencias in the menu
     CrawlWoocommerce.Go to Importar/Exportar under Gestor de existencias
-    # CrawlWoocommerce.Upload inventory file  ${OUTPUT_CSV}
+    CrawlWoocommerce.Upload inventory file  ${OUTPUT_CSV}
+    CrawlWoocommerce.Click on subir
+    CrawlWoocommerce.Check if ${OUTPUT_CSV_FILE} is uploaded
+
+    Close Browser
