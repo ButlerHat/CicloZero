@@ -3,9 +3,13 @@ import datetime
 import croniter
 import tempfile
 
-def cron_to_natural_language(cron_format):
+def cron_to_natural_language(cron_format) -> str | None:
     # Create a croniter object with the provided format string
-    cron = croniter.croniter(cron_format)
+    try:
+        cron = croniter.croniter(cron_format)
+    except Exception as e:
+        print(f"Error while parsing cron format {cron_format}: {e}")
+        return None
 
     # Get the next scheduled execution time as a datetime object
     next_execution = cron.get_next(datetime.datetime)

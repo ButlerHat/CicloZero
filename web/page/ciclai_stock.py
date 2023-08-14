@@ -15,9 +15,21 @@ PAGES = {
     "Woocommerce": "CiclAiStockUpdateWoocommerce.robot"
 }
 
+def disable():
+    st.session_state.disabled = True
+
+def enable():
+    if "disabled" in st.session_state and st.session_state.disabled == True:
+        st.session_state.disabled = False
+        st.experimental_rerun()
+
 
 ## Create a function to display a title of "Ciclai Stock", a Run button and a cron field to schedule the task
 def ciclai_stock():
+    # Disable all buttons while the task is running
+    if "disabled" not in st.session_state:
+        st.session_state.disabled = False
+
     # Title
     main_color = st.secrets.theme.primaryColor
     st.markdown(f'# <span style="color:{main_color}">CiclAI</span> Stock', unsafe_allow_html=True)
@@ -30,7 +42,10 @@ def ciclai_stock():
         col1.markdown(" ### Time")
         cron_str = col1.text_input("Cron", "0 0 * * *"),
         nl_cron = cron.cron_to_natural_language(cron_str[0])
-        col1.markdown(f"Next run: {nl_cron}")
+        if nl_cron:
+            col1.markdown(f"Next run: {nl_cron}")
+        else:
+            col1.error("Invalid cron format")
         
         # List jobs
         col2.markdown(" ### Jobs list")
@@ -40,13 +55,25 @@ def ciclai_stock():
         # Run button
         stock_path = st.secrets.paths.stock_excel
         excel_name = 'CiclAiStock_$(date +"%H-%M_%d-%m-%Y").xlsx'
+        excel_path = f'excel_path={os.path.join(stock_path, excel_name)}'
         
+        # CiclAI Stock
         args = [
-            f'RESULT_EXCEL_PATH:{os.path.join(stock_path, excel_name)}'
+            f'RESULT_EXCEL_PATH:$excel_path'
         ]
         # Place script in robot folder / jobs
         robot_command = robot_handler.get_robot_command("stock", args, "CiclAiStock.robot")
-        script_robot = robot_command + f' > {os.path.join(st.secrets.paths.robot, "jobs", "cron.log")} 2>&1'
+        script_robot = robot_command + f' > {os.path.join(st.secrets.paths.robot, "jobs", "cron_stock.log")} 2>&1'
+
+        # CiclAI Stock Amazon
+        args_update = [
+            f'STOCK_EXCEL_PATH:$excel_path'
+        ]
+        robot_command_amazon = robot_handler.get_robot_command("Amazon", args_update, "CiclAiStockUpdateAmazon.robot")
+        robot_command_woocommerce = robot_handler.get_robot_command("Woocommerce", args_update, "CiclAiStockUpdateWoocommerce.robot")
+        script_robot_amazon = robot_command_amazon + f' > {os.path.join(st.secrets.paths.robot, "jobs", "cron_amazon.log")} 2>&1'
+        script_robot_woocommerce = robot_command_woocommerce + f' > {os.path.join(st.secrets.paths.robot, "jobs", "cron_woocommerce.log")} 2>&1'
+
         # Create jobs folder
         if not os.path.exists(os.path.join(st.secrets.paths.robot, "jobs")):
             os.makedirs(os.path.join(st.secrets.paths.robot, "jobs"))
@@ -57,10 +84,17 @@ def ciclai_stock():
             f.write(f"export ROBOT_CICLOZERO_PASS='{os.environ.get('ROBOT_CICLOZERO_PASS', '')}'\n")
             f.write(f"export PYTHONPATH={os.environ.get('PYTHONPATH', '')}\n")
             f.write(f"export PATH={os.environ.get('PATH', '')}\n")
-            f.write(script_robot)
+            # Remove old files from stock folder
+            f.write(f"/opt/conda/bin/python {os.path.join(st.secrets.paths.robot, 'jobs' , 'delete_files.py')} " +
+                    f"-d {st.secrets.paths.stock_excel} -l 7" +
+                    f" > {os.path.join(st.secrets.paths.robot, 'jobs', 'delete_files.log')} 2>&1\n")
+            f.write(excel_path + "\n")
+            f.write(script_robot + "\n")
+            f.write(script_robot_amazon + "\n")
+            f.write(script_robot_woocommerce)
         os.chmod(cron_script_path, 0o777)
 
-        if st.button("Schedule", type="secondary"):
+        if st.button("Schedule", type="secondary", key="schedule", disabled=st.session_state.disabled):
             success = cron.insert_cron_job(cron_str[0], cron_script_path)
             if success:
                 c.code("\n".join(cron.get_cron_jobs()))
@@ -68,7 +102,7 @@ def ciclai_stock():
             else:
                 col1.warning("Job already scheduled")
 
-        if st.button("Delete", type="primary"):
+        if st.button("Delete", type="primary", key="delete", disabled=st.session_state.disabled):
             if cron.delete_cron_job(cron_str[0], cron_script_path):
                 c.code("\n".join(cron.get_cron_jobs()))
                 col1.success("Job deleted successfully")
@@ -77,6 +111,7 @@ def ciclai_stock():
     
     # Run get stock
     run_get_stock()
+    enable()
 
     # Show excel
     st.markdown("---")
@@ -90,7 +125,7 @@ def ciclai_stock():
     last_file = os.path.join(stock_path, option)
     # Download excel
     with open(last_file, 'rb') as f:
-        st.download_button(label=option, data=f, file_name=option, key='last_excel')
+        st.download_button(label=option, data=f, file_name=option, key='last_excel', disabled=st.session_state.disabled)
 
     # Show excel
     st.markdown("## Show last excel")
@@ -108,7 +143,7 @@ def get_last_excel() -> str | None:
     stock_excels = [f for f in stock_excels if f.endswith(".xlsx")]
     stock_excels.sort(key=os.path.getmtime, reverse=True)
     stock_names = [os.path.basename(f) for f in stock_excels]
-    return st.selectbox("Select a stock excel", stock_names)
+    return st.selectbox("Select a stock excel", stock_names, disabled=st.session_state.disabled)
 
 
 def run_get_stock():
@@ -141,7 +176,7 @@ def run_get_stock():
             excel_name = st.text_input("STOCK EXEL_NAME", f"CiclAiStock_{datetime.datetime.now().strftime('%H-%M_%d-%m-%Y')}.xlsx")
             excel_path = os.path.join(stock_path, excel_name)
             
-            if st.form_submit_button("Run", type="primary"):
+            if st.form_submit_button("Run", type="primary", on_click=disable, disabled=st.session_state.disabled):
                 # Run robot
                 args = [
                     f"RESULT_EXCEL_PATH:{excel_path}"
@@ -159,7 +194,7 @@ def run_get_stock():
         if os.path.exists(os.path.join(stock_path, excel_name)):
             st.markdown(f'### Download <span style="color:{excel_name}">CiclAI</span>', unsafe_allow_html=True)
             with open(os.path.join(stock_path, excel_name), 'rb') as f:
-                st.download_button(label=excel_name, data=f, file_name=excel_name, key='stock_excel')
+                st.download_button(label=excel_name, data=f, file_name=excel_name, key='stock_excel', disabled=st.session_state.disabled)
         else:
             st.info(f"Excel not generated")
     
@@ -189,8 +224,7 @@ def run_get_stock():
             file_path = excel_path
             print(f"Updating stock with file {file_path.split(os.sep)[-1]}")
         
-        disabled: bool = True if file_path is None else False
-        if st.form_submit_button("Update stock", type="primary", disabled=disabled) or update_after and file_path is not None:
+        if st.form_submit_button("Update stock", type="primary", on_click=disable, disabled=st.session_state.disabled) or update_after and file_path is not None:
             st.info(f"Updating stock with file {file_path.split(os.sep)[-1] if file_path is not None else 'None'}")
             
             ids_args = {}
@@ -208,6 +242,9 @@ def run_get_stock():
 
 
 def display_last_run_info(id_workflow: str):
+    if "disabled" not in st.session_state:
+        st.session_state.disabled = False
+    
     robot_path = st.secrets.paths.robot
     result_path = os.path.join(robot_path, "results", id_workflow)
     if not os.path.exists(result_path):
@@ -217,7 +254,7 @@ def display_last_run_info(id_workflow: str):
     # Get start time last run
     output_xml_path = os.path.join(result_path, "output.xml")
     if not os.path.exists(output_xml_path):
-        st.error(f"Not results file (output.xml) found in {result_path}")
+        st.error("No results file (output.xml) found")
         return
     
     start_time_status: tuple[str, str, RobotStatus] = robot_results.get_start_time(output_xml_path)
@@ -268,5 +305,5 @@ def display_last_run_info(id_workflow: str):
             st.info(f"Not log file (log.html)")
         else:
             with open(log_html_path, 'rb') as f:
-                st.download_button(label="Download log.html", data=f, file_name="log.html")
+                st.download_button(label="Download log.html", data=f, file_name="log.html", disabled=st.session_state.disabled)
 

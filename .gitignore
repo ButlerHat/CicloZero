@@ -1,6 +1,7 @@
 .DS_Store
 
 # RobotFramework
+prod_downloads/
 desktop/
 conda_pass.yml
 crawl_amazon_data/

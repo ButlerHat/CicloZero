@@ -15,8 +15,8 @@ services:
     volumes:
       - ${HOME}/urjc_chapo/ai-butlerhat:/workspaces/ai-butlerhat:cached
       - ${HOME}/.ssh:/home/vscode/.ssh:cached
-      - ${HOME}/data/CicloZero/results:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/results:cached
-      - ${HOME}/data/CicloZero/downloads:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/downloads:cached
+      - ${HOME}/data/CicloZero/results:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/prod_results:cached
+      - ${HOME}/data/CicloZero/downloads:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/prod_downloads:cached
       - ${HOME}/data/CicloZero/data:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/data:cached
     cap_add:
       - SYS_ADMIN
