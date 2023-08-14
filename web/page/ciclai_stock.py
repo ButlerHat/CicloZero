@@ -82,6 +82,7 @@ def ciclai_stock():
             f.write("#!/bin/bash\n")
             f.write(f"export DEVELOPMENT_SERVER={os.environ.get('DEVELOPMENT_SERVER', '')}\n")
             f.write(f"export ROBOT_CICLOZERO_PASS='{os.environ.get('ROBOT_CICLOZERO_PASS', '')}'\n")
+            f.write(f"export DISPLAY={os.environ.get('DISPLAY', '')}\n")
             f.write(f"export PYTHONPATH={os.environ.get('PYTHONPATH', '')}\n")
             f.write(f"export PATH={os.environ.get('PATH', '')}\n")
             # Remove old files from stock folder
