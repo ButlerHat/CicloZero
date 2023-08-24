@@ -31,6 +31,12 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+    - name: Prepare rollback
+      run: |
+        docker pull butlerhat/ciclozero_prod:latest || true
+        docker tag butlerhat/ciclozero_prod:latest butlerhat/ciclozero_prod:rollback || true
+        docker push butlerhat/ciclozero_prod:rollback || true
+
     - name: Pre-build image
       uses: devcontainers/ci@v0.3
       with:

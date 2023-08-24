@@ -7,7 +7,7 @@ Library    Collections
 Library    OperatingSystem
 Resource   robotframework/modeling/resources/CrawlAmazon.resource
 Variables  robotframework/variables/credentials.py
-Suite Setup  Browser.Add Task Library    CrawlAmazon
+Suite Setup  Setup Suite
 
 
 *** Variables ***
@@ -48,6 +48,7 @@ UpdateAmazon
 
     # Remove inventory that are not in the excel
     Click on available column
+    Wait for spinner
     Create File    path=${RETURN_FILE}  content=Warning:${SPACE}
     Set 0 to skus where have quantity and not in Stock  @{sku_total.keys()}
     ${content}    Get File    path=${RETURN_FILE}
@@ -56,6 +57,9 @@ UpdateAmazon
         Append To File  path=${RETURN_FILE}    content=are set to 0 on Amazon because are not in stock. Check if have different name in stock and Amazon.${\n}${\n}
     END
 
+    # Select only active products
+    Wait for spinner
+    Select All in Listing status
     FOR  ${sku}  ${total}  IN  &{sku_total}
         Log  Updating ${sku} to ${total}  console=${True}
 
@@ -71,7 +75,7 @@ UpdateAmazon
             END
         EXCEPT
             Log  No sku ${sku} in Amazon (Skipping).  console=${True}  level=WARN
-            Append To File  path=${RETURN_FILE}    content=No ${sku} in Amazon (Skipping).${SPACE}
+            Append To File  path=${RETURN_FILE}    content=No ${sku} (active) in Amazon (Skipping).${SPACE}
             Delete search box
             CONTINUE
         END
@@ -98,3 +102,10 @@ UpdateAmazon
     IF  "${status}"=="PASS"
         Remove File  ${RETURN_FILE}
     END
+
+
+*** Keywords ***
+Setup Suite
+    [Tags]  no_record
+    Browser.Add Task Library  CrawlAmazon
+    OperatingSystem.Remove Directory    path=${OUTPUT_DIR}${/}browser    recursive=${TRUE}    

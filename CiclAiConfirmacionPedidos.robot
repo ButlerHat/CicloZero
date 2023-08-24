@@ -1,9 +1,10 @@
 *** Settings ***
 Library    ButlerRobot.AIBrowserLibrary  record=${False}  presentation_mode=${True}  fix_bbox=${TRUE}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
 Library    Dialogs
+Library    OperatingSystem
 Resource   ./robotframework/modeling/resources/CrawlOdoo.resource
 Variables  ./robotframework/variables/credentials.py
-Suite Setup  Browser.Add Task Library    CrawlOdoo
+Suite Setup  Setup Suite
 
 
 *** Variables ***
@@ -35,7 +36,7 @@ Confirmacion pedidos
     Click on table operaciones detalladas in the third column
     Click on "Buscar más..." in the dropdown
     Input ${imei} in 'Buscar...' input
-    Keyboard Key    press    Enter
+    Keyboard Key    Enter
     Click on the first row of the table
     Click on "Aceptar Reserva" in the first row
     Click on "Validar" purple button
@@ -47,4 +48,11 @@ Confirmacion pedidos
     Click on "Publicar" at the top
     Click on "Registrar pago" at the top
     Click on "Validar" on the popup
+
+
+*** Keywords ***
+Setup Suite
+    [Tags]  no_record
+    Browser.Add Task Library  CrawlOdoo
+    OperatingSystem.Remove Directory    path=${OUTPUT_DIR}${/}browser    recursive=${TRUE}    
     

@@ -11,8 +11,8 @@ from utils.robot_results import RobotStatus
 
 
 PAGES = {
-    "Amazon": "CiclAiStockUpdateAmazon.robot",
-    "Woocommerce": "CiclAiStockUpdateWoocommerce.robot"
+    "Woocommerce": "CiclAiStockUpdateWoocommerce.robot",
+    "Amazon": "CiclAiStockUpdateAmazon.robot"
 }
 
 def disable():
@@ -56,23 +56,30 @@ def ciclai_stock():
         stock_path = st.secrets.paths.stock_excel
         excel_name = 'CiclAiStock_$(date +"%H-%M_%d-%m-%Y").xlsx'
         excel_path = f'excel_path={os.path.join(stock_path, excel_name)}'
+        robot_path = st.secrets.paths.robot
+        results_path = os.path.join(robot_path, "results")
+        scripts_robot = []
         
         # CiclAI Stock
         args = [
             f'RESULT_EXCEL_PATH:$excel_path'
         ]
-        # Place script in robot folder / jobs
         robot_command = robot_handler.get_robot_command("stock", args, "CiclAiStock.robot")
-        script_robot = robot_command + f' > {os.path.join(st.secrets.paths.robot, "jobs", "cron_stock.log")} 2>&1'
+        log_file_stock_path = os.path.join(results_path, "stock", f'logfile_out_stock.txt')
+        script_robot = robot_command + f' > {log_file_stock_path} 2>&1'
+        scripts_robot.append(script_robot)
 
-        # CiclAI Stock Amazon
+        # CiclAI Stock Update
         args_update = [
             f'STOCK_EXCEL_PATH:$excel_path'
         ]
-        robot_command_amazon = robot_handler.get_robot_command("Amazon", args_update, "CiclAiStockUpdateAmazon.robot")
-        robot_command_woocommerce = robot_handler.get_robot_command("Woocommerce", args_update, "CiclAiStockUpdateWoocommerce.robot")
-        script_robot_amazon = robot_command_amazon + f' > {os.path.join(st.secrets.paths.robot, "jobs", "cron_amazon.log")} 2>&1'
-        script_robot_woocommerce = robot_command_woocommerce + f' > {os.path.join(st.secrets.paths.robot, "jobs", "cron_woocommerce.log")} 2>&1'
+
+        for page, robot_file in PAGES.items():
+            robot_command = robot_handler.get_robot_command(page, args_update, robot_file)
+            # Redirect output to log file
+            log_file_path = os.path.join(results_path, page, f'logfile_out_{page}.txt')
+            script_robot = robot_command + f' > {log_file_path} 2>&1'
+            scripts_robot.append(script_robot)
 
         # Create jobs folder
         if not os.path.exists(os.path.join(st.secrets.paths.robot, "jobs")):
@@ -90,9 +97,9 @@ def ciclai_stock():
                     f"-d {st.secrets.paths.stock_excel} -l 7" +
                     f" > {os.path.join(st.secrets.paths.robot, 'jobs', 'delete_files.log')} 2>&1\n")
             f.write(excel_path + "\n")
-            f.write(script_robot + "\n")
-            f.write(script_robot_amazon + "\n")
-            f.write(script_robot_woocommerce)
+            for script_robot in scripts_robot:
+                f.write(script_robot + "\n")
+            
         os.chmod(cron_script_path, 0o777)
 
         if st.button("Schedule", type="secondary", key="schedule", disabled=st.session_state.disabled):

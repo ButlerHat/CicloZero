@@ -8,7 +8,7 @@ Resource   ./robotframework/modeling/resources/CrawlOdoo.resource
 Resource   ./robotframework/modeling/resources/CrawlAmazon.resource
 Resource   ./robotframework/modeling/resources/CrawlWoocommerce.resource
 Variables  ./robotframework/variables/credentials.py
-Suite Setup  Browser.Add Task Library    CrawlAmazon  CrawlOdoo  CrawlWoocommerce
+Suite Setup  Setup Suite
 
 
 *** Variables ***
@@ -66,6 +66,11 @@ CiclAI Stock
     Close Browser
 
 *** Keywords ***
+Setup Suite
+    [Tags]  no_record
+    Browser.Add Task Library  CrawlAmazon  CrawlOdoo  CrawlWoocommerce
+    OperatingSystem.Remove Directory    path=${OUTPUT_DIR}${/}browser    recursive=${TRUE}
+
 Get Stocks Odoo
     Comment  Obtener inventario de Odoo
     New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads

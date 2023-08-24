@@ -49,10 +49,18 @@ Click on available column
 Set 0 to skus where have quantity and not in Stock
     [Arguments]  @{skus_in_stock}
     [Tags]  only_substeps
-    ${skus_el}  Get Elements    //td[@data-column="sku"][./../td[@data-column="quantity"]//input[not(@value="0")]]//a  
     
-    FOR  ${sku_el}  IN  @{skus_el}
-        ${sku}  Get Text  ${sku_el}
+    Click on Active in Listing status filter
+    Click on the dropdown of results per page at the bottom right
+    Set 250 to results per page
+
+    @{skus_el}  Get Elements    //td[@data-column="sku"][./../td[@data-column="quantity"]//input[not(@value="0")]]//a  
+    ${len_el}  Get Length  ${skus_el}
+    ${i}  Set Variable  0
+    
+    WHILE  ${i} < ${len_el}
+        ${sku}  Get Text  ${skus_el[${i}]}
+    
         IF  "${sku}" not in "@{skus_in_stock}"
             ${status}  ${msg}  Run Keyword And Ignore Error  File Should Exist    ${RETURN_FILE}
             IF  "${status}"=="PASS"  Append To File    ${RETURN_FILE}    ${sku},${SPACE}
@@ -60,6 +68,9 @@ Set 0 to skus where have quantity and not in Stock
             Delete the input of available column for ${sku}
             Write 0 in available column for ${sku} row
             Click on save in the ${sku} row
+            ${len_el}  Evaluate  ${len_el} - 1
+        ELSE
+            ${i}  Evaluate  ${i} + 1
         END
     END
 
@@ -103,9 +114,20 @@ Change Results per page
     Sleep  2
     Click  //*[@id='a-autoid-1-announce']
 
+Click on Active in Listing status filter
+    Sleep  2  # Wait page to load
+    Click  //*[@id="LISTINGS_VIEW_SECTION"]//*[contains(text(),"Active")]/../input[@type="radio"]
+
+Click on the dropdown of results per page at the bottom right
+    [Documentation]  For CiclAI Update stock. The previous is for Stock
+    Click  //*[@class="mt-records-per-page"]
+
 Set Results per page to ${num}
     &{num_dict}  Create Dictionary   15=0  25=1  50=2  100=3
     Click  //*[@id='myo-table-results-per-page_${num_dict["${num}"]}']
+
+Set ${num} to results per page
+    Click  //a[text()="${num} results per page"]
 
 How many orders are Pending?
     [Documentation]  The pending tab must be active
@@ -257,6 +279,9 @@ Go to "Manage All Inventory" submenu
 
 Select SKU radio button in filter
     Click  //li[@id="SearchType_SECTION"]//span[contains(text(),"SKU")][not(contains(text(),"FN"))]
+
+Select All in Listing status
+    Wait Until Keyword Succeeds  5  1  Click  //*[@id="LISTINGS_VIEW_SECTION"]//*[contains(text(),"All")]/../input[@type="radio"]
 
 Search for SKU ${sku}
     Click  //*[@id='myitable-search']

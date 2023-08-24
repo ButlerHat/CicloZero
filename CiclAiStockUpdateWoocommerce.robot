@@ -7,7 +7,7 @@ Library    Collections
 Library    OperatingSystem
 Resource   robotframework/modeling/resources/CrawlWoocommerce.resource
 Variables  robotframework/variables/credentials.py
-Suite Setup  Browser.Add Task Library  CrawlWoocommerce
+Suite Setup  Setup Suite
 
 
 *** Variables ***
@@ -46,3 +46,9 @@ Update Woocommerce Stock
     CrawlWoocommerce.Check if ${OUTPUT_CSV_FILE} is uploaded
 
     Close Browser
+
+*** Keywords ***
+Setup Suite
+    [Tags]  no_record
+    Browser.Add Task Library  CrawlWoocommerce
+    OperatingSystem.Remove Directory    path=${OUTPUT_DIR}${/}browser    recursive=${TRUE}    
