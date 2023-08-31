@@ -41,9 +41,11 @@ def get_cron_jobs():
     return cron_jobs
 
 
-def insert_cron_job(cron_format, command):
+def insert_cron_job(cron_format: str, command: str):
     # Check if the job is already present in the crontab
     cron_jobs = get_cron_jobs()
+    cron_format = cron_format.strip()
+    command = command.strip()
     if f"{cron_format} {command}" in cron_jobs:
         return False
 
@@ -60,9 +62,11 @@ def insert_cron_job(cron_format, command):
 
     return True
 
-def delete_cron_job(cron_format, command):
+def delete_cron_job(cron_format: str, command: str):
     # Check if the job is present in the crontab
     cron_jobs = get_cron_jobs()
+    cron_format = cron_format.strip()
+    command = command.strip()
     if f"{cron_format} {command}" not in cron_jobs:
         return False
 

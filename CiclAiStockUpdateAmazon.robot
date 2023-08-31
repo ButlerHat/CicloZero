@@ -60,6 +60,7 @@ UpdateAmazon
     # Select only active products
     Wait for spinner
     Select All in Listing status
+    Wait for spinner
     FOR  ${sku}  ${total}  IN  &{sku_total}
         Log  Updating ${sku} to ${total}  console=${True}
 

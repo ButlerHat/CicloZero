@@ -52,7 +52,7 @@ def ciclai_stock():
         c = col2.empty()
         c.code("\n".join(cron.get_cron_jobs()))
 
-        # Run button
+        # Create cron script
         stock_path = st.secrets.paths.stock_excel
         excel_name = 'CiclAiStock_$(date +"%H-%M_%d-%m-%Y").xlsx'
         excel_path = f'excel_path={os.path.join(stock_path, excel_name)}'

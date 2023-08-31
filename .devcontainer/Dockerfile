@@ -35,7 +35,9 @@ RUN ls -la /tmp/conda-tmp
 RUN if [ -f "/tmp/conda-tmp/conda.yaml" ]; then umask 0002 && /opt/conda/bin/conda env create -f /tmp/conda-tmp/web/conda.yaml; fi \
     && rm -rf /tmp/conda-tmp
 
+# Change timezone
 ENV TZ='/usr/share/zoneinfo/Europe/Madrid'
+RUN sudo ln -snf $TZ /etc/localtime && echo "Europe/Madrid" > /etc/timezone
 
 # Run cron service after container is started. sudo service cron start
 # RUN sudo service cron start
@@ -43,17 +45,7 @@ ENV TZ='/usr/share/zoneinfo/Europe/Madrid'
 
 FROM base AS prod 
 
-# Install cloudflared
 USER root
-RUN wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared-linux-amd64.deb
-RUN chmod -R 777 /opt/conda
-
-# Copy CicloZero files
-COPY . /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
-WORKDIR /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
-
-# This is needed to avoid permissions errors when clonning with actions
-RUN chown -R $UNAME:$UNAME /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
 
 ENV DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
     VNC_RESOLUTION="1440x768x16" \
@@ -64,6 +56,16 @@ ENV DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
     LANG="en_US.UTF-8" \
     LANGUAGE="en_US.UTF-8"
 
+# Install cloudflared
+RUN wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared-linux-amd64.deb
+RUN chmod -R 777 /opt/conda
+
+# Copy CicloZero files
+COPY . /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
+WORKDIR /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
+
+# This is needed to avoid permissions errors when clonning with actions
+RUN chown -R $UNAME:$UNAME /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
 
 COPY conda-prod.yaml /tmp/pip-tmp/conda-prod.yaml
 COPY .devcontainer/resolve_conda_secret.py /tmp/pip-tmp/resolve_conda_secret.py
