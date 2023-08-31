@@ -79,4 +79,4 @@ RUN rm conda_pass.yaml
 WORKDIR /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
 
 USER $UNAME
-CMD ["bash", "./.devcontainer/postCreateCommand.sh"]
+CMD ["source", "./.devcontainer/postCreateCommand.sh"]
