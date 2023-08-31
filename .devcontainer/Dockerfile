@@ -73,7 +73,7 @@ COPY .devcontainer/resolve_conda_secret.py /tmp/pip-tmp/resolve_conda_secret.py
 WORKDIR /tmp/pip-tmp
 RUN python resolve_conda_secret.py --token $GITHUB_TOKEN
 RUN conda env update -n robotframework -f conda_pass.yaml --prune
-RUN chmod -R a+rw /opt/conda/lib/python3.10/site-packages/Browser
+RUN chmod -R a+rw /opt/conda/envs/robotframework/lib/python3.10/site-packages/Browser
 RUN rm conda_pass.yaml
 
 WORKDIR /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
