@@ -93,7 +93,7 @@ def ciclai_stock():
             f.write(f"export PYTHONPATH={os.environ.get('PYTHONPATH', '')}\n")
             f.write(f"export PATH={os.environ.get('PATH', '')}\n")
             # Remove old files from stock folder
-            f.write(f"/opt/conda/bin/python {os.path.join(st.secrets.paths.robot, 'jobs' , 'delete_files.py')} " +
+            f.write(f"/opt/conda/envs/robotframework/bin/python {os.path.join(st.secrets.paths.robot, 'jobs' , 'delete_files.py')} " +
                     f"-d {st.secrets.paths.stock_excel} -l 7" +
                     f" > {os.path.join(st.secrets.paths.robot, 'jobs', 'delete_files.log')} 2>&1\n")
             f.write(excel_path + "\n")

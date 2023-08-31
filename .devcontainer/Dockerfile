@@ -30,8 +30,8 @@ USER $UNAME
 # Copy environment.yml (if found) to a temp location so we update the environment. Also
 # copy "noop.txt" so the COPY instruction does not fail if no environment.yml exists.
 COPY conda.yaml* .devcontainer/noop.txt /tmp/conda-tmp/
-RUN /opt/conda/bin/conda update -n base -c defaults conda
-RUN if [ -f "/tmp/conda-tmp/conda.yaml" ]; then umask 0002 && /opt/conda/bin/conda env update -n base -f /tmp/conda-tmp/conda.yaml; fi
+RUN if [ -f "/tmp/conda-tmp/conda.yaml" ]; then umask 0002 && conda env create -n robotframework -f /tmp/conda-tmp/conda.yaml; fi 
+RUN echo "conda activate robotframework" >> ~/.bashrc
 
 COPY web/conda.yaml* .devcontainer/noop.txt /tmp/conda-tmp/web/
 RUN ls -la /tmp/conda-tmp/web
@@ -72,7 +72,7 @@ COPY .devcontainer/resolve_conda_secret.py /tmp/pip-tmp/resolve_conda_secret.py
 
 WORKDIR /tmp/pip-tmp
 RUN python resolve_conda_secret.py --token $GITHUB_TOKEN
-RUN conda env update -n base -f conda_pass.yaml
+RUN conda env update -n robotframework -f conda_pass.yaml --prune
 RUN chmod -R a+rw /opt/conda/lib/python3.10/site-packages/Browser
 RUN rm conda_pass.yaml
 

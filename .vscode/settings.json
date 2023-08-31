@@ -4,7 +4,7 @@
     "python.linting.pylintEnabled": true,
     "python.defaultInterpreterPath": "/opt/conda/envs/web_env/bin/python",
     "robot.lint.variables": false,
-    "robot.language-server.python": "/opt/conda/bin/python",
+    "robot.language-server.python": "/opt/conda/envs/robotframework/bin/python",
     "robot.libraries.libdoc.needsArgs": [
         "remote",
         "fakerlib"

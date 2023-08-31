@@ -6,7 +6,7 @@ def get_robot_command(id, vars, robot):
     robot_path = st.secrets.paths.robot
     robot_script = os.path.join(robot_path, robot)
     result_path = os.path.join(robot_path, "results", id)
-    robot_command = "/opt/conda/condabin/conda run -n base /opt/conda/bin/robot " + \
+    robot_command = "/opt/conda/condabin/conda run -n robotframework /opt/conda/envs/robotframework/bin/robot " + \
         f'-d "{result_path}" ' + \
         f'-v OUTPUT_DIR:"{result_path}" {"-v " if len(vars) > 0 else ""}{" -v ".join(vars)} ' + \
         f"{robot_script}"
