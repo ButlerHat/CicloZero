@@ -10,6 +10,10 @@ USER root
 # RUN groupmod -g $GROUP_ID $UNAME
 # RUN usermod -u $USER_ID -g $GROUP_ID $UNAME
 
+# Change timezone
+ENV TZ='/usr/share/zoneinfo/Europe/Madrid'
+RUN sudo ln -snf $TZ /etc/localtime && echo "Europe/Madrid" > /etc/timezone
+
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends poppler-utils ffmpeg libsm6 libxext6 cron
 
@@ -34,10 +38,6 @@ RUN ls -la /tmp/conda-tmp/web
 RUN ls -la /tmp/conda-tmp
 RUN if [ -f "/tmp/conda-tmp/conda.yaml" ]; then umask 0002 && /opt/conda/bin/conda env create -f /tmp/conda-tmp/web/conda.yaml; fi \
     && rm -rf /tmp/conda-tmp
-
-# Change timezone
-ENV TZ='/usr/share/zoneinfo/Europe/Madrid'
-RUN sudo ln -snf $TZ /etc/localtime && echo "Europe/Madrid" > /etc/timezone
 
 # Run cron service after container is started. sudo service cron start
 # RUN sudo service cron start
