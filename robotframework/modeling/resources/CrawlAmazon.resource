@@ -287,8 +287,22 @@ No Record Scroll Down
 Go to "Inventory" at the left
     Click  //*[text()='Inventory']
 
+Go to Catalogue menu
+    Click  //*[text()='Catalogue']
+
 Go to "Manage All Inventory" submenu
     Click  //*[text()='Manage All Inventory']
+
+Go to add products via upload submenu
+    Click  //*[text()='Add Products via Upload']
+
+Upload inventory file
+    [Documentation]  Uploads the inventory file
+    [Arguments]  ${file_path}
+    ${promise}    Promise To Upload File  ${file_path}
+    Click  //input[@id="file-upload-input"]/..
+    ${upload_result}=    Wait For    ${promise}
+    Log  ${upload_result}  console=${True}
 
 Select SKU radio button in filter
     Click  //li[@id="SearchType_SECTION"]//span[contains(text(),"SKU")][not(contains(text(),"FN"))]

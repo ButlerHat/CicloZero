@@ -215,6 +215,49 @@ def append_dict_to_main_excel(order_count_dict: dict, excel_path:str, output_exc
     return excel_df
 
 
+def create_csv_for_llm(stock_excel: str, output_csv_path: str) -> None:
+    """
+    Create a csv file with the following columns: "product", "quantity", "condition"
+    The product must be legible by LLM. Example: "[iP12PR-PCBL-256-A -R] iPhone 12 Pro (Pacific Blue, 256 GB, A, REBU)" to "iPhone 12 Pro Pacific Blue, 256 GB".
+    """
+    def parse_string(raw_product: str) -> str:
+        # Extract phone name
+        phone_name_match = re.search(r'\] (.+?) \(', raw_product)
+        phone_name = phone_name_match.group(1) if phone_name_match else ''
+        
+        # Extract color
+        color_match = re.search(r'\((.+?),', raw_product)
+        color = color_match.group(1).strip() if color_match else ''
+        
+        # Extract storage capacity
+        storage_match = re.search(r', ([\d\sGB]+?),', raw_product)
+        storage = f", {storage_match.group(1).strip()}" if storage_match else ''
+        
+        return f"{phone_name} {color} {storage}"
+    
+    # Load excel file
+    stock_df = _load_excel_file(stock_excel)
+    
+    # Create dataframe with columns: "product", "quantity", "condition"
+    llm_df = pd.DataFrame(columns=["product", "quantity", "condition"])
+    # Iterate over stock_df
+    for i in range(len(stock_df)):
+        prod = stock_df.loc[i, "prod"]
+        # Parse product
+        product = parse_string(str(prod))
+        if not product.strip():
+            continue
+        # Get quantity
+        quantity = stock_df.loc[i, "count"]
+        # Get condition
+        condition = stock_df.loc[i, "calidad"]
+        # Add row to llm_df
+        llm_df.loc[len(llm_df)] = [product, quantity, condition]  # type: ignore
+
+    # Save to csv
+    llm_df.to_csv(output_csv_path, index=False)
+
+
 def create_sheet_for_sku(sku: str, output_excel_path: str):
     wb = openpyxl.Workbook()
 

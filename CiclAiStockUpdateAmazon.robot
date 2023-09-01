@@ -2,6 +2,7 @@
 Library    ButlerRobot.AIBrowserLibrary  presentation_mode=${True}  fix_bbox=${TRUE}  record=${False}  console=${False}  output_path=${OUTPUT_DIR}/crawl_amazon_data  WITH NAME  Browser
 Library    robotframework/keywords/count_excel.py
 Library    robotframework/keywords/update_woocommerce.py
+Library    robotframework/keywords/amazon_stock_tsv.py
 Library    OTP
 Library    Collections
 Library    OperatingSystem
@@ -11,16 +12,60 @@ Suite Setup  Setup Suite
 
 
 *** Variables ***
-${OUTPUT_DIR}  /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
-${DEFAULT_AI_MODE}  Flexible
+${OUTPUT_DIR}  /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/results/Amazon
+${FILE_DIR}    /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
 ${STOCK_EXCEL_PATH}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.full.result.xlsx
 ${RETURN_FILE}  ${OUTPUT_DIR}${/}return_msg.txt
+${DEFAULT_AI_MODE}  Flexible
+
+# Generate csv
+${PRODUCTS_CSV}  ${FILE_DIR}${/}robotframework${/}keywords${/}woocommerce_files${/}data_woocommerce_products.csv
+${OUTPUT_TSV_FILE}  data_amazon_products_updated.tsv
+${OUTPUT_TSV}    ${OUTPUT_DIR}${/}${OUTPUT_TSV_FILE}
 
 # Amazon
 ${URL_AMAZON}  https://sellercentral.amazon.es/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fsellercentral.amazon.es%2Fhome&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=sc_es_amazon_v2&openid.mode=checkid_setup&language=es_ES&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=sc_es_amazon_v2&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&ssoResponse=eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.u8j_3kfAPRO9oea7TATYwCAdOKehZfRhKktBjgJlntMm6nulCn1qEg.B2O2NQ1GNLUmz9NH.cjghNVWhLvzDMxogLdKHIvb87caY5OMLYZheHT6HHz3k088JtfZnEGHu8fk8e_IFDIpVNxqqHzR8JcyQjX1b5SwxquNbOpmt5cnMPZ5pgqpf0pbcHi8-TrhHtZ2XJjSDaSwqYkPTP6oEJKgc6fDOGcJsXOPPXTJc6ZT71ZHEX1R8j94ipHBM6qer4vruZRBYMAdZVaFP.K5bI5NZ7lJG0ObtQQymgtA
 
 
 *** Test Cases ***
+UpdateAmazonWithFile
+    Log  Updating Amazon with file. Using file ${STOCK_EXCEL_PATH}.  console=${True}
+    Comment  Obtener inventario de Odoo
+    New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
+    New Context    acceptDownloads=${TRUE}
+    New Page   ${URL_AMAZON}
+
+    CrawlAmazon.Login with user ${amazon_user} and pass ${amazon_pass}
+    Sleep  1
+    AI.Click on Indicar contraseña de un solo uso desde la app de verificación
+    AI.Click on "Enviar contraseña de un solo uso"
+    
+    ${otp_key}=    Get OTP    ${otp_amazon}
+    Should Match Regexp       ${otp_key}        \\d{6}
+    Type number "${otp_key}" in field Indicar contraseña de un solo uso
+    # Check "No vuelvas a pedir un codigo en este navegador"
+    Click on "Iniciar sesion"
+    Scroll in Select Account until "Spain" is visible and click
+    Click on "Select Account"
+
+    Click on menu icon at top left
+    Go to Catalogue menu
+    Go to add products via upload submenu
+
+    # Generate tsv
+    &{sku_total}  Get All Sku And Total    excel_path=${STOCK_EXCEL_PATH}
+    ${warning_msg}  Write Tsv File All Skus    ${OUTPUT_TSV}    ${PRODUCTS_CSV}    ${sku_total}
+    # Warn if there are skus in excel that are not in woocommerce products
+    IF  "${warning_msg}"!=""
+        Create File    path=${RETURN_FILE}
+        Log  ${warning_msg}  console=${True}  level=WARN
+        Append To File  path=${RETURN_FILE}    content=${warning_msg}
+    END
+
+    # Upload tsv TODO: TEST
+    # Upload inventory file  ${OUTPUT_TSV}
+
+
 UpdateAmazon
     Comment  Obtener inventario de Odoo
     New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads

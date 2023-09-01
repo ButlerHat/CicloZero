@@ -56,7 +56,7 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/.devcontainer/postCreateCommand.sh"
+	"postCreateCommand": "source /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/.devcontainer/postCreateCommand.sh"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
