@@ -27,6 +27,7 @@ ${RESULT_EXCEL_PATH_EBAY_UNSHIPPED}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.e
 ${RESULT_EXCEL_PATH_EBAY}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.ebay.result.xlsx
 # ${RESULT_EXCEL_PATH_WOOCOMMERCE}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.woocommerce.result.xlsx
 ${RESULT_EXCEL_PATH}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.full.result.xlsx
+${RESULT_CSV_PATH}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.full.llm.result.csv
 
 
 *** Test Cases ***
@@ -61,6 +62,7 @@ CiclAI Stock
     # ================== Woocommerce ==================
     ${woocommerce_dict_obj}  Get Processing Woocommerce
     Append Dict To Main Excel    ${woocommerce_dict_obj}    ${RESULT_EXCEL_PATH_AMAZON}    ${RESULT_EXCEL_PATH}  woocom processing
+    Create Csv For Llm    ${RESULT_EXCEL_PATH}    ${RESULT_CSV_PATH}
     Log  Excel de woocommerce creado satisfactoriamente en ${RESULT_EXCEL_PATH}  console=${TRUE}
     Comment  Close browser
     Close Browser

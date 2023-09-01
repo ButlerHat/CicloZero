@@ -55,14 +55,17 @@ def ciclai_stock():
         # Create cron script
         stock_path = st.secrets.paths.stock_excel
         excel_name = 'CiclAiStock_$(date +"%H-%M_%d-%m-%Y").xlsx'
+        csv_name = 'CiclAiStock_$(date +"%H-%M_%d-%m-%Y").csv'
         excel_path = f'excel_path={os.path.join(stock_path, excel_name)}'
+        csv_path = f'csv_path={os.path.join(stock_path, csv_name)}'
         robot_path = st.secrets.paths.robot
         results_path = os.path.join(robot_path, "results")
         scripts_robot = []
         
         # CiclAI Stock
         args = [
-            f'RESULT_EXCEL_PATH:$excel_path'
+            f'RESULT_EXCEL_PATH:$excel_path',
+            f'RESULT_CSV_PATH:$csv_path'
         ]
         robot_command = robot_handler.get_robot_command("stock", args, "CiclAiStock.robot")
         log_file_stock_path = os.path.join(results_path, "stock", f'logfile_out_stock.txt')
@@ -130,10 +133,21 @@ def ciclai_stock():
         st.info("No excel found")
         return
 
+    col1, col2, _ = st.columns([2, 2, 3])
+
     last_file = os.path.join(stock_path, option)
     # Download excel
     with open(last_file, 'rb') as f:
-        st.download_button(label=option, data=f, file_name=option, key='last_excel', disabled=st.session_state.disabled)
+        col1.download_button(label=option, data=f, file_name=option, key='last_excel', disabled=st.session_state.disabled)
+    
+    # Download csv
+    csv_name = option.replace(".xlsx", ".csv")
+    csv_path = os.path.join(stock_path, csv_name)
+    if os.path.exists(csv_path):
+        with open(csv_path, 'rb') as f:
+            col2.download_button(label=f"LLM_{csv_name}", data=f, file_name=csv_name, key='last_csv', disabled=st.session_state.disabled)
+    else:
+        col2.info(f"CSV for LLM not generated")
 
     # Show excel
     st.markdown("## Show last excel")
@@ -182,12 +196,15 @@ def run_get_stock():
                 st.info("Select pages to update in the next section")
             # Add date to excel name
             excel_name = st.text_input("STOCK EXEL_NAME", f"CiclAiStock_{datetime.datetime.now().strftime('%H-%M_%d-%m-%Y')}.xlsx")
+            csv_name = excel_name.replace(".xlsx", ".csv")
             excel_path = os.path.join(stock_path, excel_name)
+            csv_path = os.path.join(stock_path, csv_name)
             
             if st.form_submit_button("Run", type="primary", on_click=disable, disabled=st.session_state.disabled):
                 # Run robot
                 args = [
-                    f"RESULT_EXCEL_PATH:{excel_path}"
+                    f"RESULT_EXCEL_PATH:{excel_path}",
+                    f"RESULT_CSV_PATH:{csv_path}"
                 ]
                 ret_code = asyncio.run(robot_handler.run_robot('stock', args, "CiclAiStock.robot"))
                 
@@ -205,6 +222,12 @@ def run_get_stock():
                 st.download_button(label=excel_name, data=f, file_name=excel_name, key='stock_excel', disabled=st.session_state.disabled)
         else:
             st.info(f"Excel not generated")
+        
+        # Download csv
+        if os.path.exists(os.path.join(stock_path, csv_name)):
+            st.markdown(f'### Download <span style="color:{csv_name}">CiclAI for LLM</span>', unsafe_allow_html=True)
+            with open(os.path.join(stock_path, csv_name), 'rb') as f:
+                st.download_button(label=csv_name, data=f, file_name=csv_name, key='stock_csv', disabled=st.session_state.disabled)
     
     display_last_run_info('stock')
 
