@@ -71,7 +71,8 @@ Set 0 to skus where have quantity and not in Stock
             Delete the input of available column for ${sku}
             Write 0 in available column for ${sku} row
             Click on save in the ${sku} row
-            ${len_el}  Evaluate  ${len_el} - 1
+            @{skus_el}  Get Elements    //td[@data-column="sku"][./../td[@data-column="quantity"]//input[not(@value="0")]]//a  
+            ${len_el}  Get Length  ${skus_el}
         ELSE
             ${i}  Evaluate  ${i} + 1
         END
