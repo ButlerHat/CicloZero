@@ -105,9 +105,11 @@ Get Stocks Odoo
 Get Unshipped Amazon
     New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
     New Context    acceptDownloads=${TRUE}
+    ${old_timeout}  Set Browser Timeout    30
     Wait New Page   ${URL_AMAZON}  wait=${1}
 
     CrawlAmazon.Login with user ${amazon_user} and pass ${amazon_pass}
+    Set Browser Timeout    timeout=${old_timeout}
     AI.Click on Indicar contraseña de un solo uso desde la app de verificación
     AI.Click on "Enviar contraseña de un solo uso"
 
@@ -163,9 +165,11 @@ Get Pending Amazon
     Comment  Obtener inventario de Odoo
     New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
     New Context    acceptDownloads=${TRUE}
+    ${old_timeout}  Set Browser Timeout    30
     Wait New Page   ${URL_AMAZON}  wait=${1}
 
     CrawlAmazon.Login with user ${amazon_user} and pass ${amazon_pass}
+    Set Browser Timeout    timeout=${old_timeout}
     AI.Click on Indicar contraseña de un solo uso desde la app de verificación
     AI.Click on "Enviar contraseña de un solo uso"
     

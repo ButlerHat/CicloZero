@@ -52,6 +52,7 @@ Set 0 to skus where have quantity and not in Stock
     
     Click on Active in Listing status filter
     Wait for spinner
+    Sleep  3
     Click on the dropdown of results per page at the bottom right
     Set 250 to results per page
 
@@ -68,9 +69,12 @@ Set 0 to skus where have quantity and not in Stock
             Log  Updating ${sku} to 0  console=${True}
             # Sometimes the sku is under the top menu. Scroll up to then scroll down if necessary
             Keyboard Key  PageUp
+            Wait for spinner
             Delete the input of available column for ${sku}
             Write 0 in available column for ${sku} row
             Click on save in the ${sku} row
+            Wait for spinner
+            Sleep  1
             @{skus_el}  Get Elements    //td[@data-column="sku"][./../td[@data-column="quantity"]//input[not(@value="0")]]//a  
             ${len_el}  Get Length  ${skus_el}
         ELSE

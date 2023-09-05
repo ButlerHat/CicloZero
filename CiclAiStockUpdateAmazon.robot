@@ -25,9 +25,11 @@ UpdateAmazon
     Comment  Obtener inventario de Odoo
     New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
     New Context    acceptDownloads=${TRUE}
+    ${old_timeout}  Set Browser Timeout    30
     New Page   ${URL_AMAZON}
 
     CrawlAmazon.Login with user ${amazon_user} and pass ${amazon_pass}
+    Set Browser Timeout    ${old_timeout}
     Sleep  1
     AI.Click on Indicar contraseña de un solo uso desde la app de verificación
     AI.Click on "Enviar contraseña de un solo uso"
@@ -76,7 +78,7 @@ UpdateAmazon
             END
         EXCEPT
             Log  No sku ${sku} in Amazon (Skipping).  console=${True}  level=WARN
-            Append To File  path=${RETURN_FILE}    content=No ${sku} (active) in Amazon (Skipping).${SPACE}
+            Append To File  path=${RETURN_FILE}    content=No ${sku} in Amazon (Skipping).${SPACE}
             Delete search box
             CONTINUE
         END
