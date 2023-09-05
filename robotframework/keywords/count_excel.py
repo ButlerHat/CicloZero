@@ -49,6 +49,11 @@ def _add_total_column_to_dataframe(dataframe: pd.DataFrame, column_name: str):
     """
     Add a column to a pandas dataframe with the formula "=B2-C2-D2-E2-F2"
     """
+    # Ensure the column exists and has dtype 'object'
+    if column_name not in dataframe.columns:
+        dataframe[column_name] = None  # Initialize with None values
+        dataframe[column_name] = dataframe[column_name].astype('object')
+        
     for i in range(len(dataframe)):
         dataframe.loc[i, column_name] = f"=B{i+2}-C{i+2}-D{i+2}-E{i+2}-F{i+2}"
 
@@ -156,10 +161,8 @@ def append_tsv_to_main_excel(tsv_path: str, excel_path:str, output_excel_path: s
             if len(matched_id_reacondicionado) == 1:
                 print(f'Sku "{prod}" matched with "{matched_id_reacondicionado.iloc[0]["prod"]}" ignoring calidad')
                 excel_df.loc[matched_id_reacondicionado.index, "amz unshipped"] = model_count.loc[i, "count"]  # type: ignore
-            elif len(matched_id_reacondicionado) > 1:
-                # Assign to the one with calidad = A
-                print(f'Sku "{prod}" matched with "{matched_id_reacondicionado.iloc[0]["prod"]}" ignoring calidad')
-                excel_df.loc[ matched_id_calidad[matched_id_calidad["calidad"] == 'A'], "amz unshipped"] = model_count.loc[i, "count"]  # type: ignore
+            # If two matches or more, assign -1. Don't subtract from any of the matches. 
+            # Hablado con Camilo el 9/5/2023
             else:
             # No match
                 new_row = [prod, "", model_count.loc[i, "count"]] + [""] * (len(excel_df.columns) - 3)

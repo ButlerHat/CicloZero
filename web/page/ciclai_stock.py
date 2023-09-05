@@ -66,8 +66,16 @@ def ciclai_stock():
         ]
         robot_command = robot_handler.get_robot_command("stock", args, "CiclAiStock.robot")
         log_file_stock_path = os.path.join(results_path, "stock", f'logfile_out_stock.txt')
+        html_file_stock_path = os.path.join(results_path, "stock", f'log.html')
         script_robot = robot_command + f' > {log_file_stock_path} 2>&1'
-        scripts_robot.append(script_robot)
+        notification_sh = f""" || curl \
+                -T "{html_file_stock_path}" \
+                -H "X-Email: paipayainfo@gmail.com" \
+                -H "Tags: warning" \
+                -H "Filename: CiclAiStock_fail_auto_$(date +"%H-%M_%d-%m-%Y").html" \
+                "https://notifications.paipaya.com/ciclai_fail"
+            """
+        scripts_robot.append(script_robot + notification_sh)
 
         # CiclAI Stock Update
         args_update = [
@@ -78,8 +86,16 @@ def ciclai_stock():
             robot_command = robot_handler.get_robot_command(page, args_update, robot_file)
             # Redirect output to log file
             log_file_path = os.path.join(results_path, page, f'logfile_out_{page}.txt')
+            html_file_stock_path = os.path.join(results_path, page, f'log.html')
             script_robot = robot_command + f' > {log_file_path} 2>&1'
-            scripts_robot.append(script_robot)
+            notification_sh = f""" || curl \
+                -T "{html_file_stock_path}" \
+                -H "X-Email: paipayainfo@gmail.com" \
+                -H "Tags: warning" \
+                -H "Filename: CiclAiStockUpdate_{page}_fail_auto_$(date +"%H-%M_%d-%m-%Y").html" \
+                "https://notifications.paipaya.com/ciclai_fail"
+            """
+            scripts_robot.append(script_robot + notification_sh)
 
         # Create jobs folder
         if not os.path.exists(os.path.join(st.secrets.paths.robot, "jobs")):
@@ -190,7 +206,7 @@ def run_get_stock():
                     f"RESULT_EXCEL_PATH:{excel_path}"
                 ]
                 ret_code = asyncio.run(robot_handler.run_robot('stock', args, "CiclAiStock.robot"))
-                
+
                 if select_update_after == "Yes":
                     if ret_code != 0:
                         st.error("Robot failed. So stock will not be updated")

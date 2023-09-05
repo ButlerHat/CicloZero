@@ -1,4 +1,5 @@
 import os
+import requests
 import streamlit as st
 import asyncio
 
@@ -23,7 +24,7 @@ async def run_robots(ids_args: dict, robot_files: list, timeout=40):
     await asyncio.gather(*tasks)
 
 
-async def run_robot(id: str, vars: list, robot: str, msg=None):
+async def run_robot(id_: str, vars: list, robot: str, msg=None):
     """
     Run robot specified in robot variable
     params:
@@ -33,12 +34,12 @@ async def run_robot(id: str, vars: list, robot: str, msg=None):
         msg: str - message to show in spinner
     """
     robot_path = st.secrets.paths.robot
-    result_path = os.path.join(robot_path, "results", id)
+    result_path = os.path.join(robot_path, "results", id_)
     # If directory does not exist, create it
     if not os.path.exists(result_path):
         os.makedirs(result_path)
 
-    robot_command = get_robot_command(id, vars, robot)
+    robot_command = get_robot_command(id_, vars, robot)
 
     # Move to robot directory
     print(f"Running {robot_command} \n")
@@ -51,7 +52,7 @@ async def run_robot(id: str, vars: list, robot: str, msg=None):
             stderr=asyncio.subprocess.PIPE)
         stdout, stderr = await proc.communicate()
         ret_val = proc.returncode
-        with open(os.sep.join([robot_path, "results", id, f'logfile_out_{id}.txt']), 'w') as f2:
+        with open(os.sep.join([robot_path, "results", id_, f'logfile_out_{id_}.txt']), 'w') as f2:
             f2.write(stdout.decode())
             f2.write(stderr.decode())
 
@@ -69,11 +70,32 @@ async def run_robot(id: str, vars: list, robot: str, msg=None):
         return ret_val
 
     if ret_val != 0:
-        msg_ = f"Robot failed with return code {ret_val}" if not msg else f'Fail {ret_val}: {id}'
+        msg_ = f"Robot failed with return code {ret_val}" if not msg else f'Fail {ret_val}: {id_}'
         st.error(msg_)
+        # Send notification
+        log_file = os.sep.join([result_path, "log.html"])
+        if os.path.exists(log_file):
+            requests.put(
+                "https://notifications.paipaya.com/ciclai_fail", 
+                data=open(log_file, 'rb'),
+                headers={
+                    "X-Email": "paipayainfo@gmail.com",
+                    "Tags": "warning",
+                    "Filename": f"{id_}_fail_manually.html",
+                }
+            )
+        else:
+            requests.post(
+                "https://notifications.paipaya.com/ciclai_fail",
+                headers={
+                    "X-Email": "paipayainfo@gmail.com",
+                    "Tags": "warning"
+                },
+                data=f"{id_} ({robot}) failed manually. No hmtl log file found."
+            )
         
     else:
-        msg_ = f"Robot finished successfully" if not msg else f'Success: {id}'
+        msg_ = f"Robot finished successfully" if not msg else f'Success: {id_}'
         st.success(msg_)
 
     return ret_val
