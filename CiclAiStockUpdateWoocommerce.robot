@@ -29,6 +29,8 @@ ${OUTPUT_CSV}    ${OUTPUT_DIR}${/}${OUTPUT_CSV_FILE}
 
 Update Woocommerce Stock
     [Documentation]  Creacion de excel para hacer el control de stock en woocommerce
+
+    Log  Updating Woocommerce with file. Using file ${STOCK_EXCEL_PATH}.  console=${True}
     Comment  Generate csv to update stock
     ${skus_not_updated}  Update Woocommerce Csv  ${PRODUCTS_CSV}  ${STOCK_EXCEL_PATH}  ${OUTPUT_CSV}
     Create File    path=${RETURN_FILE}    content=Warning: SKUs ${skus_not_updated} not in woocommerce

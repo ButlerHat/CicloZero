@@ -6,15 +6,22 @@ import pandas as pd
 from count_excel import SELLERS
 
 
-def update_woocommerce_csv(products_csv, stock_excel, output_csv):
+def get_products_dataframe(products_csv: str) -> pd.DataFrame:
+    """
+    Get the dataframe of skus from the csv file
+    """
     # Read the CSV file
     woocommerce_df = pd.read_csv(products_csv)
-
     # Remove unnamed columns
     woocommerce_df = woocommerce_df.loc[:, ~woocommerce_df.columns.str.contains('^Unnamed')]
-
     # Remove rows where Parent ID is NaN
     woocommerce_df = woocommerce_df.dropna(subset=['Parent ID'])
+    
+    return woocommerce_df
+
+
+def update_woocommerce_csv(products_csv, stock_excel, output_csv):
+    woocommerce_df = get_products_dataframe(products_csv)
 
     # Update the stock and stock status columns
     woocommerce_df["Stock"] = 0
