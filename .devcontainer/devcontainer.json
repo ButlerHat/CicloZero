@@ -7,7 +7,9 @@
 	"workspaceFolder": "/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero",
 
 	"features": {
-		"ghcr.io/devcontainers/features/desktop-lite:1": {}
+		"ghcr.io/devcontainers/features/desktop-lite:1": {},
+		// For creating firebase functions
+		"ghcr.io/devcontainers-contrib/features/firebase-cli:2": {}
 	},
 
 	"shutdownAction": "none",

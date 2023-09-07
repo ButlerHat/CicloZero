@@ -22,4 +22,7 @@
         "devcontainer*.json": "jsonc"
     },
     "robot.lint.undefinedVariableImports": true,
+    "eslint.options": {
+        "overrideConfigFile": "/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/firebase/functions/.eslintrc.js"
+    }
 }

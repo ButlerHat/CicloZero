@@ -51,8 +51,14 @@ def update_woocommerce_csv(products_csv, stock_excel, output_csv):
         woocommerce_df.loc[woocommerce_df['Sku'] == sku, 'Stock'] = total
         woocommerce_df.loc[woocommerce_df['Sku'] == sku, 'Stock status'] = 'instock' if total > 0 else 'outofstock'
 
+    # Filter all rows where stock is 0
+    woocommerce_df_non_empty = woocommerce_df[woocommerce_df['Stock'] > 0]
+
     # Save the updated dataframe to a new CSV file
     woocommerce_df.to_csv(output_csv, index=False)
+
+    # Save the non-empty dataframe to a new CSV file
+    woocommerce_df_non_empty.to_csv(output_csv.replace(".csv", "_non_empty.csv"), index=False)
 
     return not_found
 
