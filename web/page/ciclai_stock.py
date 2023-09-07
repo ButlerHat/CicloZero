@@ -8,6 +8,7 @@ import utils.robot_results as robot_results
 import utils.excel as excel
 import utils.vnc as vnc
 from utils.robot_results import RobotStatus
+import utils.ebay_oauth_manager as ebay_oauth
 
 
 PAGES = {
@@ -22,6 +23,33 @@ def enable():
     if "disabled" in st.session_state and st.session_state.disabled == True:
         st.session_state.disabled = False
         st.experimental_rerun()
+
+def auth_with_servers():
+    st.markdown("---")
+    st.markdown("## Auth with servers")
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+    with col1:
+        st.markdown("### Odoo")
+        st.success("With credentials")
+
+    with col2:
+        st.markdown("### Amazon seller")
+        st.success("With credentials")
+    
+    with col3:
+        st.markdown("### Woocommerce")
+        st.success("With credentials")
+    
+    with col4:
+        st.markdown("### Ebay")
+        with st.spinner("Login in Ebay..."):
+            auth, current_user = ebay_oauth.check_auth_ebay()
+        if auth:
+            st.success(f"Logged to Ebay as {current_user}")
+        else:
+            oauth_url = ebay_oauth.get_authorization_url()
+            st.error("Not logged to Ebay. After authorizing, reload window")
+            st.markdown(f'<a href="{oauth_url}" target="_blank">Login Ebay</a>', unsafe_allow_html=True)
 
 
 ## Create a function to display a title of "Ciclai Stock", a Run button and a cron field to schedule the task
@@ -135,6 +163,9 @@ def ciclai_stock():
                 col1.success("Job deleted successfully")
             else:
                 col1.warning("Job not found")
+
+    # Auth with servers
+    auth_with_servers()
     
     # Run get stock
     run_get_stock()
@@ -199,7 +230,7 @@ def run_get_stock():
     
     with col1:
         update_after: bool = False
-        st.warning("If 'yes' is selected, the stock will be updated after get stock")
+        st.info("If 'yes' is selected, the stock will be updated after get stock")
 
         # Get Stock
         st.markdown("### Get stock and update stock")

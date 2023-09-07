@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #111111;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .container {
+        background-color: #3f4a65;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .countdown {
+        font-size: 2em;
+        color: #7D7D7D;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- Login Success in green -->
+    <h1 style="color: #3bbd3b;">Login Success!</h1>
+    <h2>Reload CiclAi Page</h2>	
+    <p>This page will close automatically in <span class="countdown">5</span> seconds.</p>
+</div>
+<script>
+    let countdownElement = document.querySelector('.countdown');
+    let countdownValue = 10;
+    let countdownInterval = setInterval(() => {
+        countdownValue -= 1;
+        countdownElement.textContent = countdownValue;
+        if (countdownValue === 0) {
+            clearInterval(countdownInterval);
+            window.close();
+        }
+    }, 1000);
+</script>
+</body>
+</html>

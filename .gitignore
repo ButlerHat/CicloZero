@@ -1,5 +1,6 @@
 .DS_Store
 .conda/
+ebay_credentials.yaml
 
 # RobotFramework
 prod_downloads/
