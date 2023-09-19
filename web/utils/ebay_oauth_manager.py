@@ -40,6 +40,26 @@ SCOPES = [
         "https://api.ebay.com/oauth/api_scope/commerce.notification.subscription.readonly"
     ]  # a URL-encoded string of space-separated scopes
 
+# Prod scopes scope=https://api.ebay.com/oauth/api_scope https://api.ebay.com/oauth/api_scope/sell.marketing.readonly https://api.ebay.com/oauth/api_scope/sell.marketing https://api.ebay.com/oauth/api_scope/sell.inventory.readonly https://api.ebay.com/oauth/api_scope/sell.inventory https://api.ebay.com/oauth/api_scope/sell.account.readonly https://api.ebay.com/oauth/api_scope/sell.account https://api.ebay.com/oauth/api_scope/sell.fulfillment.readonly https://api.ebay.com/oauth/api_scope/sell.fulfillment https://api.ebay.com/oauth/api_scope/sell.analytics.readonly https://api.ebay.com/oauth/api_scope/sell.finances https://api.ebay.com/oauth/api_scope/sell.payment.dispute https://api.ebay.com/oauth/api_scope/commerce.identity.readonly https://api.ebay.com/oauth/api_scope/commerce.notification.subscription https://api.ebay.com/oauth/api_scope/commerce.notification.subscription.readonly
+PROD_SCOPES = [
+    "https://api.ebay.com/oauth/api_scope",
+    "https://api.ebay.com/oauth/api_scope/sell.marketing.readonly",
+    "https://api.ebay.com/oauth/api_scope/sell.marketing",
+    "https://api.ebay.com/oauth/api_scope/sell.inventory.readonly",
+    "https://api.ebay.com/oauth/api_scope/sell.inventory",
+    "https://api.ebay.com/oauth/api_scope/sell.account.readonly",
+    "https://api.ebay.com/oauth/api_scope/sell.account",
+    "https://api.ebay.com/oauth/api_scope/sell.fulfillment.readonly",
+    "https://api.ebay.com/oauth/api_scope/sell.fulfillment",
+    "https://api.ebay.com/oauth/api_scope/sell.analytics.readonly",
+    "https://api.ebay.com/oauth/api_scope/sell.finances",
+    "https://api.ebay.com/oauth/api_scope/sell.payment.dispute",
+    "https://api.ebay.com/oauth/api_scope/commerce.identity.readonly",
+    "https://api.ebay.com/oauth/api_scope/commerce.notification.subscription",
+    "https://api.ebay.com/oauth/api_scope/commerce.notification.subscription.readonly"
+]
+
+
 
 def get_authorization_url():
     """
@@ -49,17 +69,17 @@ def get_authorization_url():
     with open(credentials_path, "r") as f:
         credentials = yaml.safe_load(f)
 
-    url = "https://auth.sandbox.ebay.com/oauth2/authorize"
+    url = st.secrets.ebay.url_authorization_token
     client_id = credentials["keyset"]["client_id"]
     redirect_uri = credentials["keyset"]["ru_name"]
-    return f"{url}?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code&scope={'%20'.join(SCOPES)}"
+    return f"{url}?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code&scope={'%20'.join(PROD_SCOPES)}"
 
 
 def get_user(access_token: str):
     headers = {
         'Authorization': f'Bearer {access_token}'
     }
-    url = "https://apiz.sandbox.ebay.com/commerce/identity/v1/user/"
+    url = st.secrets.ebay.url_identity_user
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return response.json()["username"]
@@ -107,7 +127,7 @@ def check_auth_ebay() -> tuple[bool, str]:
         "scope": ' '.join(SCOPES)
     }
 
-    url = "https://api.sandbox.ebay.com/identity/v1/oauth2/token"
+    url = st.secrets.ebay.url_access_token
     response = requests.post(url, headers=headers, data=body)
     if response.status_code == 200:
         response_json = response.json()

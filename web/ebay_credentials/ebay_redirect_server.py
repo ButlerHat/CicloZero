@@ -30,9 +30,16 @@ credentials = {
 
 # Store in yaml file. Read .streamlit/secrents.toml
 curr_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Sandbox
 st_secret_path = os.path.join(curr_dir, "..", ".streamlit", "secrets.toml")
-data = toml.load(st_secret_path)
-CREDENTIALS_FILE_PATH = data["paths"]["ebay_credentials"]
+# Production
+# st_secret_path = os.path.join(curr_dir, "..", ".streamlit", "secrets_prod.toml")
+
+STREAMLIT_SECRETS = toml.load(st_secret_path)
+
+# Get credentials file path
+CREDENTIALS_FILE_PATH = STREAMLIT_SECRETS["paths"]["ebay_credentials"]
 assert os.path.exists(os.path.dirname(CREDENTIALS_FILE_PATH)), "ebay_credentials folder not found!"
 
 with open(CREDENTIALS_FILE_PATH, "w") as f:
@@ -60,7 +67,7 @@ def get_access_token(authorization_code: str) -> tuple[bool, str]:
         'redirect_uri': redirect_uri
     }
 
-    response = requests.post('https://api.sandbox.ebay.com/identity/v1/oauth2/token', headers=headers, data=body)
+    response = requests.post(STREAMLIT_SECRETS['ebay']['url_access_token'], headers=headers, data=body)
     if response.status_code == 200:
         response_json = response.json()
         credentials['current'] = {}
