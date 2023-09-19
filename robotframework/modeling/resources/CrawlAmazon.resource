@@ -62,6 +62,7 @@ Set 0 to skus where have quantity and not in Stock
     
     WHILE  ${i} < ${len_el}
         ${sku}  Get Text  ${skus_el[${i}]}
+        ${sku}  Set Variable  ${sku.replace("\n", "").strip()}
     
         IF  "${sku}" not in "@{skus_in_stock}"
             ${status}  ${msg}  Run Keyword And Ignore Error  File Should Exist    ${RETURN_FILE}
