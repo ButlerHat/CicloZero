@@ -89,6 +89,7 @@ UpdateAmazon
 
     Click on menu icon at top left
     Go to "Inventory" at the left
+    Sleep  0.5
     Go to "Manage All Inventory" submenu
 
     &{sku_total}  Get All Sku And Total    excel_path=${STOCK_EXCEL_PATH}
@@ -106,6 +107,7 @@ UpdateAmazon
 
     # Select only active products
     Wait for spinner
+    Sleep  1
     Select All in Listing status
     Wait for spinner
     FOR  ${sku}  ${total}  IN  &{sku_total}
