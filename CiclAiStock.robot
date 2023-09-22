@@ -145,8 +145,8 @@ Get Unshipped Amazon
             BREAK
         END
         
-        ${contains_no_new}  Evaluate  "no new" in "${txt.lower()}"
-        IF  ${contains_no_new}  RETURN  False
+        ${contains_no_orders}  Evaluate  "no orde" in "${txt.lower()}"
+        IF  ${contains_no_orders}  RETURN  False
 
         Sleep  30
         # Check timeout

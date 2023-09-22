@@ -29,6 +29,9 @@ ${URL_AMAZON}  https://sellercentral.amazon.es/ap/signin?openid.pape.max_auth_ag
 
 *** Test Cases ***
 UpdateAmazonWithFile
+    [Documentation]  Update Amazon with file. Not in production yet
+    [Tags]  robot:exclude
+
     Log  Updating Amazon with file. Using file ${STOCK_EXCEL_PATH}.  console=${True}
     Comment  Obtener inventario de Odoo
     New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads

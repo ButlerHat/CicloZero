@@ -11,7 +11,7 @@ Suite Setup  Setup Suite
 
 
 *** Variables ***
-${OUTPUT_DIR}  /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/results/update_stock
+${OUTPUT_DIR}  /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/results/Woocommerce
 ${FILE_DIR}    /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
 ${DEFAULT_AI_MODE}  Flexible
 ${STOCK_EXCEL_PATH}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.full.result.xlsx
@@ -32,8 +32,8 @@ Update Woocommerce Stock
 
     Log  Updating Woocommerce with file. Using file ${STOCK_EXCEL_PATH}.  console=${True}
     Comment  Generate csv to update stock
-    ${skus_not_updated}  Update Woocommerce Csv  ${PRODUCTS_CSV}  ${STOCK_EXCEL_PATH}  ${OUTPUT_CSV}
-    Create File    path=${RETURN_FILE}    content=Warning: SKUs ${skus_not_updated} not in woocommerce
+    ${skus_not_updated}  ${csv_path_list}  Update Woocommerce Csv  ${PRODUCTS_CSV}  ${STOCK_EXCEL_PATH}  ${OUTPUT_CSV}
+    Create File    path=${RETURN_FILE}    content=Warning: SKUs ${skus_not_updated} not in woocommerce${\n}
     
     Comment  Obtener los unshipped de Woocommerce
     New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
@@ -43,9 +43,21 @@ Update Woocommerce Stock
     CrawlWoocommerce.Login with user ${woocommerce_user} and pass ${woocommerce_pass}
     CrawlWoocommerce.Click on Gestor de existencias in the menu
     CrawlWoocommerce.Go to Importar/Exportar under Gestor de existencias
-    CrawlWoocommerce.Upload inventory file  ${OUTPUT_CSV}
-    CrawlWoocommerce.Click on subir
-    CrawlWoocommerce.Check if ${OUTPUT_CSV_FILE} is uploaded
+
+    Set Browser Timeout    timeout=2m
+    FOR  ${sku_path}    IN    @{csv_path_list}
+        Log  Uploading file ${sku_path}  console=${True}
+        CrawlWoocommerce.Upload inventory file  ${sku_path}
+        CrawlWoocommerce.Click on subir
+        ${status}  CrawlWoocommerce.Check if ${sku_path.split('/')[-1]} is uploaded
+        IF  "${status}" == "${False}"
+            # Log  File ${sku_path} not uploaded  console=${True}  level=WARN
+            Append To File    ${RETURN_FILE}    ${sku_path.split('/')[-1]} not uploaded${\n}
+        ELSE
+            Log  File ${sku_path} uploaded  console=${True}
+        END
+        Browser.Reload
+    END
 
     Close Browser
 

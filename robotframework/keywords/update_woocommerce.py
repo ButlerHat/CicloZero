@@ -58,10 +58,17 @@ def update_woocommerce_csv(products_csv, stock_excel, output_csv):
         woocommerce_df.loc[woocommerce_df['Sku'] == sku, 'Stock'] = total
         woocommerce_df.loc[woocommerce_df['Sku'] == sku, 'Stock status'] = 'instock' if total > 0 else 'outofstock'
 
-    # Save the updated dataframe to a new CSV file
-    woocommerce_df.to_csv(output_csv, index=False)
+    # Split the dataframe in dataframes of 40 rows
+    woocommerce_df_list = [woocommerce_df[i:i+20] for i in range(0,woocommerce_df.shape[0],20)]
 
-    return not_found
+    # Save all updated dataframe to a new CSV file
+    csv_path_list = []
+    for index, woocommerce_df in enumerate(woocommerce_df_list):
+        csv_path = output_csv.replace(".csv", f"_{index}.csv")
+        woocommerce_df.to_csv(csv_path, index=False)
+        csv_path_list.append(csv_path)
+
+    return not_found, csv_path_list
 
     
 if __name__ == "__main__":

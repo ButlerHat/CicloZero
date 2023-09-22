@@ -143,5 +143,14 @@ Click on subir
 
 Check if ${file} is uploaded
     [Tags]  no_record
-    Wait For Elements State    //form[.//input[@name="uploadFile"]]/../..//*[contains(.,"${file}")]  visible  timeout=1m
-    
+    ${status}  ${msg}  Run Keyword And Ignore Error  Wait For Elements State    //form[.//input[@name="uploadFile"]]/../..//*[contains(.,"${file}")]  visible  timeout=20s
+    IF  "${status}" == "FAIL"
+        Log  File ${file} not uploaded  level=WARN
+        RETURN  ${False}
+    END
+
+    ${status}  ${msg}  Run Keyword And Ignore Error  Wait For Elements State    (//form[.//input[@name="uploadFile"]]/../..//*[contains(.,"subido el producto")])[1]  visible  timeout=1s
+    IF  "${status}" == "FAIL"
+        Log  File ${file} not uploaded  level=WARN
+        RETURN  ${False}
+    END
