@@ -52,7 +52,7 @@ CiclAI Stock
     Comment  Close browser
     Close Browser
 
-    # ================== Amazon Unshipped ==================
+    # ================== Amazon Pending ==================
     ${amazon_dict_obj}  Get Pending Amazon
     Append Dict To Main Excel     ${amazon_dict_obj}    ${RESULT_EXCEL_PATH_AMZ_UNSHIPPED}    ${RESULT_EXCEL_PATH_AMAZON}   amz pending
     Log  Excel de amazon creado satisfactoriamente en ${RESULT_EXCEL_PATH_AMAZON}  console=${TRUE}
@@ -118,7 +118,7 @@ Get Unshipped Amazon
     ${otp_key}=    Get OTP    ${otp_amazon}
     Should Match Regexp       ${otp_key}        \\d{6}
     Type number "${otp_key}" in field Indicar contraseña de un solo uso
-    Check "No vuelvas a pedir un codigo en este navegador"
+    # Check "No vuelvas a pedir un codigo en este navegador"
     Click on "Iniciar sesion"
     Scroll in Select Account until "Spain" is visible and click
     Click on "Select Account"
@@ -178,7 +178,7 @@ Get Pending Amazon
     ${otp_key}=    Get OTP    ${otp_amazon}
     Should Match Regexp       ${otp_key}        \\d{6}
     Type number "${otp_key}" in field Indicar contraseña de un solo uso
-    Check "No vuelvas a pedir un codigo en este navegador"
+    # Check "No vuelvas a pedir un codigo en este navegador"
     Click on "Iniciar sesion"
     Scroll in Select Account until "Spain" is visible and click
     Click on "Select Account"

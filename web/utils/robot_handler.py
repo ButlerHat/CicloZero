@@ -67,7 +67,6 @@ async def run_robot(id_: str, vars: list, robot: str, msg=None):
                 st.success(msg_)
             else:
                 st.error(msg_)
-        return ret_val
 
     if ret_val != 0:
         msg_ = f"Robot failed with return code {ret_val}" if not msg else f'Fail {ret_val}: {id_}'

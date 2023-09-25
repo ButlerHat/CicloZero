@@ -49,13 +49,16 @@ def _add_total_column_to_dataframe(dataframe: pd.DataFrame, column_name: str):
     """
     Add a column to a pandas dataframe with the formula "=B2-C2-D2-E2-F2"
     """
+    if column_name in dataframe.columns:
+        # Drop column
+        dataframe = dataframe.drop(columns=[column_name])
+    
     # Ensure the column exists and has dtype 'object'
-    if column_name not in dataframe.columns:
-        dataframe[column_name] = None  # Initialize with None values
-        dataframe[column_name] = dataframe[column_name].astype('object')
+    dataframe[column_name] = ""  # Initialize with empty values
+    dataframe[column_name] = dataframe[column_name].astype('object')
         
     for i in range(len(dataframe)):
-        dataframe.loc[i, column_name] = f"=B{i+2}-C{i+2}-D{i+2}-E{i+2}-F{i+2}"
+        dataframe.at[i, column_name] = f"=B{i+2}-C{i+2}-D{i+2}-E{i+2}-F{i+2}"
 
 def _add_attributes_columns(dataframe: pd.DataFrame):
     """
@@ -75,7 +78,7 @@ def _add_attributes_columns(dataframe: pd.DataFrame):
         attributes = get_attributes_from_sku(sku)
         dataframe.loc[i, "id_modelo"] = attributes["id_modelo"]
         dataframe.loc[i, "color"] = attributes["color"]
-        dataframe.loc[i, "almacenamiento"] = attributes["almacenamiento"]
+        dataframe.loc[i, "almacenamiento"] = int(attributes["almacenamiento"])
         dataframe.loc[i, "calidad"] = attributes["calidad"]
         dataframe.loc[i, "estado"] = attributes["estado"]
         dataframe.loc[i, "reacondicionado"] = attributes["reacondicionado"]

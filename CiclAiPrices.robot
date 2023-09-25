@@ -36,7 +36,7 @@ ComparePrices
     ${otp_key}=    Get OTP    ${otp_amazon}
     Should Match Regexp       ${otp_key}        \\d{6}
     Type number "${otp_key}" in field Indicar contraseña de un solo uso
-    Check "No vuelvas a pedir un codigo en este navegador"
+    # Check "No vuelvas a pedir un codigo en este navegador"
     Click on "Iniciar sesion"
     Scroll in Select Account until "Spain" is visible and click
     Click on "Select Account"
