@@ -136,6 +136,33 @@ def ciclai_stock():
             else:
                 col1.warning("Job not found")
     
+    # Set woocommerce file
+    st.markdown("## Woocommerce file")
+    with st.expander("Set woocommerce file", expanded=False):
+        col1, col2 = st.columns([1, 2])
+        file_path =  os.path.join(st.secrets.paths.woocommerce_files, "data_woocommerce_products.csv")
+        with col1:
+            st.markdown("### Download woocommerce file")
+            if file_path is not None and os.path.exists(file_path):
+                with open(file_path, 'rb') as f:
+                    st.download_button(label="Download current woocommerce file", data=f, file_name="data_woocommerce_products.csv", disabled=st.session_state.disabled)
+            else:
+                st.error("No woocommerce file found")
+            
+            st.markdown("### Set new woocommerce file")
+            with st.form("Upload woocommerce file"):
+                uploaded_file = st.file_uploader("Upload woocommerce file", type=["csv"])
+                if st.form_submit_button("Upload", type="primary", on_click=disable, disabled=st.session_state.disabled) and uploaded_file is not None:
+                    excel.file_to_excel(uploaded_file, file_path)
+                    st.success(f"File {uploaded_file.name} uploaded successfully")
+                
+        with col2:
+            if file_path and os.path.exists(file_path):
+                df = excel.load_csv_file(file_path)
+                st.dataframe(df)
+            else:
+                st.error("No woocommerce file found")
+
     # Run get stock
     run_get_stock()
     enable()
