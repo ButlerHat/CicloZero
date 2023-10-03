@@ -379,5 +379,5 @@ def display_last_run_info(id_workflow: str):
             st.info(f"Not log file (log.html)")
         else:
             with open(log_html_path, 'rb') as f:
-                st.download_button(label="Download log.html", data=f, file_name="log.html", disabled=st.session_state.disabled)
+                st.download_button(label="Download log.html", data=f, file_name="log.html", disabled=st.session_state.disabled, key=f"download_log_{id_workflow}")
 

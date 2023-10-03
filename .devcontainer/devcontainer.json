@@ -51,7 +51,8 @@
 				"github.copilot",
 				"robocorp.robotframework-lsp",
 				"ms-vscode.live-server",
-				"donjayamanne.githistory"
+				"donjayamanne.githistory",
+				"ryu1kn.partial-diff"
 			]
 		}
 	},

@@ -10,6 +10,7 @@ services:
       - ${HOST_HOME}/data/CicloZero/results:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/results:cached
       - ${HOST_HOME}/data/CicloZero/downloads:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/downloads:cached
       - ${HOST_HOME}/data/CicloZero/data:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/data:cached
+      - ${HOST_HOME}/urjc_chapo/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/robotframework/keywords/woocommerce_files:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/robotframework/keywords/woocommerce_files:cached
       - cron_volume:/var/spool/cron/crontabs:cached
     cap_add:
       - SYS_ADMIN
