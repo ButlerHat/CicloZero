@@ -3,10 +3,13 @@ services:
   ciclozero_dev:
     build:
       context: ..
+      # Dockerfile is relative to context
       dockerfile: .devcontainer/Dockerfile
       args:
         USER_ID: ${USER_ID}
         GROUP_ID: ${GROUP_ID}
+        PYPI_USER: ${PYPI_USER}
+        PYPI_PASS: ${PYPI_PASS}
         GITHUB_TOKEN: ${GITHUB_TOKEN}
       target: base
     container_name: ciclozero_dev

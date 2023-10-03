@@ -15,6 +15,7 @@ dependencies:
   - pip=22.1.2                  # https://pip.pypa.io/en/stable/news/
   - pip:
       # Define pip packages here -> https://pypi.org/
+      # - robotframework-dist-butlerhat[browser_stealth] > Defined in post-install command with -e
       - robotframework-otp
       - pyotp
       - pandas

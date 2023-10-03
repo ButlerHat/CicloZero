@@ -3,6 +3,8 @@ FROM mcr.microsoft.com/devcontainers/miniconda:0-3 AS base
 ARG UNAME=vscode
 ARG USER_ID=1000
 ARG GROUP_ID=1000
+ARG PYPI_USER
+ARG PYPI_PASS
 ARG GITHUB_TOKEN
 
 # This image already has a user vscode
@@ -31,6 +33,7 @@ USER $UNAME
 # copy "noop.txt" so the COPY instruction does not fail if no environment.yml exists.
 COPY conda.yaml* .devcontainer/noop.txt /tmp/conda-tmp/
 RUN if [ -f "/tmp/conda-tmp/conda.yaml" ]; then umask 0002 && conda env create -n robotframework -f /tmp/conda-tmp/conda.yaml; fi 
+RUN conda init bash
 RUN echo "conda activate robotframework" >> ~/.bashrc
 
 COPY web/conda.yaml* .devcontainer/noop.txt /tmp/conda-tmp/web/
@@ -67,16 +70,23 @@ WORKDIR /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSui
 # This is needed to avoid permissions errors when clonning with actions
 RUN chown -R $UNAME:$UNAME /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
 
-COPY conda-prod.yaml /tmp/pip-tmp/conda-prod.yaml
-COPY .devcontainer/resolve_conda_secret.py /tmp/pip-tmp/resolve_conda_secret.py
+COPY conda-prod.yaml /tmp/pip-tmp/conda.yaml
+# COPY .devcontainer/resolve_conda_secret.py /tmp/pip-tmp/resolve_conda_secret.py
 
 WORKDIR /tmp/pip-tmp
-RUN python resolve_conda_secret.py --token $GITHUB_TOKEN
-RUN conda env update -n robotframework -f conda_pass.yaml --prune
+ENV PIP_EXTRA_INDEX_URL=https://$PYPI_USER:$PYPI_PASS@pypiserver.paipaya.com/
+# RUN python resolve_conda_secret.py --token $GITHUB_TOKEN
+RUN conda env update -n robotframework -f conda.yaml --prune
 RUN chmod -R a+rw /opt/conda/envs/robotframework/lib/python3.10/site-packages/Browser
-RUN rm conda_pass.yaml
+RUN rm conda.yaml
+RUN unset PIP_EXTRA_INDEX_URL
+
+USER $UNAME
+
+# For using npm installed in conda
+ENV PATH=/opt/conda/envs/robotframework/bin:$PATH
+RUN /opt/conda/envs/robotframework/bin/python -m Browser.entry init
 
 WORKDIR /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero
 
-USER $UNAME
 CMD ["source", "./.devcontainer/postCreateCommand.sh"]

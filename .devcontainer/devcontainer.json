@@ -50,13 +50,14 @@
 				"ms-python.pylint",
 				"github.copilot",
 				"robocorp.robotframework-lsp",
-				"ms-vscode.live-server"
+				"ms-vscode.live-server",
+				"donjayamanne.githistory"
 			]
 		}
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "source /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/.devcontainer/postCreateCommand.sh"
+	"postCreateCommand": "bash /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/.devcontainer/postCreateCommand.sh"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

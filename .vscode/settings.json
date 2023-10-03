@@ -22,4 +22,5 @@
         "devcontainer*.json": "jsonc"
     },
     "robot.lint.undefinedVariableImports": true,
+    "robot.python.executable": "/opt/conda/envs/robotframework/bin/python",
 }
