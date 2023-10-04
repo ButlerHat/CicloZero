@@ -10,7 +10,9 @@ import openpyxl
 SELLERS = [
     "amz unshipped", 
     "amz pending", 
-    "woocom processing", 
+    "woocom processing",
+    "ebay unshipped",
+    "ebay pending",
     "flend"
 ]
 

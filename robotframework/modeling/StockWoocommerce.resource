@@ -1,19 +1,11 @@
 *** Settings ***
-Library   ButlerRobot.AIBrowserLibrary  presentation_mode=${True}  fix_bbox=${TRUE}  console=${False}  output_path=${OUTPUT_DIR}/crawl_amazon_data  WITH NAME  Browser
+Library    ButlerRobot.AIBrowserLibrary  stealth_mode=${True}  record=${False}  console=${False}  presentation_mode=${True}  fix_bbox=${TRUE}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
 Resource  ./resources/CrawlWoocommerce.resource
 Variables  ../variables/credentials.py
-Suite Setup  Browser.Add Task Library    CrawlWoocommerce
 
 
 *** Variables ***
 ${URL_WOOCOMERCE}  https://ciclozero.com/wp-admin/admin.php?page=stock-manager
-
-
-*** Tasks ***
-Test Woocommerce Stock
-    [Documentation]  Creacion de excel para hacer el control de stock en woocommerce
-    ${dict}  Get Processing Woocommerce 
-    Log  Dictionary ${dict}  console=${True}
 
 
 *** Keywords ***

@@ -52,7 +52,8 @@
 				"robocorp.robotframework-lsp",
 				"ms-vscode.live-server",
 				"donjayamanne.githistory",
-				"ryu1kn.partial-diff"
+				"ryu1kn.partial-diff",
+				"grapecity.gc-excelviewer"
 			]
 		}
 	},
