@@ -11,6 +11,7 @@ Variables  ../variables/credentials.py
 ${URL_EBAY_SIGNIN}  https://signin.ebay.com
 ${URL_EBAY}  https://www.ebay.com/mye/myebay/summary
 ${LOGGIN_COOKIES}  ${OUTPUT_DIR}/browser/state/ebay.json
+${COOKIES_DIR}  ${OUTPUT_DIR}/browser/user_data_dir
 
 # ${EXCEL_PATH}  /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/downloads/stock/CiclAiStock_15-08_22-09-2023.xlsx
 # ${RESULT_EXCEL_PATH}  /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero${/}downloads${/}stock.quant.ebay.xlsx
@@ -43,7 +44,7 @@ Ebay Get Stock ${unshipped_pending}
     
     Comment  Obtener los unshipped de Ebay
     ${old_timeout}  Set Browser Timeout    1m
-    Browser.New Stealth Persistent Context   browser=chromium  url=${URL_EBAY}
+    Browser.New Stealth Persistent Context  userDataDir=${COOKIES_DIR}   browser=chromium  url=${URL_EBAY}
 
     Set Browser Timeout    ${old_timeout}
 

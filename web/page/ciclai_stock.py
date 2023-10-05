@@ -23,6 +23,81 @@ def enable():
         st.session_state.disabled = False
         st.experimental_rerun()
 
+def instructions_to_install_extension():
+    st.markdown("# Login to Ebay")
+    st.markdown("If you are showing this message, it means that CiclAI is not logged to Ebay. To login, follow these steps:")
+    
+    st.markdown("## 1. Install the CiclAI extension")
+    st.markdown("1.1 Download the extension from the button below")
+    st.download_button(label="Download extension", data=open(st.secrets.paths.extension, 'rb'), file_name="ciclai_extension.zip", key="download_extension")
+    st.markdown("1.2 Unzip the extension in a folder")
+    st.markdown("1.2 Open Chrome and go to <a href='chrome://extensions/' target='_blank'>chrome://extensions/</a>", unsafe_allow_html=True)
+    st.markdown("1.3 Enable developer mode at the top right")
+    st.markdown("1.4 Click on 'Load unpacked' or 'Cargar descomprimida' and select the folder where you unzipped the extension")
+    st.markdown("1.5 The extension should be installed")
+
+    st.markdown("## 2. Login to Ebay")
+    st.markdown("2.1 Open Chrome and go to <a href='https://signin.ebay.com/' target='_blank'>https://signin.ebay.com/</a>", unsafe_allow_html=True)
+    st.markdown("2.2 Login to Ebay")
+    st.markdown("2.3 Click on the extension icon and click on 'Extract data'")
+    st.markdown("2.4 Copy the cookies and paste them in the field 'Insert cookies'")
+
+
+def auth_with_servers():
+    st.markdown("---")
+    st.markdown("## Auth with servers")
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+    with col1:
+        st.markdown("### Odoo")
+        st.success("With credentials")
+
+    with col2:
+        st.markdown("### Amazon seller")
+        st.success("With credentials")
+    
+    with col3:
+        st.markdown("### Woocommerce")
+        st.success("With credentials")
+    
+    with col4:
+        st.markdown("### Ebay")
+        args = [
+            f"COOKIES_DIR:{st.secrets.paths.cookies_dir}",
+            ]
+        ret_code = asyncio.run(robot_handler.run_robot('login_ebay', args, "CiclAiLoginEbay.robot", msg='', notify=False))
+        auth = ret_code == 0
+        # auth = False  # For testing
+        if auth:
+            st.success(f"Logged to Ebay")
+            
+    # Add a link to login to Ebay
+    if not auth:
+        ebay_url = 'https://signin.ebay.com/'
+        st.error("Not logged to Ebay.Use the tutorial below to login")
+        st.markdown(f'<a href="{ebay_url}" target="_blank">Login Ebay</a>', unsafe_allow_html=True)
+        # Add a field to insert cookies
+        with st.form("Insert cookies for eBay"):
+            cookies = st.text_area("Insert cookies for eBay")
+            if st.form_submit_button("Save cookies", type="primary"):
+                if cookies:
+                    with open(st.secrets.paths.state_json, 'w') as f:
+                        f.write(cookies)
+                    # Lauch robot to check if cookies are valid
+                    args = [
+                        f"COOKIES_DIR:{st.secrets.paths.cookies_dir}",
+                        f"STATE_JSON:{st.secrets.paths.state_json}"
+                    ]
+                    ret_code = asyncio.run(robot_handler.run_robot('state_ebay', args, "CiclAiSaveStateEbay.robot"))
+                    if ret_code == 0:
+                        st.success("Cookies saved. Reload window")
+                    else:
+                        st.error("Cookies not valid")
+                else:
+                    st.error("No cookies found. Use the tutorial below to login")
+        
+    with st.expander("Login with extension for eBay", expanded=False):
+        instructions_to_install_extension()
+
 
 ## Create a function to display a title of "Ciclai Stock", a Run button and a cron field to schedule the task
 def ciclai_stock():
@@ -163,6 +238,9 @@ def ciclai_stock():
             else:
                 st.error("No woocommerce file found")
 
+    # Auth with servers
+    auth_with_servers()
+
     # Run get stock
     run_get_stock()
     enable()
@@ -226,7 +304,7 @@ def run_get_stock():
     
     with col1:
         update_after: bool = False
-        st.warning("If 'yes' is selected, the stock will be updated after get stock")
+        st.info("If 'yes' is selected, the stock will be updated after get stock")
 
         # Get Stock
         st.markdown("### Get stock and update stock")

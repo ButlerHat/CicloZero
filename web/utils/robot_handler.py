@@ -3,13 +3,14 @@ import requests
 import streamlit as st
 import asyncio
 
-def get_robot_command(id, vars, robot):
+def get_robot_command(id, vars, robot, tests=[]):
     robot_path = st.secrets.paths.robot
     robot_script = os.path.join(robot_path, robot)
     result_path = os.path.join(robot_path, "results", id)
     robot_command = "/opt/conda/condabin/conda run -n robotframework /opt/conda/envs/robotframework/bin/robot " + \
         f'-d "{result_path}" ' + \
         f'-v OUTPUT_DIR:"{result_path}" {"-v " if len(vars) > 0 else ""}{" -v ".join(vars)} ' + \
+        f'{"-t " if len(tests) > 0 else ""}{" -t ".join(tests)} ' + \
         f"{robot_script}"
     return robot_command
 
@@ -24,7 +25,7 @@ async def run_robots(ids_args: dict, robot_files: list, timeout=40):
     await asyncio.gather(*tasks)
 
 
-async def run_robot(id_: str, vars: list, robot: str, msg=None):
+async def run_robot(id_: str, vars: list, robot: str, msg=None, tests=[], notify=True):
     """
     Run robot specified in robot variable
     params:
@@ -39,7 +40,7 @@ async def run_robot(id_: str, vars: list, robot: str, msg=None):
     if not os.path.exists(result_path):
         os.makedirs(result_path)
 
-    robot_command = get_robot_command(id_, vars, robot)
+    robot_command = get_robot_command(id_, vars, robot, tests=tests)
 
     # Move to robot directory
     print(f"Running {robot_command} \n")
@@ -68,9 +69,10 @@ async def run_robot(id_: str, vars: list, robot: str, msg=None):
             else:
                 st.error(msg_)
 
-    if ret_val != 0:
-        msg_ = f"Robot failed with return code {ret_val}" if not msg else f'Fail {ret_val}: {id_}'
-        st.error(msg_)
+    if notify and ret_val != 0:
+        msg_ = f"Robot failed with return code {ret_val}" if msg is not None else msg
+        if msg:
+            st.error(msg_)
         # Send notification
         log_file = os.sep.join([result_path, "log.html"])
         if os.path.exists(log_file):
@@ -94,7 +96,8 @@ async def run_robot(id_: str, vars: list, robot: str, msg=None):
             )
         
     else:
-        msg_ = f"Robot finished successfully" if not msg else f'Success: {id_}'
-        st.success(msg_)
+        msg_ = f"Robot finished successfully" if msg is not None else msg
+        if msg:
+            st.success(msg_)
 
     return ret_val

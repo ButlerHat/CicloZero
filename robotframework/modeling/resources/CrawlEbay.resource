@@ -7,13 +7,13 @@ Library   Collections
 Check if not logged in
     [Tags]  no_record
     [Documentation]  Check if logged in
-    ${logged_in}  Get Element Count  //a[@title='My eBay']
-    IF  ${logged_in} == 0
+    TRY
+        Wait For Elements State    //a[@title='My eBay']  visible  timeout=5s
+    EXCEPT
         RETURN  ${True}
-    ELSE
-        RETURN  ${False}
     END
-
+    RETURN  ${False}
+    
 Continue with user ${user}
     Click  //*[@id="userid"]
     Keyboard Input    type    ${user}
