@@ -2,6 +2,7 @@
 node_modules/
 .conda/
 ebay_credentials.yaml
+*.out
 
 # RobotFramework
 prod_results/

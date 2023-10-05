@@ -49,7 +49,7 @@ def _save_dataframe_to_excel(dataframe: pd.DataFrame, file_path: str):
 
 def _add_total_column_to_dataframe(dataframe: pd.DataFrame, column_name: str):
     """
-    Add a column to a pandas dataframe with the formula "=B2-C2-D2-E2-F2"
+    Add a column to a pandas dataframe with the formula "=B2-C2-D2-E2-F2-G2-H2"
     """
     if column_name in dataframe.columns:
         # Drop column
@@ -60,7 +60,7 @@ def _add_total_column_to_dataframe(dataframe: pd.DataFrame, column_name: str):
     dataframe[column_name] = dataframe[column_name].astype('object')
         
     for i in range(len(dataframe)):
-        dataframe.at[i, column_name] = f"=B{i+2}-C{i+2}-D{i+2}-E{i+2}-F{i+2}"
+        dataframe.at[i, column_name] = f"=B{i+2}-C{i+2}-D{i+2}-E{i+2}-F{i+2}-G{i+2}-H{i+2}"  # type: ignore
 
 def _add_attributes_columns(dataframe: pd.DataFrame):
     """
@@ -115,6 +115,33 @@ def get_attributes_from_sku(sku: str) -> dict[str, str]:
     return attributes_dict
 
 # KEYORDS
+
+def combine_all_excels(stock_file: str, col_excel: dict[str, str], output_excel_path: str):
+    """
+    Merge all excels with the seller name into the stock_file
+    """
+    df_result = _load_excel_file(stock_file)
+
+    for seller, excel_file in col_excel.items():
+        df_seller = _load_excel_file(excel_file)
+
+        # Update the seller's values in df_result for matching 'prod' values
+        df_result.set_index('prod', inplace=True)
+        df_seller.set_index('prod', inplace=True)
+
+        df_result[seller].update(df_seller[seller])
+
+        # Append rows from df_seller that don't exist in df_result
+        missing_rows = df_seller.index.difference(df_result.index)
+        df_result = df_result = pd.concat([df_result, df_seller.loc[missing_rows]], sort=False)
+
+        # Reset index after operations
+        df_result.reset_index(inplace=True)
+
+    _add_total_column_to_dataframe(df_result, "Total")
+    _add_attributes_columns(df_result)
+    _save_dataframe_to_excel(df_result, output_excel_path)
+
 
 def create_excel(count_excel_path: str, output_excel_path: str):
     """

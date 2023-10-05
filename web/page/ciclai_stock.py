@@ -21,7 +21,8 @@ def disable():
 def enable():
     if "disabled" in st.session_state and st.session_state.disabled == True:
         st.session_state.disabled = False
-        st.experimental_rerun()
+        st.error("To enable buttons, reload the page. The page info will be lost")
+        # st.experimental_rerun()
 
 def instructions_to_install_extension():
     st.markdown("# Login to Ebay")
@@ -64,16 +65,22 @@ def auth_with_servers():
         args = [
             f"COOKIES_DIR:{st.secrets.paths.cookies_dir}",
             ]
-        ret_code = asyncio.run(robot_handler.run_robot('login_ebay', args, "CiclAiLoginEbay.robot", msg='', notify=False))
+        ret_code = asyncio.run(robot_handler.run_robot(
+            'login_ebay', 
+            args, 
+            "CiclAiLoginEbay.robot", 
+            msg_fail='', 
+            msg_success="Logged to Ebay",
+            msg_info="Checking cookies on eBay",
+            notify=False
+        ))
         auth = ret_code == 0
         # auth = False  # For testing
-        if auth:
-            st.success(f"Logged to Ebay")
             
     # Add a link to login to Ebay
     if not auth:
         ebay_url = 'https://signin.ebay.com/'
-        st.error("Not logged to Ebay.Use the tutorial below to login")
+        st.error("Not logged to Ebay. Use the tutorial below to login")
         st.markdown(f'<a href="{ebay_url}" target="_blank">Login Ebay</a>', unsafe_allow_html=True)
         # Add a field to insert cookies
         with st.form("Insert cookies for eBay"):
@@ -87,11 +94,18 @@ def auth_with_servers():
                         f"COOKIES_DIR:{st.secrets.paths.cookies_dir}",
                         f"STATE_JSON:{st.secrets.paths.state_json}"
                     ]
-                    ret_code = asyncio.run(robot_handler.run_robot('state_ebay', args, "CiclAiSaveStateEbay.robot"))
-                    if ret_code == 0:
-                        st.success("Cookies saved. Reload window")
-                    else:
-                        st.error("Cookies not valid")
+                    ret_code = asyncio.run(robot_handler.run_robot(
+                        'state_ebay', 
+                        args, 
+                        "CiclAiSaveStateEbay.robot", 
+                        msg_fail="Cookies not valid", 
+                        msg_success="Cookies saved. Reload window",
+                        msg_info="Checking cookies on eBay",
+                        notify=True))
+                    # if ret_code == 0:
+                    #     st.success("Cookies saved. Reload window")
+                    # else:
+                    #     st.error()
                 else:
                     st.error("No cookies found. Use the tutorial below to login")
         
@@ -142,18 +156,19 @@ def ciclai_stock():
             f'RESULT_EXCEL_PATH:$excel_path',
             f'RESULT_CSV_PATH:$csv_path'
         ]
-        robot_command = robot_handler.get_robot_command("stock", args, "CiclAiStock.robot")
-        log_file_stock_path = os.path.join(results_path, "stock", f'logfile_out_stock.txt')
-        html_file_stock_path = os.path.join(results_path, "stock", f'log.html')
-        script_robot = robot_command + f' > {log_file_stock_path} 2>&1'
-        notification_sh = f""" || curl \
-                -T "{html_file_stock_path}" \
-                -H "X-Email: paipayainfo@gmail.com" \
-                -H "Tags: warning" \
-                -H "Filename: CiclAiStock_fail_auto_$(date +"%H-%M_%d-%m-%Y").html" \
-                "https://notifications.paipaya.com/ciclai_fail"
-            """
-        scripts_robot.append(script_robot + notification_sh)
+        for i in range(1, 5):
+            robot_command = robot_handler.get_pabot_command(f"stock_{i}", args, "CiclAiStock.robot", [str(i)])
+            log_file_stock_path = os.path.join(results_path, f"stock_{i}", f'logfile_out_stock.txt')
+            html_file_stock_path = os.path.join(results_path, f"stock_{i}", f'log.html')
+            script_robot = robot_command + f' > {log_file_stock_path} 2>&1'
+            notification_sh = f""" || curl \
+                    -T "{html_file_stock_path}" \
+                    -H "X-Email: paipayainfo@gmail.com" \
+                    -H "Tags: warning" \
+                    -H "Filename: CiclAiStock_fail_auto_$(date +"%H-%M_%d-%m-%Y").html" \
+                    "https://notifications.paipaya.com/ciclai_fail"
+                """
+            scripts_robot.append(script_robot + notification_sh)
 
         # CiclAI Stock Update
         args_update = [
@@ -259,14 +274,14 @@ def ciclai_stock():
     last_file = os.path.join(stock_path, option)
     # Download excel
     with open(last_file, 'rb') as f:
-        col1.download_button(label=option, data=f, file_name=option, key='last_excel', disabled=st.session_state.disabled)
+        col1.download_button(label=option, data=f, file_name=option, key='last_excel')
     
     # Download csv
     csv_name = option.replace(".xlsx", ".csv")
     csv_path = os.path.join(stock_path, csv_name)
     if os.path.exists(csv_path):
         with open(csv_path, 'rb') as f:
-            col2.download_button(label=f"LLM_{csv_name}", data=f, file_name=csv_name, key='last_csv', disabled=st.session_state.disabled)
+            col2.download_button(label=f"LLM_{csv_name}", data=f, file_name=csv_name, key='last_csv')
     else:
         col2.info(f"CSV for LLM not generated")
 
@@ -275,8 +290,8 @@ def ciclai_stock():
     df = excel.load_excel_file(last_file)
     # Replace NaN with 0
     df = df.fillna(0)
-    get_total = lambda count, amz_unshipped, amz_pending, flendu: count - amz_unshipped - amz_pending - flendu
-    df['Total'] = df.apply(lambda row: get_total(row['count'], row['amz unshipped'], row['amz pending'], row['flend']), axis=1)
+    get_total = lambda count, amz_unshipped, amz_pending, ebay_unshipped, ebay_pending, flendu: count - amz_unshipped - amz_pending - ebay_unshipped - ebay_pending - flendu
+    df['Total'] = df.apply(lambda row: get_total(row['count'], row['amz unshipped'], row['amz pending'], row["ebay unshipped"], row["ebay pending"], row['flend']), axis=1)
     st.dataframe(df)
 
 
@@ -327,10 +342,23 @@ def run_get_stock():
                     f"RESULT_EXCEL_PATH:{excel_path}",
                     f"RESULT_CSV_PATH:{csv_path}"
                 ]
-                ret_code = asyncio.run(robot_handler.run_robot('stock', args, "CiclAiStock.robot"))
+                sum_ret_code = 0
+                for i in range(1, 5):
+                    ret_code = asyncio.run(robot_handler.run_robot(
+                        f'stock_{i}', 
+                        args, 
+                        "CiclAiStock.robot", 
+                        pabot=True, 
+                        include_tags=[str(i)],
+                        msg_info=f"Running {i}/4",
+                        msg_fail=f"Failed {i}/4",
+                        msg_success=f"Success {i}/4",
+
+                    ))
+                    sum_ret_code += int(ret_code) if ret_code is not None else 0
 
                 if select_update_after == "Yes":
-                    if ret_code != 0:
+                    if sum_ret_code != 0:
                         st.error("Robot failed. So stock will not be updated")
                     else:
                         update_after = True
@@ -340,7 +368,7 @@ def run_get_stock():
         if os.path.exists(os.path.join(stock_path, excel_name)):
             st.markdown(f'### Download <span style="color:{excel_name}">CiclAI</span>', unsafe_allow_html=True)
             with open(os.path.join(stock_path, excel_name), 'rb') as f:
-                st.download_button(label=excel_name, data=f, file_name=excel_name, key='stock_excel', disabled=st.session_state.disabled)
+                st.download_button(label=excel_name, data=f, file_name=excel_name, key='stock_excel', disabled=update_after)
         else:
             st.info(f"Excel not generated")
         
@@ -348,7 +376,7 @@ def run_get_stock():
         if os.path.exists(os.path.join(stock_path, csv_name)):
             st.markdown(f'### Download <span style="color:{csv_name}">CiclAI for LLM</span>', unsafe_allow_html=True)
             with open(os.path.join(stock_path, csv_name), 'rb') as f:
-                st.download_button(label=csv_name, data=f, file_name=csv_name, key='stock_csv', disabled=st.session_state.disabled)
+                st.download_button(label=csv_name, data=f, file_name=csv_name, key='stock_csv', disabled=update_after)
     
     display_last_run_info('stock')
 

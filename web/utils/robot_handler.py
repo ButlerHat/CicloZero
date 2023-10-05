@@ -14,18 +14,30 @@ def get_robot_command(id, vars, robot, tests=[]):
         f"{robot_script}"
     return robot_command
 
+def get_pabot_command(id, vars, robot, include_tags=[]):
+    robot_path = st.secrets.paths.robot
+    robot_script = os.path.join(robot_path, robot)
+    result_path = os.path.join(robot_path, "results", id)
+    robot_command = "/opt/conda/condabin/conda run -n robotframework /opt/conda/envs/robotframework/bin/pabot " + \
+        '--testlevelsplit ' + \
+        f'-d "{result_path}" ' + \
+        f'{"-v " if len(vars) > 0 else ""}{" -v ".join(vars)} ' + \
+        f'{"-i " if len(include_tags) > 0 else ""}{" -i ".join(include_tags)} ' + \
+        f"{robot_script}"
+    return robot_command
+
 
 async def run_robots(ids_args: dict, robot_files: list, timeout=40):
     assert len(ids_args) == len(robot_files) or len(robot_files) == 1, "Number of robots and number of files must be the same"
     tasks = []
     for (id, args), robot_file in zip(ids_args.items(), robot_files):
-        tasks.append(asyncio.create_task(run_robot(id, args, robot_file, msg=f"Running {id}")))
+        tasks.append(asyncio.create_task(run_robot(id, args, robot_file, msg_fail=f"Running {id}")))
         await asyncio.sleep(timeout)
 
     await asyncio.gather(*tasks)
 
 
-async def run_robot(id_: str, vars: list, robot: str, msg=None, tests=[], notify=True):
+async def run_robot(id_: str, vars: list, robot: str, msg_info=None, msg_fail=None, msg_success="Robot finished successfully", pabot=False, include_tags=[], notify=True):
     """
     Run robot specified in robot variable
     params:
@@ -40,11 +52,14 @@ async def run_robot(id_: str, vars: list, robot: str, msg=None, tests=[], notify
     if not os.path.exists(result_path):
         os.makedirs(result_path)
 
-    robot_command = get_robot_command(id_, vars, robot, tests=tests)
+    if pabot:
+        robot_command = get_pabot_command(id_, vars, robot, include_tags)
+    else:
+        robot_command = get_robot_command(id_, vars, robot)
 
     # Move to robot directory
     print(f"Running {robot_command} \n")
-    msg_ = f"Running {robot}" if not msg else msg
+    msg_ = f"Running {robot}" if not msg_info else msg_info
 
     with st.spinner(msg_):
         proc = await asyncio.create_subprocess_shell(
@@ -70,8 +85,8 @@ async def run_robot(id_: str, vars: list, robot: str, msg=None, tests=[], notify
                 st.error(msg_)
 
     if notify and ret_val != 0:
-        msg_ = f"Robot failed with return code {ret_val}" if msg is not None else msg
-        if msg:
+        msg_ = f"Robot failed with return code {ret_val}" if msg_fail is not None else msg_fail
+        if msg_fail:
             st.error(msg_)
         # Send notification
         log_file = os.sep.join([result_path, "log.html"])
@@ -96,8 +111,8 @@ async def run_robot(id_: str, vars: list, robot: str, msg=None, tests=[], notify
             )
         
     else:
-        msg_ = f"Robot finished successfully" if msg is not None else msg
-        if msg:
+        msg_ = msg_success if msg_success is not None else f"Robot finished successfully"
+        if msg_:
             st.success(msg_)
 
     return ret_val

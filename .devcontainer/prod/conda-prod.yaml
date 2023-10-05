@@ -17,6 +17,7 @@ dependencies:
       # Define pip packages here -> https://pypi.org/
       - robotframework-butlerhat[browser_stealth]
       - robotframework-otp
+      - robotframework-pabot
       - pyotp
       - pandas
       - openpyxl

@@ -17,6 +17,7 @@ dependencies:
       # Define pip packages here -> https://pypi.org/
       # - robotframework-dist-butlerhat[browser_stealth] > Defined in post-install command with -e
       - robotframework-otp
+      - robotframework-pabot
       - pyotp
       - pandas
       - openpyxl
