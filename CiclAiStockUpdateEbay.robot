@@ -27,7 +27,7 @@ Update Ebay Stock
 
     ${not_logged}  Check if not logged in
     IF  ${not_logged}
-        Create File    path=${RETURN_FILE}  content=Skipped: Not logged
+        Create File    path=${RETURN_FILE}  content=Skipped: Not logged. Please, use the plugin to login in eBay${\n}Instructions at the top of the page.
         Skip  Not logged in eBay
     END
 
@@ -55,7 +55,7 @@ Update Ebay Stock
 
         IF  "${status}" == "FAIL"
             Log  ${custom_label} Custom label (SKU) not found in eBay  level=WARN  console=${True}
-            Append To File  path=${RETURN_FILE}    content=${custom_label} Custom label (SKU) not found in eBay${\n}
+            Append To File  path=${RETURN_FILE}    content=${custom_label} Custom label (SKU) not found in eBay${\n}${\n}
             CONTINUE
         END
 
