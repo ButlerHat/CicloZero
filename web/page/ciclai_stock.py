@@ -12,7 +12,8 @@ from utils.robot_results import RobotStatus
 
 PAGES = {
     "Woocommerce": "CiclAiStockUpdateWoocommerce.robot",
-    "Amazon": "CiclAiStockUpdateAmazon.robot"
+    "Amazon": "CiclAiStockUpdateAmazon.robot",
+    "Ebay": "CiclAiStockUpdateEbay.robot",
 }
 
 def disable():
@@ -21,7 +22,8 @@ def disable():
 def enable():
     if "disabled" in st.session_state and st.session_state.disabled == True:
         st.session_state.disabled = False
-        st.error("To enable buttons, reload the page. The page info will be lost")
+        with st.sidebar:
+            st.info("To enable buttons, reload the page. The page info will be lost")
         # st.experimental_rerun()
 
 def instructions_to_install_extension():
@@ -168,7 +170,8 @@ def ciclai_stock():
 
         # CiclAI Stock Update
         args_update = [
-            f'STOCK_EXCEL_PATH:$excel_path'
+            'STOCK_EXCEL_PATH:$excel_path',
+            f"COOKIES_DIR:{st.secrets.paths.cookies_dir}"
         ]
 
         for page, robot_file in PAGES.items():
@@ -408,7 +411,8 @@ def run_get_stock():
             for page in update_pages:
                 robot_files.append(PAGES[page])
                 ids_args[page] = [
-                    f"STOCK_EXCEL_PATH:{file_path}"
+                    f"STOCK_EXCEL_PATH:{file_path}",
+                    f"COOKIES_DIR:{st.secrets.paths.cookies_dir}",
                 ]
             asyncio.run(robot_handler.run_robots(ids_args, robot_files, timeout=2))
     
@@ -439,7 +443,9 @@ def display_last_run_info(id_workflow: str):
     if start_time_status[2] == RobotStatus.PASS:
         # If true, print a green success message with markdown
         status_msg = f"<span style='color:green'>Success</span>"
-
+    elif start_time_status[2] == RobotStatus.SKIP:
+        # If false, print a yellow skipped message with markdown
+        status_msg = f"<span style='color:yellow'>Skipped</span>"
     elif start_time_status[2] == RobotStatus.FAIL:
         # If false, print a red error message with markdown
         status_msg = f"<span style='color:red'>Failed</span>"
@@ -457,12 +463,13 @@ def display_last_run_info(id_workflow: str):
     else:
         with open(msg_path, 'r') as f:
             msg_ = f.read()
-            if 'warn' in msg_.lower():
-                st.warning(msg_)
-            elif 'success' in msg_.lower():
-                st.success(msg_)
-            else:
-                st.error(msg_)
+            with st.expander("Show message", expanded=False):
+                if 'warn' or 'skipped' in msg_.lower():
+                    st.code(msg_, language='text')
+                elif 'success' in msg_.lower():
+                    st.code(msg_, language='text')
+                else:
+                    st.error(msg_)
 
     col1, col2 = st.columns([3, 1])
     with col1:

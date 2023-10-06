@@ -2,9 +2,8 @@
 Library    ButlerRobot.AIBrowserLibrary  stealth_mode=${True}  captcha_api_key=${0}  record=${False}  console=${False}  presentation_mode=${True}  fix_bbox=${True}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
 Library   OperatingSystem
 Library   Collections
-Library    ../keywords/count_excel.py
-Resource  ./resources/CrawlEbay.resource
-Variables  ../variables/credentials.py
+Library    robotframework/keywords/count_excel.py
+Resource   robotframework/modeling/resources/CrawlEbay.resource
 Suite Setup  Browser.Add Task Library    CrawlEbay
 
 
@@ -28,8 +27,8 @@ Update Ebay Stock
 
     ${not_logged}  Check if not logged in
     IF  ${not_logged}
-        Skip  Not logged in eBay
         Create File    path=${RETURN_FILE}  content=Skipped: Not logged
+        Skip  Not logged in eBay
     END
 
     Go to my ebay
@@ -56,7 +55,7 @@ Update Ebay Stock
 
         IF  "${status}" == "FAIL"
             Log  ${custom_label} Custom label (SKU) not found in eBay  level=WARN  console=${True}
-            Append To File  path=${RETURN_FILE}    content=${custom_label} Custom label (SKU) not found in eBay${\n}${\n}
+            Append To File  path=${RETURN_FILE}    content=${custom_label} Custom label (SKU) not found in eBay${\n}
             CONTINUE
         END
 
@@ -92,6 +91,7 @@ Update Ebay Stock
         Log  ${msg}  console=${True}
         Append To File  path=${RETURN_FILE}    content=${msg}${\n}
         FOR  ${sku}  ${total}  IN  &{sku_total}
+            ${total}  Evaluate  ${total} if int(${total}) > 0 else 0       
             Click on the cell in ${sku} row and available quantity column
             Click on the edit icon in the cell  ${sku}
             Write quantity ${total}
@@ -100,7 +100,7 @@ Update Ebay Stock
             
         END
 
-        Append To File  path=${RETURN_FILE}    content=${\n}
+        Append To File  path=${RETURN_FILE}   content=${\n}
         Go to active in right menu
 
     END

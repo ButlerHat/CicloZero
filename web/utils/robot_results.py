@@ -10,6 +10,7 @@ class RobotStatus(Enum):
     PASS = 1
     FAIL = 2
     PROGRESS = 3
+    SKIP = 4
 
 
 def get_start_time(output_xml_path: str) -> tuple[str, str, RobotStatus]:
@@ -33,7 +34,12 @@ def get_start_time(output_xml_path: str) -> tuple[str, str, RobotStatus]:
     
     # Extract status attribute value
     status = status_element.get('status') if status_element is not None else 'FAIL'
-    status = RobotStatus.PASS if status == 'PASS' else RobotStatus.FAIL
+    if status == 'PASS':
+        status = RobotStatus.PASS
+    elif status == 'SKIP':
+        status = RobotStatus.SKIP
+    else:
+        status = RobotStatus.FAIL
 
     if start_time_str is None or end_time_str is None:
         return ("Error getting start time", "", status)
