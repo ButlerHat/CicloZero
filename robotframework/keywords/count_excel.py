@@ -401,6 +401,43 @@ def get_all_sku_and_total(excel_path: str) -> dict[str, int]:
     return dict(zip(sku_list, total_list))
 
 
+def get_all_sku_and_total_grouped_by_id_modelo(excel_path: str) -> dict[str, dict[str, int]]:
+    """
+    Get all sku and total from an excel file. Ignore all rows where count is nan or 0.
+    """
+    df = _load_excel_file(excel_path)
+    # Remove columns where count is nan or 0
+    df = df[df["count"].notna()]
+    
+    actual_sellers = [seller for seller in SELLERS if seller in df.columns]
+    for seller in actual_sellers:
+        df[seller] = df[seller].fillna(0)
+    # Get all unique id_modelo
+    id_modelo_list = df["id_modelo"].unique().tolist()
+
+    id_modelo_list = {id_modelo: {} for id_modelo in id_modelo_list}
+    for id_modelo in id_modelo_list:
+        # Get all sku
+        sku_list = df[df["id_modelo"] == id_modelo]["prod"].tolist()
+        # Convert product to sku
+        for i in range(len(sku_list)):
+            prod = sku_list[i]
+            if "[" in prod:
+                sku_list[i] = prod[prod.find("[") + 1:prod.find("]")]
+            else:
+                sku_list[i] = prod
+        
+        # Get total. count - (sum of all sellers)
+        total_list = df[df["id_modelo"] == id_modelo]["count"].tolist()
+        for seller in actual_sellers:
+            total_list = [int(total_list[i] - df[df["id_modelo"] == id_modelo][seller].tolist()[i]) for i in range(len(total_list))]
+
+        id_modelo_list[id_modelo] = dict(zip(sku_list, total_list))
+
+    return id_modelo_list
+    
+
+
 if __name__ == "__main__":
     import os 
 
@@ -429,3 +466,6 @@ if __name__ == "__main__":
 
     sku_total = get_all_sku_and_total(res_full_excel_path)
     print(f"Total: {sku_total}")
+
+    id_modelo_sku_total = get_all_sku_and_total_grouped_by_id_modelo(res_full_excel_path)
+    print(f"Total grouped by id_modelo: {id_modelo_sku_total}")

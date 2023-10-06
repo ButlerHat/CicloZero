@@ -62,8 +62,89 @@ Go to my ebay selling
 Click on orders tab
     Click  //li//a[text()='Orders']
 
+Click on Listings tab
+    Click  //li//a[text()='Listings']
+
 Select All orders in menu
     Click  //nav[@class='left-nav']//*[text()='All orders']
+
+Go to active in right menu
+    Click  //nav[@class='left-nav']//*[text()='Active']
+
+Click on thrid dropdown in search
+    [Arguments]  ${option}
+    Wait For Elements State    //select[@data-id="primaryFilter"]  stable
+    Click  //select[@data-id="primaryFilter"]
+    Select Options By  //select[@data-id="primaryFilter"]  text  ${option}
+
+Click on the dropdown next to ${right_option}
+    [Arguments]  ${option}
+    Click  //select[@data-id="listingSKU"]
+    Select Options By  //select[@data-id="listingSKU"]  text  ${option}
+    
+Write ${text} in the field next to is equal to
+    Click  //div[@id="filters"]//input[@type="text"]
+    Keyboard Input    type    ${text}
+
+Search
+    Click  //button[@type="submit"]
+    Wait for spinner
+
+Wait for spinner
+    [Tags]  no_record
+    Run Keyword And Ignore Error  Wait For Elements State    //span[@aria-label="Updating results"]  state=visible  timeout=3s
+    Run Keyword And Ignore Error  Wait For Elements State    //span[@aria-label="Updating results"]  state=hidden  timeout=30s
+
+Click on variations on the result
+    Click  //a[contains(.,'variations')]
+
+Is sku ${sku} in page
+    [Tags]  no_record
+    ${status}  ${msg}  Run Keyword And Ignore Error  Wait For Elements State    //tr[contains(.,'${sku}')]  visible  timeout=1s
+    IF  "${status}" == "PASS"
+        RETURN  ${True}
+    END
+        RETURN  ${False}
+
+Click on the cell in ${sku} row and available quantity column
+    Click  //tr[contains(.,'${sku}')]//td[contains(@class,'available')]
+
+Click on the edit icon in the cell
+    [Arguments]  ${sku}
+    Click  //tr[contains(.,'${sku}')]//td[contains(@class,'available')]//div[@class="inline-editable-pencil"]
+
+Get All Sku In Page
+    @{skus_el}  Get Elements  //td[contains(@class,'listingSKU')]//span
+    @{skus}  Create List
+    FOR  ${sku_el}  IN  @{skus_el}
+        ${sku}  Get Text  ${sku_el}
+        Append To List  ${skus}  ${sku}
+    END
+    RETURN  ${skus}
+
+Get All Sku In Page that has available quantity
+    @{skus_el}  Get Elements  //td[contains(@class,'listingSKU')]//span
+    @{skus}  Create List
+    FOR  ${sku_el}  IN  @{skus_el}
+        ${sku}  Get Text  ${sku_el}
+        ${quantity}  Get Text  //tr[contains(.,'${sku}')]//td[contains(@class,'available')]//span
+        IF  "${quantity}" != "0"
+            Append To List  ${skus}  ${sku}
+        END
+    END
+    RETURN  ${skus}
+
+Write quantity ${quantity}
+    Click  //div[@class="popover-content"]//input[@type="text"]
+    Keyboard Key    Control+A+Delete
+    Keyboard Input    type    ${quantity}
+
+Click on submit in the popover
+    Click  //div[@class="popover-content"]//button[@type="submit"]
+
+Wait until popover is gone
+    [Tags]  no_record
+    Wait For Elements State    selector=//div[@class="popover-content"]  state=detached  timeout=20s
 
 Click on unshipped menu
     Click  //nav[@class='left-nav']//*[text()='Awaiting shipment']
