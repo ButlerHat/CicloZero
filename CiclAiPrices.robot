@@ -1,5 +1,5 @@
 *** Settings ***
-Library   ButlerRobot.AIBrowserLibrary  fix_bbox=${TRUE}  presentation_mode=${True}  console=${False}  record=${True}  output_path=${OUTPUT_DIR}/crawl_amazon_data  WITH NAME  Browser
+Library   ButlerRobot.AIBrowserLibrary  stealth_mode=${True}  record=${False}  fix_bbox=${TRUE}  presentation_mode=${True}   console=${False}  output_path=${OUTPUT_DIR}/crawl_amazon_data  WITH NAME  Browser
 Library   OTP
 Library   Collections
 Library   ./robotframework/keywords/count_excel.py
@@ -9,14 +9,12 @@ Suite Setup  Browser.Add Task Library    CrawlAmazon
 
 
 *** Variables ***
-${OUTPUT_DIR}  /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/robotframework/modeling
+# ${OUTPUT_DIR}  /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/robotframework/results/price
 ${URL_AMAZON}  https://sellercentral.amazon.es/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fsellercentral.amazon.es%2Fhome&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=sc_es_amazon_v2&openid.mode=checkid_setup&language=es_ES&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=sc_es_amazon_v2&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&ssoResponse=eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.u8j_3kfAPRO9oea7TATYwCAdOKehZfRhKktBjgJlntMm6nulCn1qEg.B2O2NQ1GNLUmz9NH.cjghNVWhLvzDMxogLdKHIvb87caY5OMLYZheHT6HHz3k088JtfZnEGHu8fk8e_IFDIpVNxqqHzR8JcyQjX1b5SwxquNbOpmt5cnMPZ5pgqpf0pbcHi8-TrhHtZ2XJjSDaSwqYkPTP6oEJKgc6fDOGcJsXOPPXTJc6ZT71ZHEX1R8j94ipHBM6qer4vruZRBYMAdZVaFP.K5bI5NZ7lJG0ObtQQymgtA
-${DEFAULT_AI_MODE}  Flexible
-${ROBOT_BROWSER_WAIT}  1
 
 ${RETURN_FILE}  ${OUTPUT_DIR}${/}return_msg.txt
 
-${SKU}  iP13-MD-128-B+ -R
+${SKU}  iP13PR-GRT-256-A -R
 ${STOCK_EXCEL_PATH}  ${OUTPUT_DIR}${/}downloads${/}stock.quant.full.result.xlsx
 ${SKU_EXCEL_PATH}  ${OUTPUT_DIR}${/}downloads${/}stock.${SKU}.xlsx
 
@@ -71,7 +69,7 @@ ComparePrices
         ${self_price}  Get price for ${market}
 
         ${url}  Go to page of the ${market} row
-        Run Keyword And Ignore Error    Accept cookies
+        Run Keyword And Ignore Error    CrawlAmazon.Accept cookies
         
         TRY
             See Renewed at the right above sell on Amazon

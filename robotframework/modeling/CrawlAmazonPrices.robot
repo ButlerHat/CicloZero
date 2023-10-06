@@ -67,7 +67,7 @@ ComparePrices
         ${self_price}  Get price for ${market}
 
         ${url}  Go to page of the ${market} row
-        Run Keyword And Ignore Error    Accept cookies
+        Run Keyword And Ignore Error    CrawlAmazon.Accept cookies
 
         TRY
             See Renewed at the right above sell on Amazon

@@ -102,10 +102,6 @@ def auth_with_servers():
                         msg_success="Cookies saved. Reload window",
                         msg_info="Checking cookies on eBay",
                         notify=True))
-                    # if ret_code == 0:
-                    #     st.success("Cookies saved. Reload window")
-                    # else:
-                    #     st.error()
                 else:
                     st.error("No cookies found. Use the tutorial below to login")
         

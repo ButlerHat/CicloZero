@@ -409,8 +409,8 @@ Check if update success for sku ${sku}
     END
 
 # ========== Amazon Public ==========
-# Accept cookies
-#     Click  //*[@id='sp-cc-accept']
+Accept cookies
+    Click  //*[@id='sp-cc-accept']
 
 # Search ${product}
 #     Click  //*[@id='twotabsearchtextbox']

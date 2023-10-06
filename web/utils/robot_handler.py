@@ -31,7 +31,7 @@ async def run_robots(ids_args: dict, robot_files: list, timeout=40):
     assert len(ids_args) == len(robot_files) or len(robot_files) == 1, "Number of robots and number of files must be the same"
     tasks = []
     for (id, args), robot_file in zip(ids_args.items(), robot_files):
-        tasks.append(asyncio.create_task(run_robot(id, args, robot_file, msg_fail=f"Running {id}")))
+        tasks.append(asyncio.create_task(run_robot(id, args, robot_file, msg_info=f"Running {id}", notify=False)))
         await asyncio.sleep(timeout)
 
     await asyncio.gather(*tasks)
@@ -83,12 +83,20 @@ async def run_robot(id_: str, vars: list, robot: str, msg_info=None, msg_fail=No
                 st.success(msg_)
             else:
                 st.error(msg_)
+    # If not, check return code
+    else:
+        if ret_val != 0 and msg_fail != "": 
+            msg_ = f"Robot failed with return code {ret_val}" if msg_fail is not None else msg_fail
+            if msg_fail:
+                st.error(msg_)
+        elif ret_val == 0 and msg_success != "":
+            msg_ = msg_success if msg_success is not None else f"Robot finished successfully"
+            if msg_:
+                st.success(msg_)
 
+
+    # Send notification
     if notify and ret_val != 0:
-        msg_ = f"Robot failed with return code {ret_val}" if msg_fail is not None else msg_fail
-        if msg_fail:
-            st.error(msg_)
-        # Send notification
         log_file = os.sep.join([result_path, "log.html"])
         if os.path.exists(log_file):
             requests.put(
@@ -109,10 +117,6 @@ async def run_robot(id_: str, vars: list, robot: str, msg_info=None, msg_fail=No
                 },
                 data=f"{id_} ({robot}) failed manually. No hmtl log file found."
             )
-        
-    else:
-        msg_ = msg_success if msg_success is not None else f"Robot finished successfully"
-        if msg_:
-            st.success(msg_)
 
+    
     return ret_val

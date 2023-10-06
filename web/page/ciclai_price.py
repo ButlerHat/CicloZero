@@ -39,7 +39,7 @@ def ciclai_price():
         skus_df = excel.get_skus_df(uploaded_file, compute_all)
         # Sort by prod
         skus_df = skus_df.sort_values(by=['prod'])
-        edited_df = st.experimental_data_editor(skus_df, use_container_width=True)
+        edited_df = st.data_editor(skus_df, use_container_width=True)
     else:
         edited_df = None
         st.warning("Please upload a file.")
@@ -73,13 +73,14 @@ def ciclai_price():
                             f'SKU_EXCEL_PATH:"{os.path.join(price_path, sku + ".xlsx")}"',
                         ]
                      
-                    asyncio.run(robot_handler.run_robots(id_args, ["CiclAiPrices.robot"]))
+                    asyncio.run(robot_handler.run_robots(id_args, ["CiclAiPrices.robot"] * len(id_args), timeout=40))
     
     # Show prices
     st.markdown("# Show prices")
-    df_prices = None
-    if edited_df is not None:
-        df_prices = show_prices(edited_df)
+    with st.spinner("Loading prices"):
+        df_prices = None
+        if edited_df is not None:
+            df_prices = show_prices(edited_df)
 
     # Show statistics
     st.markdown("# Amazon Sellers vs Ciclozero")
@@ -111,9 +112,13 @@ def show_prices(stock_df: pd.DataFrame):
     st.dataframe(df)
 
     # Save excel
-    excel_name = f"CiclAiPrice_{datetime.datetime.now().strftime('%H-%M_%d-%m-%Y')}.xlsx"
-    df.to_excel(os.path.join('/tmp', excel_name), index=False)
-    with open(os.path.join('/tmp', excel_name), 'rb') as f:
+    all_price_path = st.secrets.paths.all_prices_excel
+    if not os.path.exists(all_price_path):
+        os.makedirs(all_price_path)
+    excel_name = f"CiclAiPrice.xlsx"
+    excel_path = os.path.join(all_price_path, excel_name)
+    df.to_excel(excel_path, index=False)
+    with open(excel_path, 'rb') as f:
         st.download_button(label=f'Download {excel_name}', data=f, file_name=excel_name)
 
     return df
@@ -330,7 +335,7 @@ def show_statistics_pie_per_sku(df):
 
     for col, marketplace in zip((col1, col2, col3, col4, col5), ['Spain', 'Italy', 'France', 'Germany', 'Netherlands']):
         # Create a new dataframe to hold the sum of the differences for each marketplace
-        diff_df: pd.DataFrame = df[['prod', f'{marketplace} diff']]
+        diff_df: pd.DataFrame = df[['prod', f'{marketplace} diff']].copy()
         diff_df.set_index('prod', inplace=True)
 
         # Clip the differences to 0
