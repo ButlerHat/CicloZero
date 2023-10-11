@@ -113,7 +113,12 @@ Click on the cell in ${sku} row and available quantity column
 Click on the edit icon in the cell
     [Arguments]  ${sku}
     Wait For Elements State    //tr[contains(.,'${sku}')]//td[contains(@class,'available')]//div[@class="inline-editable-pencil"]  stable
-    Click  //tr[contains(.,'${sku}')]//td[contains(@class,'available')]//div[@class="inline-editable-pencil"]
+    ${status}  ${msg}  Run Keyword And Ignore Error  Click  //tr[contains(.,'${sku}')]//td[contains(@class,'available')]//div[@class="inline-editable-pencil"]
+    IF  "${status}" == "FAIL"
+        Scroll By  ${None}  vertical=-100%
+        Click  //tr[contains(.,'${sku}')]//td[contains(@class,'available')]
+        Click  //tr[contains(.,'${sku}')]//td[contains(@class,'available')]//div[@class="inline-editable-pencil"]
+    END
 
 Get All Sku In Page
     @{skus_el}  Get Elements  //td[contains(@class,'listingSKU')]//span
