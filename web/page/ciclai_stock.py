@@ -16,6 +16,13 @@ PAGES = {
     "Ebay": "CiclAiStockUpdateEbay.robot",
 }
 
+STOCK_IDS = [
+    "stock_odoo",
+    "stock_woocommerce_amazon_ebay_unshipped",
+    "stock_amazon_ebay_pending",
+    "stock_results"
+]
+
 def disable():
     st.session_state.disabled = True
 
@@ -64,22 +71,31 @@ def auth_with_servers():
     
     with col4:
         st.markdown("### Ebay")
-        args = [
-            f"COOKIES_DIR:{st.secrets.paths.cookies_dir}",
-            ]
-        ret_code = asyncio.run(robot_handler.run_robot(
-            'login_ebay', 
-            args, 
-            "CiclAiLoginEbay.robot", 
-            msg_fail='', 
-            msg_success="Logged to Ebay",
-            msg_info="Checking cookies on eBay",
-            notify=False
-        ))
-        auth = ret_code == 0
-        # auth = False  # For testing
+        if not hasattr(st.session_state, 'logged_ebay'):
+            st.session_state.logged_ebay = False
+        
+        if st.session_state.logged_ebay:
+            auth = True
+            st.success("Logged to eBay")
+        else:
+            args = [
+                f"COOKIES_DIR:{st.secrets.paths.cookies_dir}",
+                ]
+            ret_code = asyncio.run(robot_handler.run_robot(
+                'login_ebay', 
+                args, 
+                "CiclAiLoginEbay.robot", 
+                msg_fail='', 
+                msg_success="Logged to Ebay",
+                msg_info="Checking cookies on eBay",
+                notify=False
+            ))
+            auth = ret_code == 0
             
-    # Add a link to login to Ebay
+            if auth:
+                st.session_state.logged_ebay = True
+            
+    # Cookies
     if not auth:
         ebay_url = 'https://signin.ebay.com/'
         st.error("Not logged to Ebay. Use the tutorial below to login")
@@ -342,9 +358,9 @@ def run_get_stock():
                     f"RESULT_CSV_PATH:{csv_path}"
                 ]
                 sum_ret_code = 0
-                for i in range(1, 5):
+                for i, id_stock in enumerate(STOCK_IDS, start=1):
                     ret_code = asyncio.run(robot_handler.run_robot(
-                        f'stock_{i}', 
+                        id_stock, 
                         args, 
                         "CiclAiStock.robot", 
                         pabot=True, 
@@ -377,7 +393,8 @@ def run_get_stock():
             with open(os.path.join(stock_path, csv_name), 'rb') as f:
                 st.download_button(label=csv_name, data=f, file_name=csv_name, key='stock_csv', disabled=update_after)
     
-    display_last_run_info('stock')
+    for id_stock in STOCK_IDS:
+        display_last_run_info(id_stock)
 
     # Update stock
     st.markdown("---")
@@ -482,11 +499,18 @@ def display_last_run_info(id_workflow: str):
                     st.code(f.read(), language='text')
 
     with col2:
-        # Download log.html
+        # Download log.html and images in browser/ folder
         log_html_path = os.path.join(result_path, "log.html")
+        
         if not os.path.exists(log_html_path):
             st.info(f"Not log file (log.html)")
         else:
-            with open(log_html_path, 'rb') as f:
-                st.download_button(label="Download log.html", data=f, file_name="log.html", disabled=st.session_state.disabled, key=f"download_log_{id_workflow}")
+            # Zip log.html and images
+            with st.spinner("Zipping log.html and images..."):
+                zip_path = os.path.join(result_path, "log.zip")
+                if not os.path.exists(zip_path):
+                    os.system(f"cd {result_path} && zip -r log.zip log.html browser")
+                
+                with open(zip_path, 'rb') as f:
+                    st.download_button(label="Download log.zip", data=f, file_name="log.zip", disabled=st.session_state.disabled, key=f"download_zip_{id_workflow}")
 

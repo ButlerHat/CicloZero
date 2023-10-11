@@ -9,7 +9,7 @@ credentials = {
     'amazon_user_flendu': 'gAAAAABkQRRpB-F3IN9FAcrTxlAAEuMcnQiF0JRx8qZBHXyxw-pIUDl26BrMehMCKtiqOs12utj7O6hvQpqiUJiiVWEPwihFzA==',
     'amazon_pass_flendu': 'gAAAAABkQQ-cS29l1B7fmtReo2nKvWk5ExYYBgIPEX43bhOJIDSrmHJQQJH-15L4IY97GyrA3k0anX2TDaTrmxfFGk0Uln_DMQ==',
     'amazon_user': 'gAAAAABkSP8xE5uDjEs8YzAWgeSxsRtr09NmcL-PpDaw-afb97EpzscWWIIZzUQe2sNmZjhHF7DIfggSz2vk8xBqei-9D8e-PDIaX33MiAXNWA61LkAo2UY=',
-    'amazon_pass': 'gAAAAABkSP9PTs90CYOVaQEV_EuJznsDxwqkTc7zxAx-T_lsJWCnYkNvB7TgEHsLDv3_y9FzHSDJzHSQlMFEkPBgryvbEyyCuQ==',
+    'amazon_pass': 'gAAAAABlJXKbCVO48soM-GbIe-cmXFL2yzwOEpojkiXO4tPdCQKpl3R1JyRFJ_Mi0LKO4AVA2eHrm-kg-ZJV71pIz9lBnOgxAg==',
     'woocommerce_user': 'gAAAAABkwPmaICENOV7Nd4cB9ez3SrGiZkypV8LHteWMAA2Grs1HYVeR6J1tIfaOhnfIU9ftZpHsnIuBDWDFrIfo-PE0alvqLT5naWnnLUkuia6r7osqS7w=',
     'woocommerce_pass': 'gAAAAABkwPnqdW_4XIAg9XzPd4HL3BsTM7qv5ehN5nS5AmhYpWNnz80yC7t37tLXbG1oG0AqjAg_IRugTC-OwuwK76ViPMkhrA==',
     'ebay_user': 'gAAAAABkwUXsOssO25JsjZ4iCe2to2ntKKsgrwiKw2_qRuxslAq6Fw5cK3hFBVPFEOtaPWBuZ5Rv0R5DYsYbsCDfpsT_A10xhsGX7r75Q_smFEo7oA5xn88=',

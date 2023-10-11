@@ -62,7 +62,7 @@ UpdateAmazonWithFile
     IF  "${warning_msg}"!=""
         Create File    path=${RETURN_FILE}
         Log  ${warning_msg}  console=${True}  level=WARN
-        Append To File  path=${RETURN_FILE}    content=${warning_msg}
+        Append To File  path=${RETURN_FILE}    content=${warning_msg}${\n}
     END
 
     # Upload tsv TODO: TEST
@@ -122,11 +122,11 @@ UpdateAmazon
             Delete the input of available column for ${sku}
             IF  "${previous_total}"=="0" and "${total}"!="0"
                 Log  SKU ${sku} was 0 in Amazon, change to ${total}.  console=${True}
-                Append To File  path=${RETURN_FILE}    content=Sku ${sku} was 0 in Amazon, change to ${total}.${SPACE}
+                Append To File  path=${RETURN_FILE}    content=Sku ${sku} was 0 in Amazon, change to ${total}.${SPACE}${\n}
             END
         EXCEPT
             Log  No sku ${sku} in Amazon (Skipping).  console=${True}  level=WARN
-            Append To File  path=${RETURN_FILE}    content=No ${sku} in Amazon (Skipping).${SPACE}
+            Append To File  path=${RETURN_FILE}    content=No ${sku} in Amazon (Skipping).${SPACE}${\n}
             Delete search box
             CONTINUE
         END
@@ -138,7 +138,7 @@ UpdateAmazon
                 Check if update success for sku ${sku}
             EXCEPT
                 Log  No success message for ${sku} CHECK!.  console=${True}  level=WARN
-                Append To File  path=${RETURN_FILE}    content=No success message for ${sku} CHECK!.${SPACE}
+                Append To File  path=${RETURN_FILE}    content=No success message for ${sku} CHECK!.${SPACE}${\n}
             END
             Log  Changed ${sku}.  console=${True}  level=INFO
         ELSE

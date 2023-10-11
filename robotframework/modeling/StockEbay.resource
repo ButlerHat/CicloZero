@@ -54,9 +54,6 @@ Ebay Get Stock ${unshipped_pending}
     ELSE
         Select pending menu
     END
-
-    # For testing
-    Select All orders in menu
     
     &{skus_count_dict}  Count Skus in list
 
