@@ -112,6 +112,7 @@ Click on the cell in ${sku} row and available quantity column
 
 Click on the edit icon in the cell
     [Arguments]  ${sku}
+    Wait For Elements State    //tr[contains(.,'${sku}')]//td[contains(@class,'available')]//div[@class="inline-editable-pencil"]  stable
     Click  //tr[contains(.,'${sku}')]//td[contains(@class,'available')]//div[@class="inline-editable-pencil"]
 
 Get All Sku In Page
