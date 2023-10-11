@@ -508,8 +508,8 @@ def display_last_run_info(id_workflow: str):
             # Zip log.html and images
             with st.spinner("Zipping log.html and images..."):
                 zip_path = os.path.join(result_path, "log.zip")
-                if not os.path.exists(zip_path):
-                    os.system(f"cd {result_path} && zip -r log.zip log.html browser")
+                # Don't display information in terminal
+                os.system(f"cd {result_path} && zip -r log.zip log.html browser > /dev/null 2>&1")
                 
                 with open(zip_path, 'rb') as f:
                     st.download_button(label="Download log.zip", data=f, file_name="log.zip", disabled=st.session_state.disabled, key=f"download_zip_{id_workflow}")

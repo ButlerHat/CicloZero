@@ -12,6 +12,7 @@ services:
       - ${HOST_HOME}/data/CicloZero/data:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/data:cached
       - ${HOST_HOME}/urjc_chapo/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/robotframework/keywords/woocommerce_files:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/robotframework/keywords/woocommerce_files:cached
       - cron_volume:/var/spool/cron/crontabs:cached
+      - cookies_volume:/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/browser/user_data_dir:cached
     cap_add:
       - SYS_ADMIN
     shm_size: '2gb'
@@ -25,6 +26,9 @@ services:
 
 volumes:
   cron_volume:
+    driver: local
+
+  cookies_volume:
     driver: local
 
 networks:

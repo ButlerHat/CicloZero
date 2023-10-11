@@ -57,6 +57,7 @@ Go to my ebay
     Click  //a[@title='My eBay']
 
 Go to my ebay selling
+    Wait For Elements State    //a[text()='Selling']  stable
     Click  //a[text()='Selling']
 
 Click on orders tab
