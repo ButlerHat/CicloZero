@@ -72,6 +72,9 @@ async def run_robot(id_: str, vars: list, robot: str, msg_info=None, msg_fail=No
             f2.write(stdout.decode())
             f2.write(stderr.decode())
 
+    if not hasattr(st.session_state, f'log_{id_}'):
+        st.session_state[f'log_{id_}'] = False
+
     # Check if there is a msg file
     msg_path = os.path.join(result_path, "return_msg.txt")
     if os.path.exists(msg_path):
