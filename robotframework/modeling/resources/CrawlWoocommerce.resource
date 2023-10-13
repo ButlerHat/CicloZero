@@ -34,6 +34,7 @@ Check if there are orders to process
     RETURN  ${True}
 
 Click on procesando
+    Wait Until Network Is Idle
     Click  //ul//a[contains(.,"Procesando")]
 
 Get bounding box of the count of procesando
