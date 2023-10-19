@@ -221,6 +221,7 @@ def ciclai_stock():
                     f"-d {st.secrets.paths.stock_excel} -l 7" +
                     f" > {os.path.join(st.secrets.paths.robot, 'jobs', 'delete_files.log')} 2>&1\n")
             f.write(excel_path + "\n")
+            f.write(csv_path + "\n")
             for script_robot in scripts_robot:
                 f.write(script_robot + "\n")
             

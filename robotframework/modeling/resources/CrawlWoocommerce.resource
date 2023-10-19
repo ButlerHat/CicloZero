@@ -70,7 +70,12 @@ Get all skus from the table
     RETURN  ${orders_sku}
 
 Click on eye icon of the ${name} row
-    Click  //table[not(@style="display: none")]//tbody/tr[contains(.,"${name}")]//a[@class="order-preview"]
+    TRY
+        Click  //table[not(@style="display: none")]//tbody/tr[contains(.,"${name}")]//a[@class="order-preview"]
+    EXCEPT
+        Scroll Down  50
+        Click  //table[not(@style="display: none")]//tbody/tr[contains(.,"${name}")]//a[@class="order-preview"]
+    END
 
 Get bouding box of the sku code above capacidad
     ${sku_elements}  Get Elements    //div[@class="wc-order-item-sku"]

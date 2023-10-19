@@ -55,6 +55,7 @@ Close popup
 
 Go to my ebay
     Click  //a[@title='My eBay']
+    Sleep  2
 
 Go to my ebay selling
     Wait For Elements State    //a[text()='Selling']  stable
