@@ -76,7 +76,7 @@ Go to active in right menu
 Click on thrid dropdown in search
     [Arguments]  ${option}
     Wait For Elements State    //select[@data-id="primaryFilter"]  stable
-    Click  //select[@data-id="primaryFilter"]
+    Wait Until Keyword Succeeds  5  1  Click  //select[@data-id="primaryFilter"]
     Select Options By  //select[@data-id="primaryFilter"]  text  ${option}
 
 Click on the dropdown next to ${right_option}

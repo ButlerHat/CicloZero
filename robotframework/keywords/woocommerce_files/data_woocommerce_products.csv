@@ -1,78 +1,41 @@
 Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
-9360,iPSE2-EC,iPhone SE (2.ª gen),,outofstock,no,,variable,
-9412,iPSE2-EC,64 GB Black Bueno ,true,outofstock,no,,product-variant,9360
-9413,iPSE2-EC,64 GB Black Muy bueno ,true,outofstock,no,,product-variant,9360
-9414,iPSE2-EC,64 GB Black Como nuevo ,true,outofstock,no,,product-variant,9360
-9415,iPSE2-EC,64 GB Black Premium ,true,outofstock,no,,product-variant,9360
-9416,iPSE2-EC,64 GB Red Bueno ,true,outofstock,no,,product-variant,9360
-9417,iPSE2-EC,64 GB Red Muy bueno ,true,outofstock,no,,product-variant,9360
-9418,iPSE2-EC,64 GB Red Como nuevo ,true,outofstock,no,,product-variant,9360
-9419,iPSE2-EC,64 GB Red Premium ,true,outofstock,no,,product-variant,9360
-9420,iPSE2-EC,64 GB White Bueno ,true,outofstock,no,,product-variant,9360
-9421,iPSE2-EC,64 GB White Muy bueno ,true,outofstock,no,,product-variant,9360
-9422,iPSE2-EC,64 GB White Como nuevo ,true,outofstock,no,,product-variant,9360
-9423,iPSE2-EC,64 GB White Premium ,true,outofstock,no,,product-variant,9360
-9424,iPSE2-EC,128 GB Black Bueno ,true,outofstock,no,,product-variant,9360
-9425,iPSE2-EC,128 GB Black Muy bueno ,true,outofstock,no,,product-variant,9360
-9426,iPSE2-EC,128 GB Black Como nuevo ,true,outofstock,no,,product-variant,9360
-9427,iPSE2-EC,128 GB Black Premium ,true,outofstock,no,,product-variant,9360
-9428,iPSE2-EC,128 GB Red Bueno ,true,outofstock,no,,product-variant,9360
-9429,iPSE2-EC,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,9360
-9430,iPSE2-EC,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,9360
-9431,iPSE2-EC,128 GB Red Premium ,true,outofstock,no,,product-variant,9360
-9432,iPSE2-EC,128 GB White Bueno ,true,outofstock,no,,product-variant,9360
-9433,iPSE2-EC,128 GB White Muy bueno ,true,outofstock,no,,product-variant,9360
-9434,iPSE2-EC,128 GB White Como nuevo ,true,outofstock,no,,product-variant,9360
-9435,iPSE2-EC,128 GB White Premium ,true,outofstock,no,,product-variant,9360
-9436,iPSE2-EC,256 GB Black Bueno ,true,outofstock,no,,product-variant,9360
-9437,iPSE2-EC,256 GB Black Muy bueno ,true,outofstock,no,,product-variant,9360
-9438,iPSE2-EC,256 GB Black Como nuevo ,true,outofstock,no,,product-variant,9360
-9439,iPSE2-EC,256 GB Black Premium ,true,outofstock,no,,product-variant,9360
-9440,iPSE2-EC,256 GB Red Bueno ,true,outofstock,no,,product-variant,9360
-9441,iPSE2-EC,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,9360
-9442,iPSE2-EC,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,9360
-9443,iPSE2-EC,256 GB Red Premium ,true,outofstock,no,,product-variant,9360
-9444,iPSE2-EC,256 GB White Bueno ,true,outofstock,no,,product-variant,9360
-9445,iPSE2-EC,256 GB White Muy bueno ,true,outofstock,no,,product-variant,9360
-9446,iPSE2-EC,256 GB White Como nuevo ,true,outofstock,no,,product-variant,9360
-9447,iPSE2-EC,256 GB White Premium ,true,outofstock,no,,product-variant,9360
 9465,iPSE3-EC,iPhone SE (3.ª gen),,outofstock,no,,variable,
-9502,iPSE3-EC,64 GB Midnight Bueno ,true,outofstock,no,,product-variant,9465
-9503,iPSE3-EC,64 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,9465
-9504,iPSE3-EC,64 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,9465
-9505,iPSE3-EC,64 GB Midnight Premium ,true,outofstock,no,,product-variant,9465
-9506,iPSE3-EC,64 GB Red Bueno ,true,outofstock,no,,product-variant,9465
-9507,iPSE3-EC,64 GB Red Muy bueno ,true,outofstock,no,,product-variant,9465
-9508,iPSE3-EC,64 GB Red Como nuevo ,true,outofstock,no,,product-variant,9465
-9509,iPSE3-EC,64 GB Red Premium ,true,outofstock,no,,product-variant,9465
-9510,iPSE3-EC,64 GB Starlight Bueno ,true,outofstock,no,,product-variant,9465
-9511,iPSE3-EC,64 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,9465
-9512,iPSE3-EC,64 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,9465
-9513,iPSE3-EC,64 GB Starlight Premium ,true,outofstock,no,,product-variant,9465
-9514,iPSE3-EC,128 GB Midnight Bueno ,true,outofstock,no,,product-variant,9465
-9515,iPSE3-EC,128 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,9465
-9516,iPSE3-EC,128 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,9465
-9517,iPSE3-EC,128 GB Midnight Premium ,true,outofstock,no,,product-variant,9465
-9518,iPSE3-EC,128 GB Red Bueno ,true,outofstock,no,,product-variant,9465
-9519,iPSE3-EC,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,9465
-9520,iPSE3-EC,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,9465
-9521,iPSE3-EC,128 GB Red Premium ,true,outofstock,no,,product-variant,9465
-9522,iPSE3-EC,128 GB Starlight Bueno ,true,outofstock,no,,product-variant,9465
-9523,iPSE3-EC,128 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,9465
-9524,iPSE3-EC,128 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,9465
-9525,iPSE3-EC,128 GB Starlight Premium ,true,outofstock,no,,product-variant,9465
-9526,iPSE3-EC,256 GB Midnight Bueno ,true,outofstock,no,,product-variant,9465
-9527,iPSE3-EC,256 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,9465
-9528,iPSE3-EC,256 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,9465
-9529,iPSE3-EC,256 GB Midnight Premium ,true,outofstock,no,,product-variant,9465
-9530,iPSE3-EC,256 GB Red Bueno ,true,outofstock,no,,product-variant,9465
-9531,iPSE3-EC,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,9465
-9532,iPSE3-EC,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,9465
-9533,iPSE3-EC,256 GB Red Premium ,true,outofstock,no,,product-variant,9465
-9534,iPSE3-EC,256 GB Starlight Bueno ,true,outofstock,no,,product-variant,9465
-9535,iPSE3-EC,256 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,9465
-9536,iPSE3-EC,256 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,9465
-9537,iPSE3-EC,256 GB Starlight Premium ,true,outofstock,no,,product-variant,9465
+9502,iPSE22-MD-64-C -R,64 GB Midnight Bueno ,true,outofstock,no,,product-variant,9465
+9503,iPSE22-MD-64-B -R,64 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,9465
+9504,iPSE22-MD-64-A -R,64 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,9465
+9505,iPSE22-MD-64-A+ -R,64 GB Midnight Premium ,true,outofstock,no,,product-variant,9465
+9506,iPSE22-RD-64-C -R,64 GB Red Bueno ,true,outofstock,no,,product-variant,9465
+9507,iPSE22-RD-64-B -R,64 GB Red Muy bueno ,true,outofstock,no,,product-variant,9465
+9508,iPSE22-RD-64-A -R,64 GB Red Como nuevo ,true,outofstock,no,,product-variant,9465
+9509,iPSE22-RD-64-A+ -R,64 GB Red Premium ,true,outofstock,no,,product-variant,9465
+9510,iPSE22-STR-64-C -R,64 GB Starlight Bueno ,true,outofstock,no,,product-variant,9465
+9511,iPSE22-STR-64-B -R,64 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,9465
+9512,iPSE22-STR-64-A -R,64 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,9465
+9513,iPSE22-STR-64-A+ -R,64 GB Starlight Premium ,true,outofstock,no,,product-variant,9465
+9514,iPSE22-MD-128-C -R,128 GB Midnight Bueno ,true,outofstock,no,,product-variant,9465
+9515,iPSE22-MD-128-B -R,128 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,9465
+9516,iPSE22-MD-128-A -R,128 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,9465
+9517,iPSE22-MD-128-A+ -R,128 GB Midnight Premium ,true,outofstock,no,,product-variant,9465
+9518,iPSE22-RD-128-C -R,128 GB Red Bueno ,true,outofstock,no,,product-variant,9465
+9519,iPSE22-RD-128-B -R,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,9465
+9520,iPSE22-RD-128-A -R,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,9465
+9521,iPSE22-RD-128-A+ -R,128 GB Red Premium ,true,outofstock,no,,product-variant,9465
+9522,iPSE22-STR-128-C -R,128 GB Starlight Bueno ,true,outofstock,no,,product-variant,9465
+9523,iPSE22-STR-128-B -R,128 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,9465
+9524,iPSE22-STR-128-A -R,128 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,9465
+9525,iPSE22-STR-128-A+ -R,128 GB Starlight Premium ,true,outofstock,no,,product-variant,9465
+9526,iPSE22-MD-256-C -R,256 GB Midnight Bueno ,true,outofstock,no,,product-variant,9465
+9527,iPSE22-MD-256-B -R,256 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,9465
+9528,iPSE22-MD-256-A -R,256 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,9465
+9529,iPSE22-MD-256-A+ -R,256 GB Midnight Premium ,true,outofstock,no,,product-variant,9465
+9530,iPSE22-RD-256-C -R,256 GB Red Bueno ,true,outofstock,no,,product-variant,9465
+9531,iPSE22-RD-256-B -R,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,9465
+9532,iPSE22-RD-256-A -R,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,9465
+9533,iPSE22-RD-256-A+ -R,256 GB Red Premium ,true,outofstock,no,,product-variant,9465
+9534,iPSE22-STR-256-C -R,256 GB Starlight Bueno ,true,outofstock,no,,product-variant,9465
+9535,iPSE22-STR-256-B -R,256 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,9465
+9536,iPSE22-STR-256-A -R,256 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,9465
+9537,iPSE22-STR-256-A+ -R,256 GB Starlight Premium ,true,outofstock,no,,product-variant,9465
 9541,iW7G-EC,Apple Watch 7 Reacondicionado,,onbackorder,no,,variable,
 9616,AWT7G-ALUBL-41-C -R,41 MM Aluminio Blue Bueno ,true,outofstock,no,,product-variant,9541
 9617,AWT7G-ALUBL-41-B -R,41 MM Aluminio Blue Muy bueno ,true,outofstock,no,,product-variant,9541
@@ -114,7 +77,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 9653,AWT7G-ALUSTR-45-B -R,45 MM Aluminio Starlight Muy bueno ,true,outofstock,no,,product-variant,9541
 9654,AWT7G-ALUSTR-45-A -R,45 MM Aluminio Starlight Como nuevo ,true,outofstock,no,,product-variant,9541
 9655,AWT7G-ALUSTR-45-A+ -R,45 MM Aluminio Starlight Premium ,true,outofstock,no,,product-variant,9541
-9656,iWSE2G-EC,Apple Watch SE (2.ª gen) Reacondicionado,,instock,no,,variable,
+9656,iWSE2G-EC,Apple Watch SE (2.ª gen) Reacondicionado,,onbackorder,no,,variable,
 9702,AWTSE2G-ALUMD-40-C -R,40 MM Aluminio Midnight Bueno ,true,outofstock,no,,product-variant,9656
 9703,AWTSE2G-ALUMD-40-B -R,40 MM Aluminio Midnight Muy bueno ,true,outofstock,no,,product-variant,9656
 9704,AWTSE2G-ALUMD-40-A -R,40 MM Aluminio Midnight Como nuevo ,true,outofstock,no,,product-variant,9656
@@ -122,7 +85,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 9706,AWTSE2G-ALUSL-40-C -R,40 MM Aluminio Silver Bueno ,true,outofstock,no,,product-variant,9656
 9707,AWTSE2G-ALUSL-40-B -R,40 MM Aluminio Silver Muy bueno ,true,outofstock,no,,product-variant,9656
 9708,AWTSE2G-ALUSL-40-A -R,40 MM Aluminio Silver Como nuevo ,true,outofstock,no,,product-variant,9656
-9709,AWTSE2G-ALUSL-40-A+ -R,40 MM Aluminio Silver Premium ,true,instock,no,1,product-variant,9656
+9709,AWTSE2G-ALUSL-40-A+ -R,40 MM Aluminio Silver Premium ,true,outofstock,no,,product-variant,9656
 9710,AWTSE2G-ALUSTR-40-C -R,40 MM Aluminio Starlight Bueno ,true,outofstock,no,,product-variant,9656
 9711,AWTSE2G-ALUSTR-40-B -R,40 MM Aluminio Starlight Muy bueno ,true,outofstock,no,,product-variant,9656
 9712,AWTSE2G-ALUSTR-40-A -R,40 MM Aluminio Starlight Como nuevo ,true,outofstock,no,,product-variant,9656
@@ -139,72 +102,72 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 9723,AWTSE2G-ALUSTR-44-B -R,44 MM Aluminio Starlight Muy bueno ,true,outofstock,no,,product-variant,9656
 9724,AWTSE2G-ALUSTR-44-A -R,44 MM Aluminio Starlight Como nuevo ,true,outofstock,no,,product-variant,9656
 9725,AWTSE2G-ALUSTR-44-A+ -R,44 MM Aluminio Starlight Premium ,true,outofstock,no,,product-variant,9656
-10265,iP8P-EC-2,iPhone 8 Plus Reacondicionado,,outofstock,no,,variable,
-10266,iP8P-EC-2,64 GB Gold Bueno ,true,outofstock,no,,product-variant,10265
-10267,iP8P-EC-2,64 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10265
-10268,iP8P-EC-2,64 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10265
-10269,iP8P-EC-2,64 GB Gold Premium ,true,outofstock,no,,product-variant,10265
-10270,iP8P-EC-2,64 GB Red Bueno ,true,outofstock,no,,product-variant,10265
-10271,iP8P-EC-2,64 GB Red Muy bueno ,true,outofstock,no,,product-variant,10265
-10272,iP8P-EC-2,64 GB Red Como nuevo ,true,outofstock,no,,product-variant,10265
-10273,iP8P-EC-2,64 GB Red Premium ,true,outofstock,no,,product-variant,10265
-10274,iP8P-EC-2,64 GB Silver Bueno ,true,outofstock,no,,product-variant,10265
-10275,iP8P-EC-2,64 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10265
-10276,iP8P-EC-2,64 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10265
-10277,iP8P-EC-2,64 GB Silver Premium ,true,outofstock,no,,product-variant,10265
-10278,iP8P-EC-2,64 GB Space gray Bueno ,true,outofstock,no,,product-variant,10265
-10279,iP8P-EC-2,64 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10265
-10280,iP8P-EC-2,64 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10265
-10281,iP8P-EC-2,64 GB Space gray Premium ,true,outofstock,no,,product-variant,10265
-10282,iP8P-EC-2,128 GB Gold Bueno ,true,outofstock,no,,product-variant,10265
-10283,iP8P-EC-2,128 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10265
-10284,iP8P-EC-2,128 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10265
-10285,iP8P-EC-2,128 GB Gold Premium ,true,outofstock,no,,product-variant,10265
-10286,iP8P-EC-2,128 GB Red Bueno ,true,outofstock,no,,product-variant,10265
-10287,iP8P-EC-2,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,10265
-10288,iP8P-EC-2,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,10265
-10289,iP8P-EC-2,128 GB Red Premium ,true,outofstock,no,,product-variant,10265
-10290,iP8P-EC-2,128 GB Silver Bueno ,true,outofstock,no,,product-variant,10265
-10291,iP8P-EC-2,128 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10265
-10292,iP8P-EC-2,128 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10265
-10293,iP8P-EC-2,128 GB Silver Premium ,true,outofstock,no,,product-variant,10265
-10294,iP8P-EC-2,128 GB Space gray Bueno ,true,outofstock,no,,product-variant,10265
-10295,iP8P-EC-2,128 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10265
-10296,iP8P-EC-2,128 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10265
-10297,iP8P-EC-2,128 GB Space gray Premium ,true,outofstock,no,,product-variant,10265
-10298,iP8P-EC-2,256 GB Gold Bueno ,true,outofstock,no,,product-variant,10265
-10299,iP8P-EC-2,256 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10265
-10300,iP8P-EC-2,256 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10265
-10301,iP8P-EC-2,256 GB Gold Premium ,true,outofstock,no,,product-variant,10265
-10302,iP8P-EC-2,256 GB Red Bueno ,true,outofstock,no,,product-variant,10265
-10303,iP8P-EC-2,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,10265
-10304,iP8P-EC-2,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,10265
-10305,iP8P-EC-2,256 GB Red Premium ,true,outofstock,no,,product-variant,10265
-10306,iP8P-EC-2,256 GB Silver Bueno ,true,outofstock,no,,product-variant,10265
-10307,iP8P-EC-2,256 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10265
-10308,iP8P-EC-2,256 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10265
-10309,iP8P-EC-2,256 GB Silver Premium ,true,outofstock,no,,product-variant,10265
-10310,iP8P-EC-2,256 GB Space gray Bueno ,true,outofstock,no,,product-variant,10265
-10311,iP8P-EC-2,256 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10265
-10312,iP8P-EC-2,256 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10265
-10313,iP8P-EC-2,256 GB Space gray Premium ,true,outofstock,no,,product-variant,10265
-10314,iPXR-EC-1,iPhone XR Reacondicionado,,onbackorder,no,,variable,
-10315,iPXS-GD-64-C -R-1,64 GB Gold Bueno ,true,outofstock,no,,product-variant,10314
-10316,iPXS-GD-64-B -R-1,64 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10314
-10317,iPXS-GD-64-A -R-1,64 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10314
-10318,iPXS-GD-64-A+ -R-1,64 GB Gold Premium ,true,outofstock,no,,product-variant,10314
-10319,iPXS-SL-64-C -R-1,64 GB Silver Bueno ,true,outofstock,no,,product-variant,10314
-10320,iPXS-SL-64-B -R-1,64 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10314
-10321,iPXS-SL-64-A -R-1,64 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10314
-10322,iPXS-SL-64-A+ -R-1,64 GB Silver Premium ,true,outofstock,no,,product-variant,10314
-10323,iPXS-SG-64-C -R-1,64 GB Space gray Bueno ,true,outofstock,no,,product-variant,10314
-10324,iPXS-SG-64-B -R-1,64 GB Space gray Muy bueno ,true,onbackorder,yes,,product-variant,10314
-10325,iPXS-SG-64-A -R-1,64 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10314
-10326,iPXS-SG-64-A+ -R-1,64 GB Space gray Premium ,true,outofstock,no,,product-variant,10314
-10327,iPXS-GD-256-C -R-1,256 GB Gold Bueno ,true,outofstock,no,,product-variant,10314
-10328,iPXS-GD-256-B -R-1,256 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10314
-10329,iPXS-GD-256-A -R-1,256 GB Gold Como nuevo ,true,onbackorder,yes,,product-variant,10314
-10330,iPXS-GD-256-A+ -R-1,256 GB Gold Premium ,true,outofstock,no,,product-variant,10314
+10265,iP8P-EC,iPhone 8 Plus Reacondicionado,,outofstock,no,,variable,
+10266,iP8P-EC,64 GB Gold Bueno ,true,outofstock,no,,product-variant,10265
+10267,iP8P-EC,64 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10265
+10268,iP8P-EC,64 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10265
+10269,iP8P-EC,64 GB Gold Premium ,true,outofstock,no,,product-variant,10265
+10270,iP8P-EC,64 GB Red Bueno ,true,outofstock,no,,product-variant,10265
+10271,iP8P-EC,64 GB Red Muy bueno ,true,outofstock,no,,product-variant,10265
+10272,iP8P-EC,64 GB Red Como nuevo ,true,outofstock,no,,product-variant,10265
+10273,iP8P-EC,64 GB Red Premium ,true,outofstock,no,,product-variant,10265
+10274,iP8P-EC,64 GB Silver Bueno ,true,outofstock,no,,product-variant,10265
+10275,iP8P-EC,64 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10265
+10276,iP8P-EC,64 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10265
+10277,iP8P-EC,64 GB Silver Premium ,true,outofstock,no,,product-variant,10265
+10278,iP8P-EC,64 GB Space gray Bueno ,true,outofstock,no,,product-variant,10265
+10279,iP8P-EC,64 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10265
+10280,iP8P-EC,64 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10265
+10281,iP8P-EC,64 GB Space gray Premium ,true,outofstock,no,,product-variant,10265
+10282,iP8P-EC,128 GB Gold Bueno ,true,outofstock,no,,product-variant,10265
+10283,iP8P-EC,128 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10265
+10284,iP8P-EC,128 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10265
+10285,iP8P-EC,128 GB Gold Premium ,true,outofstock,no,,product-variant,10265
+10286,iP8P-EC,128 GB Red Bueno ,true,outofstock,no,,product-variant,10265
+10287,iP8P-EC,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,10265
+10288,iP8P-EC,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,10265
+10289,iP8P-EC,128 GB Red Premium ,true,outofstock,no,,product-variant,10265
+10290,iP8P-EC,128 GB Silver Bueno ,true,outofstock,no,,product-variant,10265
+10291,iP8P-EC,128 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10265
+10292,iP8P-EC,128 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10265
+10293,iP8P-EC,128 GB Silver Premium ,true,outofstock,no,,product-variant,10265
+10294,iP8P-EC,128 GB Space gray Bueno ,true,outofstock,no,,product-variant,10265
+10295,iP8P-EC,128 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10265
+10296,iP8P-EC,128 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10265
+10297,iP8P-EC,128 GB Space gray Premium ,true,outofstock,no,,product-variant,10265
+10298,iP8P-EC,256 GB Gold Bueno ,true,outofstock,no,,product-variant,10265
+10299,iP8P-EC,256 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10265
+10300,iP8P-EC,256 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10265
+10301,iP8P-EC,256 GB Gold Premium ,true,outofstock,no,,product-variant,10265
+10302,iP8P-EC,256 GB Red Bueno ,true,outofstock,no,,product-variant,10265
+10303,iP8P-EC,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,10265
+10304,iP8P-EC,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,10265
+10305,iP8P-EC,256 GB Red Premium ,true,outofstock,no,,product-variant,10265
+10306,iP8P-EC,256 GB Silver Bueno ,true,outofstock,no,,product-variant,10265
+10307,iP8P-EC,256 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10265
+10308,iP8P-EC,256 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10265
+10309,iP8P-EC,256 GB Silver Premium ,true,outofstock,no,,product-variant,10265
+10310,iP8P-EC,256 GB Space gray Bueno ,true,outofstock,no,,product-variant,10265
+10311,iP8P-EC,256 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10265
+10312,iP8P-EC,256 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10265
+10313,iP8P-EC,256 GB Space gray Premium ,true,outofstock,no,,product-variant,10265
+10314,iPXR-EC,iPhone XR Reacondicionado,,onbackorder,no,,variable,
+10315,iPXS-GD-64-C -R-1,64 GB Gold Bueno ,,outofstock,no,,product-variant,10314
+10316,iPXS-GD-64-B -R-1,64 GB Gold Muy bueno ,,outofstock,no,,product-variant,10314
+10317,iPXS-GD-64-A -R-1,64 GB Gold Como nuevo ,,outofstock,no,,product-variant,10314
+10318,iPXS-GD-64-A+ -R-1,64 GB Gold Premium ,,outofstock,no,,product-variant,10314
+10319,iPXS-SL-64-C -R-1,64 GB Silver Bueno ,,outofstock,no,,product-variant,10314
+10320,iPXS-SL-64-B -R-1,64 GB Silver Muy bueno ,,outofstock,no,,product-variant,10314
+10321,iPXS-SL-64-A -R-1,64 GB Silver Como nuevo ,,outofstock,no,,product-variant,10314
+10322,iPXS-SL-64-A+ -R-1,64 GB Silver Premium ,,outofstock,no,,product-variant,10314
+10323,iPXS-SG-64-C -R-1,64 GB Space gray Bueno ,,outofstock,no,,product-variant,10314
+10324,iPXS-SG-64-B -R-1,64 GB Space gray Muy bueno ,,outofstock,no,,product-variant,10314
+10325,iPXS-SG-64-A -R-1,64 GB Space gray Como nuevo ,,outofstock,no,,product-variant,10314
+10326,iPXS-SG-64-A+ -R-1,64 GB Space gray Premium ,,outofstock,no,,product-variant,10314
+10327,iPXS-GD-256-C -R-1,256 GB Gold Bueno ,,outofstock,no,,product-variant,10314
+10328,iPXS-GD-256-B -R-1,256 GB Gold Muy bueno ,,outofstock,no,,product-variant,10314
+10329,iPXS-GD-256-A -R-1,256 GB Gold Como nuevo ,,outofstock,no,,product-variant,10314
+10330,iPXS-GD-256-A+ -R-1,256 GB Gold Premium ,,outofstock,no,,product-variant,10314
 10331,iPXS-SL-256-C -R-1,256 GB Silver Bueno ,true,outofstock,no,,product-variant,10314
 10332,iPXS-SL-256-B -R-1,256 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10314
 10333,iPXS-SL-256-A -R-1,256 GB Silver Como nuevo ,true,onbackorder,yes,,product-variant,10314
@@ -225,7 +188,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 10348,iPXS-SG-512-B -R-1,512 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10314
 10349,iPXS-SG-512-A -R-1,512 GB Space gray Como nuevo ,true,onbackorder,yes,,product-variant,10314
 10350,iPXS-SG-512-A+ -R-1,512 GB Space gray Premium ,true,outofstock,no,,product-variant,10314
-10353,iPXSM-EC-1-1,iPhone XS Max Reacondicionado ,,onbackorder,no,,variable,
+10353,iPXSM-EC,iPhone XS Max Reacondicionado ,,onbackorder,no,,variable,
 10354,iPXS-GD-64-C -R-1-1,64 GB Gold Bueno ,true,outofstock,no,,product-variant,10353
 10355,iPXS-GD-64-B -R-1-1,64 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10353
 10356,iPXS-GD-64-A -R-1-1,64 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10353
@@ -248,7 +211,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 10373,iPXS-SL-256-A+ -R-1-1,256 GB Silver Premium ,true,outofstock,no,,product-variant,10353
 10374,iPXS-SG-256-C -R-1-1,256 GB Space gray Bueno ,true,outofstock,no,,product-variant,10353
 10375,iPXS-SG-256-B -R-1-1,256 GB Space gray Muy bueno ,true,onbackorder,yes,,product-variant,10353
-10376,iPXS-SG-256-A -R-1-1,256 GB Space gray Como nuevo ,true,onbackorder,yes,,product-variant,10353
+10376,iPXS-SG-256-A -R-1-1,256 GB Space gray Como nuevo ,true,onbackorder,yes,-1,product-variant,10353
 10377,iPXS-SG-256-A+ -R-1-1,256 GB Space gray Premium ,true,outofstock,no,,product-variant,10353
 10378,iPXS-GD-512-C -R-1-1,512 GB Gold Bueno ,true,outofstock,no,,product-variant,10353
 10379,iPXS-GD-512-B -R-1-1,512 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10353
@@ -263,18 +226,18 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 10388,iPXS-SG-512-A -R-1-1,512 GB Space gray Como nuevo ,true,onbackorder,yes,,product-variant,10353
 10389,iPXS-SG-512-A+ -R-1-1,512 GB Space gray Premium ,true,outofstock,no,,product-variant,10353
 10506,iW8G-EC,Apple Watch 8 Reacondicionado,,outofstock,no,,variable,
-10552,iW8G-EC,41 MM Aluminio Midnight Muy bueno ,true,outofstock,no,,product-variant,10506
-10553,iW8G-EC,41 MM Aluminio Midnight Como nuevo ,true,outofstock,no,,product-variant,10506
-10554,iW8G-EC,41 MM Aluminio Midnight Premium ,true,outofstock,no,,product-variant,10506
-10555,iW8G-EC,41 MM Aluminio Red Muy bueno ,true,outofstock,no,,product-variant,10506
-10556,iW8G-EC,41 MM Aluminio Red Como nuevo ,true,outofstock,no,,product-variant,10506
-10557,iW8G-EC,41 MM Aluminio Red Premium ,true,outofstock,no,,product-variant,10506
-10558,iW8G-EC,41 MM Aluminio Silver Muy bueno ,true,outofstock,no,,product-variant,10506
-10559,iW8G-EC,41 MM Aluminio Silver Como nuevo ,true,outofstock,no,,product-variant,10506
-10560,iW8G-EC,41 MM Aluminio Silver Premium ,true,outofstock,no,,product-variant,10506
-10561,iW8G-EC,41 MM Aluminio Starlight Muy bueno ,true,outofstock,no,,product-variant,10506
-10562,iW8G-EC,41 MM Aluminio Starlight Como nuevo ,true,outofstock,no,,product-variant,10506
-10563,iW8G-EC,41 MM Aluminio Starlight Premium ,true,outofstock,no,,product-variant,10506
+10552,AWT8G-ALUMD-41-B -R,41 MM Aluminio Midnight Muy bueno ,true,outofstock,no,,product-variant,10506
+10553,AWT8G-ALUMD-41-A -R,41 MM Aluminio Midnight Como nuevo ,true,outofstock,no,,product-variant,10506
+10554,AWT8G-ALUMD-41-A+ -R,41 MM Aluminio Midnight Premium ,true,outofstock,no,,product-variant,10506
+10555,AWT8G-ALURD-41-B -R,41 MM Aluminio Red Muy bueno ,true,outofstock,no,,product-variant,10506
+10556,AWT8G-ALURD-41-A -R,41 MM Aluminio Red Como nuevo ,true,outofstock,no,,product-variant,10506
+10557,AWT8G-ALURD-41-A+ -R,41 MM Aluminio Red Premium ,true,outofstock,no,,product-variant,10506
+10558,AWT8G-ALUSL-41-B -R,41 MM Aluminio Silver Muy bueno ,true,outofstock,no,,product-variant,10506
+10559,AWT8G-ALUSL-41-A -R,41 MM Aluminio Silver Como nuevo ,true,outofstock,no,,product-variant,10506
+10560,AWT8G-ALUSL-41-A+ -R,41 MM Aluminio Silver Premium ,true,outofstock,no,,product-variant,10506
+10561,AWT8G-ALUSTR-41-B -R,41 MM Aluminio Starlight Muy bueno ,true,outofstock,no,,product-variant,10506
+10562,AWT8G-ALUSTR-41-A -R,41 MM Aluminio Starlight Como nuevo ,true,outofstock,no,,product-variant,10506
+10563,AWT8G-ALUSTR-41-A+ -R,41 MM Aluminio Starlight Premium ,true,outofstock,no,,product-variant,10506
 10564,iW8G-EC,41 MM Stainless Steel Gold Muy bueno ,true,outofstock,no,,product-variant,10506
 10565,iW8G-EC,41 MM Stainless Steel Gold Como nuevo ,true,outofstock,no,,product-variant,10506
 10566,iW8G-EC,41 MM Stainless Steel Gold Premium ,true,outofstock,no,,product-variant,10506
@@ -284,18 +247,18 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 10570,iW8G-EC,41 MM Stainless Steel Silver Muy bueno ,true,outofstock,no,,product-variant,10506
 10571,iW8G-EC,41 MM Stainless Steel Silver Como nuevo ,true,outofstock,no,,product-variant,10506
 10572,iW8G-EC,41 MM Stainless Steel Silver Premium ,true,outofstock,no,,product-variant,10506
-10573,iW8G-EC,45 MM Aluminio Midnight Muy bueno ,true,outofstock,no,,product-variant,10506
-10574,iW8G-EC,45 MM Aluminio Midnight Como nuevo ,true,outofstock,no,,product-variant,10506
-10575,iW8G-EC,45 MM Aluminio Midnight Premium ,true,outofstock,no,,product-variant,10506
-10576,iW8G-EC,45 MM Aluminio Red Muy bueno ,true,outofstock,no,,product-variant,10506
-10577,iW8G-EC,45 MM Aluminio Red Como nuevo ,true,outofstock,no,,product-variant,10506
-10578,iW8G-EC,45 MM Aluminio Red Premium ,true,outofstock,no,,product-variant,10506
-10579,iW8G-EC,45 MM Aluminio Silver Muy bueno ,true,outofstock,no,,product-variant,10506
-10580,iW8G-EC,45 MM Aluminio Silver Como nuevo ,true,outofstock,no,,product-variant,10506
-10581,iW8G-EC,45 MM Aluminio Silver Premium ,true,outofstock,no,,product-variant,10506
-10582,iW8G-EC,45 MM Aluminio Starlight Muy bueno ,true,outofstock,no,,product-variant,10506
-10583,iW8G-EC,45 MM Aluminio Starlight Como nuevo ,true,outofstock,no,,product-variant,10506
-10584,iW8G-EC,45 MM Aluminio Starlight Premium ,true,outofstock,no,,product-variant,10506
+10573,AWT8G-ALUMD-45-B -R,45 MM Aluminio Midnight Muy bueno ,true,outofstock,no,,product-variant,10506
+10574,AWT8G-ALUMD-45-A -R,45 MM Aluminio Midnight Como nuevo ,true,outofstock,no,,product-variant,10506
+10575,AWT8G-ALUMD-45-A+ -R,45 MM Aluminio Midnight Premium ,true,outofstock,no,,product-variant,10506
+10576,AWT8G-ALURD-45-B -R,45 MM Aluminio Red Muy bueno ,true,outofstock,no,,product-variant,10506
+10577,AWT8G-ALURD-45-A -R,45 MM Aluminio Red Como nuevo ,true,outofstock,no,,product-variant,10506
+10578,AWT8G-ALURD-45-A+ -R,45 MM Aluminio Red Premium ,true,outofstock,no,,product-variant,10506
+10579,AWT8G-ALUSL-45-B -R,45 MM Aluminio Silver Muy bueno ,true,outofstock,no,,product-variant,10506
+10580,AWT8G-ALUSL-45-A -R,45 MM Aluminio Silver Como nuevo ,true,outofstock,no,,product-variant,10506
+10581,AWT8G-ALUSL-45-A+ -R,45 MM Aluminio Silver Premium ,true,outofstock,no,,product-variant,10506
+10582,AWT8G-ALUSTR-45-B -R,45 MM Aluminio Starlight Muy bueno ,true,outofstock,no,,product-variant,10506
+10583,AWT8G-ALUSTR-45-A -R,45 MM Aluminio Starlight Como nuevo ,true,outofstock,no,,product-variant,10506
+10584,AWT8G-ALUSTR-45-A+ -R,45 MM Aluminio Starlight Premium ,true,outofstock,no,,product-variant,10506
 10585,iW8G-EC,45 MM Stainless Steel Gold Muy bueno ,true,outofstock,no,,product-variant,10506
 10586,iW8G-EC,45 MM Stainless Steel Gold Como nuevo ,true,outofstock,no,,product-variant,10506
 10587,iW8G-EC,45 MM Stainless Steel Gold Premium ,true,outofstock,no,,product-variant,10506
@@ -305,56 +268,56 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 10591,iW8G-EC,45 MM Stainless Steel Silver Muy bueno ,true,outofstock,no,,product-variant,10506
 10592,iW8G-EC,45 MM Stainless Steel Silver Como nuevo ,true,outofstock,no,,product-variant,10506
 10593,iW8G-EC,45 MM Stainless Steel Silver Premium ,true,outofstock,no,,product-variant,10506
-10646,iP8-EC-1,iPhone 7 Reacondicionado,,outofstock,no,,variable,
-10647,iP8-EC-1,64 GB Gold Bueno ,true,outofstock,no,,product-variant,10646
-10648,iP8-EC-1,64 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10646
+10646,iP7-EC,iPhone 7 Reacondicionado,,outofstock,no,,variable,
+10647,iP7-EC,64 GB Gold Bueno ,true,outofstock,no,,product-variant,10646
+10648,iP7-EC,64 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10646
 10649,iP8-EC-1,64 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10646
-10650,iP8-EC-1,64 GB Gold Premium ,true,outofstock,no,,product-variant,10646
-10651,iP8-EC-1,64 GB Red Bueno ,true,outofstock,no,,product-variant,10646
-10652,iP8-EC-1,64 GB Red Muy bueno ,true,outofstock,no,,product-variant,10646
-10653,iP8-EC-1,64 GB Red Como nuevo ,true,outofstock,no,,product-variant,10646
-10654,iP8-EC-1,64 GB Red Premium ,true,outofstock,no,,product-variant,10646
-10655,iP8-EC-1,64 GB Silver Bueno ,true,outofstock,no,,product-variant,10646
-10656,iP8-EC-1,64 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10646
-10657,iP8-EC-1,64 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10646
-10658,iP8-EC-1,64 GB Silver Premium ,true,outofstock,no,,product-variant,10646
-10659,iP8-EC-1,64 GB Space gray Bueno ,true,outofstock,no,,product-variant,10646
-10660,iP8-EC-1,64 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10646
-10661,iP8-EC-1,64 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10646
-10662,iP8-EC-1,64 GB Space gray Premium ,true,outofstock,no,,product-variant,10646
-10663,iP8-EC-1,128 GB Gold Bueno ,true,outofstock,no,,product-variant,10646
-10664,iP8-EC-1,128 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10646
-10665,iP8-EC-1,128 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10646
-10666,iP8-EC-1,128 GB Gold Premium ,true,outofstock,no,,product-variant,10646
-10667,iP8-EC-1,128 GB Red Bueno ,true,outofstock,no,,product-variant,10646
-10668,iP8-EC-1,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,10646
-10669,iP8-EC-1,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,10646
-10670,iP8-EC-1,128 GB Red Premium ,true,outofstock,no,,product-variant,10646
-10671,iP8-EC-1,128 GB Silver Bueno ,true,outofstock,no,,product-variant,10646
-10672,iP8-EC-1,128 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10646
-10673,iP8-EC-1,128 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10646
-10674,iP8-EC-1,128 GB Silver Premium ,true,outofstock,no,,product-variant,10646
-10675,iP8-EC-1,128 GB Space gray Bueno ,true,outofstock,no,,product-variant,10646
-10676,iP8-EC-1,128 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10646
-10677,iP8-EC-1,128 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10646
-10678,iP8-EC-1,128 GB Space gray Premium ,true,outofstock,no,,product-variant,10646
-10679,iP8-EC-1,256 GB Gold Bueno ,true,outofstock,no,,product-variant,10646
-10680,iP8-EC-1,256 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10646
-10681,iP8-EC-1,256 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10646
-10682,iP8-EC-1,256 GB Gold Premium ,true,outofstock,no,,product-variant,10646
-10683,iP8-EC-1,256 GB Red Bueno ,true,outofstock,no,,product-variant,10646
-10684,iP8-EC-1,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,10646
-10685,iP8-EC-1,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,10646
-10686,iP8-EC-1,256 GB Red Premium ,true,outofstock,no,,product-variant,10646
-10687,iP8-EC-1,256 GB Silver Bueno ,true,outofstock,no,,product-variant,10646
-10688,iP8-EC-1,256 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10646
-10689,iP8-EC-1,256 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10646
-10690,iP8-EC-1,256 GB Silver Premium ,true,outofstock,no,,product-variant,10646
-10691,iP8-EC-1,256 GB Space gray Bueno ,true,outofstock,no,,product-variant,10646
-10692,iP8-EC-1,256 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10646
-10693,iP8-EC-1,256 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10646
-10694,iP8-EC-1,256 GB Space gray Premium ,true,outofstock,no,,product-variant,10646
-10849,iP13MN-EC-1,iPhone 13 Mini Reacondicionado,,onbackorder,no,,variable,
+10650,iP7-EC,64 GB Gold Premium ,true,outofstock,no,,product-variant,10646
+10651,iP7-EC,64 GB Red Bueno ,true,outofstock,no,,product-variant,10646
+10652,iP7-EC,64 GB Red Muy bueno ,true,outofstock,no,,product-variant,10646
+10653,iP7-EC,64 GB Red Como nuevo ,true,outofstock,no,,product-variant,10646
+10654,iP7-EC,64 GB Red Premium ,true,outofstock,no,,product-variant,10646
+10655,iP7-EC,64 GB Silver Bueno ,true,outofstock,no,,product-variant,10646
+10656,iP7-EC,64 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10646
+10657,iP7-EC,64 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10646
+10658,iP7-EC,64 GB Silver Premium ,true,outofstock,no,,product-variant,10646
+10659,iP7-EC,64 GB Space gray Bueno ,true,outofstock,no,,product-variant,10646
+10660,iP7-EC,64 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10646
+10661,iP7-EC,64 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10646
+10662,iP7-EC,64 GB Space gray Premium ,true,outofstock,no,,product-variant,10646
+10663,iP7-EC,128 GB Gold Bueno ,true,outofstock,no,,product-variant,10646
+10664,iP7-EC,128 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10646
+10665,iP7-EC,128 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10646
+10666,iP7-EC,128 GB Gold Premium ,true,outofstock,no,,product-variant,10646
+10667,iP7-EC,128 GB Red Bueno ,true,outofstock,no,,product-variant,10646
+10668,iP7-EC,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,10646
+10669,iP7-EC,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,10646
+10670,iP7-EC,128 GB Red Premium ,true,outofstock,no,,product-variant,10646
+10671,iP7-EC,128 GB Silver Bueno ,true,outofstock,no,,product-variant,10646
+10672,iP7-EC,128 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10646
+10673,iP7-EC,128 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10646
+10674,iP7-EC,128 GB Silver Premium ,true,outofstock,no,,product-variant,10646
+10675,iP7-EC,128 GB Space gray Bueno ,true,outofstock,no,,product-variant,10646
+10676,iP7-EC,128 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10646
+10677,iP7-EC,128 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10646
+10678,iP7-EC,128 GB Space gray Premium ,true,outofstock,no,,product-variant,10646
+10679,iP7-EC,256 GB Gold Bueno ,true,outofstock,no,,product-variant,10646
+10680,iP7-EC,256 GB Gold Muy bueno ,true,outofstock,no,,product-variant,10646
+10681,iP7-EC,256 GB Gold Como nuevo ,true,outofstock,no,,product-variant,10646
+10682,iP7-EC,256 GB Gold Premium ,true,outofstock,no,,product-variant,10646
+10683,iP7-EC,256 GB Red Bueno ,true,outofstock,no,,product-variant,10646
+10684,iP7-EC,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,10646
+10685,iP7-EC,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,10646
+10686,iP7-EC,256 GB Red Premium ,true,outofstock,no,,product-variant,10646
+10687,iP7-EC,256 GB Silver Bueno ,true,outofstock,no,,product-variant,10646
+10688,iP7-EC,256 GB Silver Muy bueno ,true,outofstock,no,,product-variant,10646
+10689,iP7-EC,256 GB Silver Como nuevo ,true,outofstock,no,,product-variant,10646
+10690,iP7-EC,256 GB Silver Premium ,true,outofstock,no,,product-variant,10646
+10691,iP7-EC,256 GB Space gray Bueno ,true,outofstock,no,,product-variant,10646
+10692,iP7-EC,256 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,10646
+10693,iP7-EC,256 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,10646
+10694,iP7-EC,256 GB Space gray Premium ,true,outofstock,no,,product-variant,10646
+10849,iP13MN-EC,iPhone 13 Mini Reacondicionado,,instock,no,,variable,
 10850,iP13MN-BL-512-B -R,512 GB Blue Muy bueno ,true,outofstock,no,,product-variant,10849
 10851,iP13MN-BL-512-A+ -R,512 GB Blue Premium ,true,outofstock,no,,product-variant,10849
 10852,iP13MN-GR-512-C -R,512 GB Green Bueno ,true,outofstock,no,,product-variant,10849
@@ -362,11 +325,11 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 10854,iP13MN-GR-512-B -R,512 GB Green Muy bueno ,true,outofstock,no,,product-variant,10849
 10855,iP13MN-GR-512-A+ -R,512 GB Green Premium ,true,outofstock,no,,product-variant,10849
 10856,iP13MN-MD-512-C -R,512 GB Midnight Bueno ,true,outofstock,no,,product-variant,10849
-10857,iP13MN-MD-512-A -R,512 GB Midnight Como nuevo ,true,onbackorder,yes,,product-variant,10849
+10857,iP13MN-MD-512-A -R,512 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,10849
 10858,iP13MN-MD-512-B -R,512 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,10849
 10859,iP13MN-MD-512-A+ -R,512 GB Midnight Premium ,true,outofstock,no,,product-variant,10849
 10860,iP13MN-PK-512-C -R,512 GB Pink Bueno ,true,outofstock,no,,product-variant,10849
-10861,iP13MN-PK-512-A -R,512 GB Pink Como nuevo ,true,onbackorder,yes,,product-variant,10849
+10861,iP13MN-PK-512-A -R,512 GB Pink Como nuevo ,true,outofstock,no,,product-variant,10849
 10862,iP13MN-PK-512-B -R,512 GB Pink Muy bueno ,true,outofstock,no,,product-variant,10849
 10863,iP13MN-PK-512-A+ -R,512 GB Pink Premium ,true,outofstock,no,,product-variant,10849
 10864,iP13MN-RD-512-C -R,512 GB Red Bueno ,true,outofstock,no,,product-variant,10849
@@ -378,8 +341,8 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 10870,iP13MN-STR-512-B -R,512 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,10849
 10871,iP13MN-STR-512-A+ -R,512 GB Starlight Premium ,true,outofstock,no,,product-variant,10849
 10872,iP13MN-BL-128-C -R,128 GB Blue Bueno ,true,outofstock,no,,product-variant,10849
-10873,iP13MN-BL-128-A -R,128 GB Blue Como nuevo ,true,outofstock,no,,product-variant,10849
-10874,iP13MN-BL-128-B -R,128 GB Blue Muy bueno ,true,outofstock,no,,product-variant,10849
+10873,iP13MN-BL-128-A -R,128 GB Blue Como nuevo ,true,instock,no,1,product-variant,10849
+10874,iP13MN-BL-128-B -R,128 GB Blue Muy bueno ,true,instock,no,1,product-variant,10849
 10875,iP13MN-BL-128-A+ -R,128 GB Blue Premium ,true,outofstock,no,,product-variant,10849
 10876,iP13MN-GR-128-C -R,128 GB Green Bueno ,true,outofstock,no,,product-variant,10849
 10877,iP13MN-GR-128-A -R,128 GB Green Como nuevo ,true,outofstock,no,,product-variant,10849
@@ -390,7 +353,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 10882,iP13MN-MD-128-B -R,128 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,10849
 10883,iP13MN-MD-128-A+ -R,128 GB Midnight Premium ,true,outofstock,no,,product-variant,10849
 10884,iP13MN-PK-128-C -R,128 GB Pink Bueno ,true,outofstock,no,,product-variant,10849
-10885,iP13MN-PK-128-A -R,128 GB Pink Como nuevo ,true,outofstock,no,,product-variant,10849
+10885,iP13MN-PK-128-A -R,128 GB Pink Como nuevo ,true,instock,no,4,product-variant,10849
 10886,iP13MN-PK-128-B -R,128 GB Pink Muy bueno ,true,onbackorder,yes,,product-variant,10849
 10887,iP13MN-PK-128-A+ -R,128 GB Pink Premium ,true,outofstock,no,,product-variant,10849
 10888,iP13MN-RD-128-C -R,128 GB Red Bueno ,true,outofstock,no,,product-variant,10849
@@ -427,79 +390,61 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 10919,iP13MN-STR-256-A+ -R,256 GB Starlight Premium ,true,outofstock,no,,product-variant,10849
 10920,iP13MN-BL-512-C -R,512 GB Blue Bueno ,true,outofstock,no,,product-variant,10849
 10921,iP13MN-BL-512-A -R,512 GB Blue Como nuevo ,true,outofstock,no,,product-variant,10849
-8456,iP11-EC,iPhone 11 Reacondicionado,,instock,no,,variable,
-8529,iP11-MV-128-C -R,128 GB Malva Bueno ,true,outofstock,no,,product-variant,8456
-8530,iP11-MV-128-B -R,128 GB Malva Muy bueno ,true,outofstock,no,,product-variant,8456
-8531,iP11-MV-128-A -R,128 GB Malva Como nuevo ,true,outofstock,no,,product-variant,8456
-8532,iP11-MV-128-A+ -R,128 GB Malva Premium ,true,outofstock,no,,product-variant,8456
-8533,iP11-BK-128-C -R,128 GB Black Bueno ,true,onbackorder,yes,,product-variant,8456
-8534,iP11-BK-128-B -R,128 GB Black Muy bueno ,true,onbackorder,yes,,product-variant,8456
-8535,iP11-BK-128-A -R,128 GB Black Como nuevo ,true,onbackorder,yes,,product-variant,8456
-8536,iP11-BK-128-A+ -R,128 GB Black Premium ,true,onbackorder,yes,,product-variant,8456
-8537,iP11-GR-128-C -R,128 GB Green Bueno ,true,outofstock,no,,product-variant,8456
-8538,iP11-GR-128-B -R,128 GB Green Muy bueno ,true,outofstock,no,,product-variant,8456
-8539,iP11-GR-128-A -R,128 GB Green Como nuevo ,true,outofstock,no,,product-variant,8456
-8540,iP11-GR-128-A+ -R,128 GB Green Premium ,true,outofstock,no,,product-variant,8456
-8541,iP11-RD-128-C -R,128 GB Red Bueno ,true,outofstock,no,,product-variant,8456
-8542,iP11-RD-128-B -R,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,8456
-8543,iP11-RD-128-A -R,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,8456
-8544,iP11-RD-128-A+ -R,128 GB Red Premium ,true,outofstock,no,,product-variant,8456
-8545,iP11-WT-128-C -R,128 GB White Bueno ,true,outofstock,no,,product-variant,8456
-8546,iP11-WT-128-B -R,128 GB White Muy bueno ,true,outofstock,no,,product-variant,8456
-8547,iP11-WT-128-A -R,128 GB White Como nuevo ,true,onbackorder,yes,,product-variant,8456
-8548,iP11-WT-128-A+ -R,128 GB White Premium ,true,outofstock,no,,product-variant,8456
-8549,iP11-YW-128-C -R,128 GB Yellow Bueno ,true,outofstock,no,,product-variant,8456
-8550,iP11-YW-128-B -R,128 GB Yellow Muy bueno ,true,outofstock,no,,product-variant,8456
-8551,iP11-YW-128-A -R,128 GB Yellow Como nuevo ,true,outofstock,no,,product-variant,8456
-8552,iP11-YW-128-A+ -R,128 GB Yellow Premium ,true,outofstock,no,,product-variant,8456
-8553,iP11-MV-256-C -R,256 GB Malva Bueno ,true,outofstock,no,,product-variant,8456
-8554,iP11-MV-256-B -R,256 GB Malva Muy bueno ,true,outofstock,no,,product-variant,8456
-8555,iP11-MV-256-A -R,256 GB Malva Como nuevo ,true,outofstock,no,,product-variant,8456
-8556,iP11-MV-256-A+ -R,256 GB Malva Premium ,true,outofstock,no,,product-variant,8456
-8557,iP11-BK-256-C -R,256 GB Black Bueno ,true,outofstock,no,,product-variant,8456
-8558,iP11-BK-256-B -R,256 GB Black Muy bueno ,true,outofstock,no,,product-variant,8456
-8559,iP11-BK-256-A -R,256 GB Black Como nuevo ,true,outofstock,no,,product-variant,8456
-8560,iP11-BK-256-A+ -R,256 GB Black Premium ,true,outofstock,no,,product-variant,8456
-8561,iP11-GR-256-C -R,256 GB Green Bueno ,true,outofstock,no,,product-variant,8456
-8562,iP11-GR-256-B -R,256 GB Green Muy bueno ,true,outofstock,no,,product-variant,8456
-8563,iP11-GR-256-A -R,256 GB Green Como nuevo ,true,outofstock,no,,product-variant,8456
-8564,iP11-GR-256-A+ -R,256 GB Green Premium ,true,outofstock,no,,product-variant,8456
-8565,iP11-RD-256-C -R,256 GB Red Bueno ,true,outofstock,no,,product-variant,8456
-8566,iP11-RD-256-B -R,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,8456
-8567,iP11-RD-256-A -R,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,8456
-8568,iP11-RD-256-A+ -R,256 GB Red Premium ,true,outofstock,no,,product-variant,8456
-8569,iP11-WT-256-C -R,256 GB White Bueno ,true,outofstock,no,,product-variant,8456
-8570,iP11-WT-256-B -R,256 GB White Muy bueno ,true,outofstock,no,,product-variant,8456
-8571,iP11-WT-256-A -R,256 GB White Como nuevo ,true,outofstock,no,,product-variant,8456
-8572,iP11-WT-256-A+ -R,256 GB White Premium ,true,outofstock,no,,product-variant,8456
-8573,iP11-YW-256-C -R,256 GB Yellow Bueno ,true,outofstock,no,,product-variant,8456
-8574,iP11-YW-256-B -R,256 GB Yellow Muy bueno ,true,outofstock,no,,product-variant,8456
-8575,iP11-YW-256-A -R,256 GB Yellow Como nuevo ,true,outofstock,no,,product-variant,8456
-8576,iP11-YW-256-A+ -R,256 GB Yellow Premium ,true,outofstock,no,,product-variant,8456
-8577,iP11-MV-64-C -R,64 GB Malva Bueno ,true,outofstock,no,,product-variant,8456
-8578,iP11-MV-64-B -R,64 GB Malva Muy bueno ,true,outofstock,no,,product-variant,8456
-8579,iP11-MV-64-A -R,64 GB Malva Como nuevo ,true,outofstock,no,,product-variant,8456
-8580,iP11-MV-64-A+ -R,64 GB Malva Premium ,true,instock,no,1,product-variant,8456
-8581,iP11-BK-64-C -R,64 GB Black Bueno ,true,outofstock,no,,product-variant,8456
-8582,iP11-BK-64-B -R,64 GB Black Muy bueno ,true,outofstock,no,,product-variant,8456
-8583,iP11-BK-64-A -R,64 GB Black Como nuevo ,true,outofstock,no,,product-variant,8456
-8584,iP11-BK-64-A+ -R,64 GB Black Premium ,true,outofstock,no,,product-variant,8456
-8585,iP11-GR-64-C -R,64 GB Green Bueno ,true,outofstock,no,,product-variant,8456
-8586,iP11-GR-64-B -R,64 GB Green Muy bueno ,true,outofstock,no,,product-variant,8456
-8587,iP11-GR-64-A -R,64 GB Green Como nuevo ,true,instock,no,6,product-variant,8456
-8588,iP11-GR-64-A+ -R,64 GB Green Premium ,true,outofstock,no,,product-variant,8456
-8589,iP11-RD-64-C -R,64 GB Red Bueno ,true,outofstock,no,,product-variant,8456
-8590,iP11-iP11-RD-64-B -REC,64 GB Red Muy bueno ,true,outofstock,no,,product-variant,8456
-8591,iP11-RD-64-A -R,64 GB Red Como nuevo ,true,instock,no,1,product-variant,8456
-8592,iP11-RD-64-A+ -R,64 GB Red Premium ,true,instock,no,2,product-variant,8456
-8593,iP11-WT-64-C -R,64 GB White Bueno ,true,outofstock,no,,product-variant,8456
-8594,iP11-WT-64-B -R,64 GB White Muy bueno ,true,outofstock,no,,product-variant,8456
-8595,iP11-WT-64-A -R,64 GB White Como nuevo ,true,instock,no,3,product-variant,8456
-8596,iP11-WT-64-A+ -R,64 GB White Premium ,true,instock,no,2,product-variant,8456
-8597,iP11-YW-64-C -R,64 GB Yellow Bueno ,true,outofstock,no,,product-variant,8456
-8598,iP11-YW-64-B -R,64 GB Yellow Muy bueno ,true,outofstock,no,,product-variant,8456
-8599,iP11-YW-64-A -R,64 GB Yellow Como nuevo ,true,outofstock,no,,product-variant,8456
-8600,iP11-YW-64-A+ -R,64 GB Yellow Premium ,true,outofstock,no,,product-variant,8456
+11803,iP14-EC,iPhone 14 Reacondicionado,,outofstock,no,,variable,
+11880,iP14-PUR-128-C -R,128 GB Purple Bueno ,true,outofstock,no,,product-variant,11803
+11881,iP14-PUR-128-B -R,128 GB Purple Muy bueno ,true,outofstock,no,,product-variant,11803
+11882,iP14-PUR-128-A -R,128 GB Purple Como nuevo ,true,outofstock,no,,product-variant,11803
+11883,iP14-BL-128-C -R,128 GB Blue Bueno ,true,outofstock,no,,product-variant,11803
+11884,iP14-BL-128-B -R,128 GB Blue Muy bueno ,true,outofstock,no,,product-variant,11803
+11885,iP14-BL-128-A -R,128 GB Blue Como nuevo ,true,outofstock,no,,product-variant,11803
+11886,iP14-MD-128-C -R,128 GB Midnight Bueno ,true,outofstock,no,,product-variant,11803
+11887,iP14-MD-128-B -R,128 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,11803
+11888,iP14-MD-128-A -R,128 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,11803
+11889,iP14-RD-128-C -R,128 GB Red Bueno ,true,outofstock,no,,product-variant,11803
+11890,iP14-RD-128-B -R,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,11803
+11891,iP14-RD-128-A -R,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,11803
+11892,iP14-STR-128-C -R,128 GB Starlight Bueno ,true,outofstock,no,,product-variant,11803
+11893,iP14-STR-128-B -R,128 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,11803
+11894,iP14-STR-128-A -R,128 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,11803
+11895,iP14-YW-128-C -R,128 GB Yellow Bueno ,true,outofstock,no,,product-variant,11803
+11896,iP14-YW-128-B -R,128 GB Yellow Muy bueno ,true,outofstock,no,,product-variant,11803
+11897,iP14-YW-128-A -R,128 GB Yellow Como nuevo ,true,outofstock,no,,product-variant,11803
+11898,iP14-PUR-256-C -R,256 GB Purple Bueno ,true,outofstock,no,,product-variant,11803
+11899,iP14-PUR-256-B -R,256 GB Purple Muy bueno ,true,outofstock,no,,product-variant,11803
+11900,iP14-PUR-256-A -R,256 GB Purple Como nuevo ,true,outofstock,no,,product-variant,11803
+11901,iP14-BL-256-C -R,256 GB Blue Bueno ,true,outofstock,no,,product-variant,11803
+11902,iP14-BL-256-B -R,256 GB Blue Muy bueno ,true,outofstock,no,,product-variant,11803
+11903,iP14-BL-256-A -R,256 GB Blue Como nuevo ,true,outofstock,no,,product-variant,11803
+11904,iP14-MD-256-C -R,256 GB Midnight Bueno ,true,outofstock,no,,product-variant,11803
+11905,iP14-MD-256-B -R,256 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,11803
+11906,iP14-MD-256-A -R,256 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,11803
+11907,iP14-RD-256-C -R,256 GB Red Bueno ,true,outofstock,no,,product-variant,11803
+11908,iP14-RD-256-B -R,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,11803
+11909,iP14-RD-256-A -R,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,11803
+11910,iP14-STR-256-C -R,256 GB Starlight Bueno ,true,outofstock,no,,product-variant,11803
+11911,iP14-STR-256-B -R,256 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,11803
+11912,iP14-STR-256-A -R,256 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,11803
+11913,iP14-YW-256-C -R,256 GB Yellow Bueno ,true,outofstock,no,,product-variant,11803
+11914,iP14-YW-256-B -R,256 GB Yellow Muy bueno ,true,outofstock,no,,product-variant,11803
+11915,iP14-YW-256-A -R,256 GB Yellow Como nuevo ,true,outofstock,no,,product-variant,11803
+11916,iP14-PUR-512-C -R,512 GB Purple Bueno ,true,outofstock,no,,product-variant,11803
+11917,iP14-PUR-512-B -R,512 GB Purple Muy bueno ,true,outofstock,no,,product-variant,11803
+11918,iP14-PUR-512-A -R,512 GB Purple Como nuevo ,true,outofstock,no,,product-variant,11803
+11919,iP14-BL-512-C -R,512 GB Blue Bueno ,true,outofstock,no,,product-variant,11803
+11920,iP14-BL-512-B -R,512 GB Blue Muy bueno ,true,outofstock,no,,product-variant,11803
+11921,iP14-BL-512-A -R,512 GB Blue Como nuevo ,true,outofstock,no,,product-variant,11803
+11922,iP14-MD-512-C -R,512 GB Midnight Bueno ,true,outofstock,no,,product-variant,11803
+11923,iP14-MD-512-B -R,512 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,11803
+11924,iP14-MD-512-A -R,512 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,11803
+11925,iP14-RD-512-C -R,512 GB Red Bueno ,true,outofstock,no,,product-variant,11803
+11926,iP14-RD-512-B -R,512 GB Red Muy bueno ,true,outofstock,no,,product-variant,11803
+11927,iP14-RD-512-A -R,512 GB Red Como nuevo ,true,outofstock,no,,product-variant,11803
+11928,iP14-WT-512-C -R,512 GB Starlight Bueno ,true,outofstock,no,,product-variant,11803
+11929,iP14-WT-512-B -R,512 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,11803
+11930,iP14-WT-512-A -R,512 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,11803
+11931,iP14-YW-512-C -R,512 GB Yellow Bueno ,true,outofstock,no,,product-variant,11803
+11932,iP14-YW-512-B -R,512 GB Yellow Muy bueno ,true,outofstock,no,,product-variant,11803
+11933,iP14-YW-512-A -R,512 GB Yellow Como nuevo ,true,outofstock,no,,product-variant,11803
 8601,iPX-EC,iPhone X Reacondicionado,,onbackorder,no,,variable,
 8674,iPX-SL-64-C -R,64 GB Silver Bueno ,true,outofstock,no,,product-variant,8601
 8675,iPX-SL-64-B -R,64 GB Silver Muy bueno ,true,outofstock,no,,product-variant,8601
@@ -580,7 +525,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 8874,iP11PR-SL-64-A -R,64 GB Silver Como nuevo ,true,outofstock,no,,product-variant,8791
 8875,iP11PR-SL-64-A+ -R,64 GB Silver Premium ,true,outofstock,no,,product-variant,8791
 8876,iP11PR-SG-64-C -R,64 GB Space gray Bueno ,true,outofstock,no,,product-variant,8791
-8877,iP11PR-SG-64-B -R,64 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,8791
+8877,iP11PR-SG-64-B -R,64 GB Space gray Muy bueno ,true,instock,no,1,product-variant,8791
 8878,iP11PR-SG-64-A -R,64 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,8791
 8879,iP11PR-SG-64-A+ -R,64 GB Space gray Premium ,true,outofstock,no,,product-variant,8791
 8880,iP11PR-GD-256-C -R,256 GB Gold Bueno ,true,outofstock,no,,product-variant,8791
@@ -588,7 +533,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 8882,iP11PR-GD-256-A -R,256 GB Gold Como nuevo ,true,outofstock,no,,product-variant,8791
 8883,iP11PR-GD-256-A+ -R,256 GB Gold Premium ,true,outofstock,no,,product-variant,8791
 8884,iP11PR-MDGR-256-C -R,256 GB Midnight Green Bueno ,true,outofstock,no,,product-variant,8791
-8885,iP11PR-MDGR-256-B -R,256 GB Midnight Green Muy bueno ,true,instock,no,1,product-variant,8791
+8885,iP11PR-MDGR-256-B -R,256 GB Midnight Green Muy bueno ,true,outofstock,no,,product-variant,8791
 8886,iP11PR-MDGR-256-A -R,256 GB Midnight Green Como nuevo ,true,outofstock,no,,product-variant,8791
 8887,iP11PR-MDGR-256-A+ -R,256 GB Midnight Green Premium ,true,outofstock,no,,product-variant,8791
 8888,iP11PR-SL-256-C -R,256 GB Silver Bueno ,true,outofstock,no,,product-variant,8791
@@ -609,10 +554,10 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 8903,iP11PR-MDGR-512-A+ -R,512 GB Midnight Green Premium ,true,outofstock,no,,product-variant,8791
 8904,iP11PR-SL-512-C -R,512 GB Silver Bueno ,true,outofstock,no,,product-variant,8791
 8905,iP11PR-SL-512-B -R,512 GB Silver Muy bueno ,true,outofstock,no,,product-variant,8791
-8906,iP11PR-SL-512-A -R,512 GB Silver Como nuevo ,true,instock,no,1,product-variant,8791
+8906,iP11PR-SL-512-A -R,512 GB Silver Como nuevo ,true,outofstock,no,,product-variant,8791
 8907,iP11PR-SL-512-A+ -R,512 GB Silver Premium ,true,outofstock,no,,product-variant,8791
 8908,iP11PR-SG-512-C -R,512 GB Space gray Bueno ,true,outofstock,no,,product-variant,8791
-8909,iP11PR-SG-512-B -R,512 GB Space gray Muy bueno ,true,instock,no,1,product-variant,8791
+8909,iP11PR-SG-512-B -R,512 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,8791
 8910,iP11PR-SG-512-A -R,512 GB Space gray Como nuevo ,true,outofstock,no,,product-variant,8791
 8911,iP11PR-SG-512-A+ -R,512 GB Space gray Premium ,true,outofstock,no,,product-variant,8791
 8912,iP12P-EC,iPhone 12 Pro Reacondicionado,,instock,no,,variable,
@@ -632,7 +577,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 8993,iPXS-GD-256-C -R,256 GB Gold Bueno ,true,outofstock,no,,product-variant,8961
 8994,iPXS-GD-256-B -R,256 GB Gold Muy bueno ,true,outofstock,no,,product-variant,8961
 8995,iPXS-GD-256-A -R,256 GB Gold Como nuevo ,true,onbackorder,yes,,product-variant,8961
-8996,iPXS-GD-256-A+ -R,256 GB Gold Premium ,true,outofstock,no,,product-variant,8961
+8996,iPXS-GD-256-A+ -R,256 GB Gold ,true,outofstock,no,,product-variant,8961
 8997,iPXS-SL-256-C -R,256 GB Silver Bueno ,true,outofstock,no,,product-variant,8961
 8998,iPXS-SL-256-B -R,256 GB Silver Muy bueno ,true,outofstock,no,,product-variant,8961
 8999,iPXS-SL-256-A -R,256 GB Silver Como nuevo ,true,onbackorder,yes,,product-variant,8961
@@ -644,7 +589,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 9005,iPXS-GD-512-C -R,512 GB Gold Bueno ,true,outofstock,no,,product-variant,8961
 9006,iPXS-GD-512-B -R,512 GB Gold Muy bueno ,true,outofstock,no,,product-variant,8961
 9007,iPXS-GD-512-A -R,512 GB Gold Como nuevo ,true,onbackorder,yes,,product-variant,8961
-9008,iPXS-GD-512-A+ -R,512 GB Gold Premium ,true,outofstock,no,,product-variant,8961
+9008,iPXS-GD-512-A+ -R,512 GB Gold ,true,outofstock,no,,product-variant,8961
 9009,iPXS-SL-512-C -R,512 GB Silver Bueno ,true,outofstock,no,,product-variant,8961
 9010,iPXS-SL-512-B -R,512 GB Silver Muy bueno ,true,outofstock,no,,product-variant,8961
 9011,iPXS-SL-512-A -R,512 GB Silver Como nuevo ,true,outofstock,no,,product-variant,8961
@@ -652,7 +597,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 9013,iPXS-SG-512-C -R,512 GB Space gray Bueno ,true,outofstock,no,,product-variant,8961
 9014,iPXS-SG-512-B -R,512 GB Space gray Muy bueno ,true,outofstock,no,,product-variant,8961
 9015,iPXS-SG-512-A -R,512 GB Space gray Como nuevo ,true,onbackorder,yes,,product-variant,8961
-9016,iPXS-SG-512-A+ -R,512 GB Space gray Premium ,true,outofstock,no,,product-variant,8961
+9016,iPXS-SG-512-A+ -R,512 GB Space gray ,true,outofstock,no,,product-variant,8961
 9017,iP11PM-EC,iPhone 11 Pro Max Reacondicionado ,,outofstock,no,,variable,
 9018,iP11PRMX-GD-64-C -R,64 GB Gold Bueno ,,outofstock,no,,product-variant,9017
 9019,iP11PRMX-GD-64-B -R,64 GB Gold Muy bueno ,,outofstock,no,,product-variant,9017
@@ -753,84 +698,84 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 9117,iP12PRMX-SG-512-A+ -R,512 GB Space gray Premium ,,outofstock,no,,product-variant,9069
 9120,iP13P-EC,iPhone 13 Pro Reacondicionado,,instock,no,,variable,
 9196,iP13PR-ALGR-128-C -R,128 GB Alpine Green Bueno ,true,outofstock,no,,product-variant,9120
-9197,iP13PR-ALGR-128-B -R,128 GB Alpine Green Muy bueno ,true,instock,no,1,product-variant,9120
+9197,iP13PR-ALGR-128-B -R,128 GB Alpine Green Muy bueno ,true,outofstock,no,,product-variant,9120
 9198,iP13PR-ALGR-128-A -R,128 GB Alpine Green Como nuevo ,true,instock,no,1,product-variant,9120
 9199,iP13PR-ALGR-128-A+ -R,128 GB Alpine Green Premium ,true,outofstock,no,,product-variant,9120
-9200,iP13PR-GD-128-C -R,128 GB Gold Bueno ,true,instock,no,1,product-variant,9120
+9200,iP13PR-GD-128-C -R,128 GB Gold Bueno ,true,outofstock,no,,product-variant,9120
 9201,iP13PR-GD-128-B -R,128 GB Gold Muy bueno ,true,instock,no,1,product-variant,9120
-9202,iP13PR-GD-128-A -R,128 GB Gold Como nuevo ,true,outofstock,no,,product-variant,9120
-9203,iP13PR-GD-128-A+ -R,128 GB Gold Premium ,true,instock,no,5,product-variant,9120
+9202,iP13PR-GD-128-A -R,128 GB Gold Como nuevo ,true,instock,no,5,product-variant,9120
+9203,iP13PR-GD-128-A+ -R,128 GB Gold Premium ,true,outofstock,no,,product-variant,9120
 9204,iP13PR-GRT-128-C -R,128 GB Graphite Bueno ,true,outofstock,no,,product-variant,9120
 9205,iP13PR-GRT-128-B -R,128 GB Graphite Muy bueno ,true,outofstock,no,,product-variant,9120
 9206,iP13PR-GRT-128-A -R,128 GB Graphite Como nuevo ,true,outofstock,no,,product-variant,9120
 9207,iP13PR-GRT-128-A+ -R,128 GB Graphite Premium ,true,outofstock,no,,product-variant,9120
-9208,iP13PR-SRBL-128-C -R,128 GB Sierra blue Bueno ,true,instock,no,3,product-variant,9120
-9209,iP13PR-SRBL-128-B -R,128 GB Sierra blue Muy bueno ,true,outofstock,no,,product-variant,9120
-9210,iP13PR-SRBL-128-A -R,128 GB Sierra blue Como nuevo ,true,outofstock,no,,product-variant,9120
+9208,iP13PR-SRBL-128-C -R,128 GB Sierra blue Bueno ,true,outofstock,no,,product-variant,9120
+9209,iP13PR-SRBL-128-B -R,128 GB Sierra blue Muy bueno ,true,instock,no,3,product-variant,9120
+9210,iP13PR-SRBL-128-A -R,128 GB Sierra blue Como nuevo ,true,instock,no,3,product-variant,9120
 9211,iP13PR-SRBL-128-A+ -R,128 GB Sierra blue Premium ,true,outofstock,no,,product-variant,9120
 9212,iP13PR-SL-128-C -R,128 GB Silver Bueno ,true,outofstock,no,,product-variant,9120
 9213,iP13PR-SL-128-B -R,128 GB Silver Muy bueno ,true,outofstock,no,,product-variant,9120
-9214,iP13PR-SL-128-A -R,128 GB Silver Como nuevo ,true,instock,no,5,product-variant,9120
-9215,iP13PR-SL-128-A+ -R,128 GB Silver Premium ,true,instock,no,6,product-variant,9120
+9214,iP13PR-SL-128-A -R,128 GB Silver Como nuevo ,true,outofstock,no,,product-variant,9120
+9215,iP13PR-SL-128-A+ -R,128 GB Silver Premium ,true,outofstock,no,,product-variant,9120
 9216,iP13PR-ALGR-256-C -R,256 GB Alpine Green Bueno ,true,outofstock,no,,product-variant,9120
 9217,iP13PR-ALGR-256-B -R,256 GB Alpine Green Muy bueno ,true,outofstock,no,,product-variant,9120
 9218,iP13PR-ALGR-256-A -R,256 GB Alpine Green Como nuevo ,true,outofstock,no,,product-variant,9120
 9219,iP13PR-ALGR-256-A+ -R,256 GB Alpine Green Premium ,true,outofstock,no,,product-variant,9120
 9220,iP13PR-GD-256-C -R,256 GB Gold Bueno ,true,outofstock,no,,product-variant,9120
-9221,iP13PR-GD-256-B -R,256 GB Gold Muy bueno ,true,outofstock,no,,product-variant,9120
-9222,iP13PR-GD-256-A -R,256 GB Gold Como nuevo ,true,outofstock,no,,product-variant,9120
-9223,iP13PR-GD-256-A+ -R,256 GB Gold Premium ,true,outofstock,no,,product-variant,9120
+9221,iP13PR-GD-256-B -R,256 GB Gold Muy bueno ,true,instock,no,4,product-variant,9120
+9222,iP13PR-GD-256-A -R,256 GB Gold Como nuevo ,true,instock,no,1,product-variant,9120
+9223,iP13PR-GD-256-A+ -R,256 GB Gold Premium ,true,instock,no,1,product-variant,9120
 9224,iP13PR-GRT-256-C -R,256 GB Graphite Bueno ,true,outofstock,no,,product-variant,9120
 9225,iP13PR-GRT-256-B -R,256 GB Graphite Muy bueno ,true,outofstock,no,,product-variant,9120
-9226,iP13PR-GRT-256-A -R,256 GB Graphite Como nuevo ,true,outofstock,no,,product-variant,9120
+9226,iP13PR-GRT-256-A -R,256 GB Graphite Como nuevo ,true,instock,no,4,product-variant,9120
 9227,iP13PR-GRT-256-A+ -R,256 GB Graphite Premium ,true,outofstock,no,,product-variant,9120
 9228,iP13PR-SRBL-256-C -R,256 GB Sierra blue Bueno ,true,outofstock,no,,product-variant,9120
-9229,iP13PR-SRBL-256-B -R,256 GB Sierra blue Muy bueno ,true,instock,no,7,product-variant,9120
-9230,iP13PR-SRBL-256-A -R,256 GB Sierra blue Como nuevo ,true,instock,no,16,product-variant,9120
-9231,iP13PR-SRBL-256-A+ -R,256 GB Sierra blue Premium ,true,instock,no,14,product-variant,9120
+9229,iP13PR-SRBL-256-B -R,256 GB Sierra blue Muy bueno ,true,instock,no,9,product-variant,9120
+9230,iP13PR-SRBL-256-A -R,256 GB Sierra blue Como nuevo ,true,outofstock,no,,product-variant,9120
+9231,iP13PR-SRBL-256-A+ -R,256 GB Sierra blue Premium ,true,outofstock,no,,product-variant,9120
 9232,iP13PR-SL-256-C -R,256 GB Silver Bueno ,true,outofstock,no,,product-variant,9120
 9233,iP13PR-SL-256-B -R,256 GB Silver Muy bueno ,true,instock,no,1,product-variant,9120
 9234,iP13PR-SL-256-A -R,256 GB Silver Como nuevo ,true,outofstock,no,,product-variant,9120
 9235,iP13PR-SL-256-A+ -R,256 GB Silver Premium ,true,outofstock,no,,product-variant,9120
-9236,iP13P-EC,512 GB Alpine Green Bueno ,true,outofstock,no,,product-variant,9120
-9237,iP13P-EC,512 GB Alpine Green Muy bueno ,true,outofstock,no,,product-variant,9120
-9238,iP13P-EC,512 GB Alpine Green Como nuevo ,true,outofstock,no,,product-variant,9120
+9236,iP13PR-ALGR-512-C -R,512 GB Alpine Green Bueno ,true,outofstock,no,,product-variant,9120
+9237,iP13PR-ALGR-512-B -R,512 GB Alpine Green Muy bueno ,true,outofstock,no,,product-variant,9120
+9238,iP13PR-ALGR-512-A -R,512 GB Alpine Green Como nuevo ,true,outofstock,no,,product-variant,9120
 9239,iP13P-EC,512 GB Alpine Green Premium ,true,outofstock,no,,product-variant,9120
-9240,iP13P-EC,512 GB Gold Bueno ,true,outofstock,no,,product-variant,9120
-9241,iP13P-EC,512 GB Gold Muy bueno ,true,outofstock,no,,product-variant,9120
-9242,iP13P-EC,512 GB Gold Como nuevo ,true,outofstock,no,,product-variant,9120
+9240,iP13PR-GD-512-C -R,512 GB Gold Bueno ,true,outofstock,no,,product-variant,9120
+9241,iP13PR-GD-512-B -R,512 GB Gold Muy bueno ,true,outofstock,no,,product-variant,9120
+9242,iP13PR-GD-512-A -R,512 GB Gold Como nuevo ,true,outofstock,no,,product-variant,9120
 9243,iP13P-EC,512 GB Gold Premium ,true,outofstock,no,,product-variant,9120
-9244,iP13P-EC,512 GB Graphite Bueno ,true,outofstock,no,,product-variant,9120
-9245,iP13P-EC,512 GB Graphite Muy bueno ,true,outofstock,no,,product-variant,9120
-9246,iP13P-EC,512 GB Graphite Como nuevo ,true,outofstock,no,,product-variant,9120
+9244,iP13PR-GRT-512-C -R,512 GB Graphite Bueno ,true,outofstock,no,,product-variant,9120
+9245,iP13PR-GRT-512-B -R,512 GB Graphite Muy bueno ,true,outofstock,no,,product-variant,9120
+9246,iP13PR-GRT-512-A -R,512 GB Graphite Como nuevo ,true,outofstock,no,,product-variant,9120
 9247,iP13P-EC,512 GB Graphite Premium ,true,outofstock,no,,product-variant,9120
-9248,iP13P-EC,512 GB Sierra blue Bueno ,true,outofstock,no,,product-variant,9120
-9249,iP13P-EC,512 GB Sierra blue Muy bueno ,true,outofstock,no,,product-variant,9120
-9250,iP13P-EC,512 GB Sierra blue Como nuevo ,true,outofstock,no,,product-variant,9120
+9248,iP13PR-SRBL-512-C -R,512 GB Sierra blue Bueno ,true,outofstock,no,,product-variant,9120
+9249,iP13PR-SRBL-512-B -R,512 GB Sierra blue Muy bueno ,true,outofstock,no,,product-variant,9120
+9250,iP13PR-SRBL-512-A -R,512 GB Sierra blue Como nuevo ,true,outofstock,no,,product-variant,9120
 9251,iP13P-EC,512 GB Sierra blue Premium ,true,outofstock,no,,product-variant,9120
-9252,iP13P-EC,512 GB Silver Bueno ,true,outofstock,no,,product-variant,9120
-9253,iP13P-EC,512 GB Silver Muy bueno ,true,outofstock,no,,product-variant,9120
-9254,iP13P-EC,512 GB Silver Como nuevo ,true,outofstock,no,,product-variant,9120
+9252,iP13PR-SL-512-C -R,512 GB Silver Bueno ,true,outofstock,no,,product-variant,9120
+9253,iP13PR-SL-512-B -R,512 GB Silver Muy bueno ,true,outofstock,no,,product-variant,9120
+9254,iP13PR-SL-512-A -R,512 GB Silver Como nuevo ,true,outofstock,no,,product-variant,9120
 9255,iP13P-EC,512 GB Silver Premium ,true,outofstock,no,,product-variant,9120
-9256,iP13P-EC,1 TB Alpine Green Bueno ,true,outofstock,no,,product-variant,9120
-9257,iP13P-EC,1 TB Alpine Green Muy bueno ,true,outofstock,no,,product-variant,9120
-9258,iP13P-EC,1 TB Alpine Green Como nuevo ,true,outofstock,no,,product-variant,9120
+9256,iP13PR-ALGR-1T-C -R,1 TB Alpine Green Bueno ,true,outofstock,no,,product-variant,9120
+9257,iP13PR-ALGR-1T-B -R,1 TB Alpine Green Muy bueno ,true,outofstock,no,,product-variant,9120
+9258,iP13PR-ALGR-1T-A -R,1 TB Alpine Green Como nuevo ,true,outofstock,no,,product-variant,9120
 9259,iP13P-EC,1 TB Alpine Green Premium ,true,outofstock,no,,product-variant,9120
-9260,iP13P-EC,1 TB Gold Bueno ,true,outofstock,no,,product-variant,9120
-9261,iP13P-EC,1 TB Gold Muy bueno ,true,outofstock,no,,product-variant,9120
-9262,iP13P-EC,1 TB Gold Como nuevo ,true,outofstock,no,,product-variant,9120
+9260,iP13PR-GD-1T-C -R,1 TB Gold Bueno ,true,outofstock,no,,product-variant,9120
+9261,iP13PR-GD-1T-B -R,1 TB Gold Muy bueno ,true,outofstock,no,,product-variant,9120
+9262,iP13PR-GD-1T-A -R,1 TB Gold Como nuevo ,true,outofstock,no,,product-variant,9120
 9263,iP13P-EC,1 TB Gold Premium ,true,outofstock,no,,product-variant,9120
-9264,iP13P-EC,1 TB Graphite Bueno ,true,outofstock,no,,product-variant,9120
-9265,iP13P-EC,1 TB Graphite Muy bueno ,true,outofstock,no,,product-variant,9120
-9266,iP13P-EC,1 TB Graphite Como nuevo ,true,outofstock,no,,product-variant,9120
+9264,iP13PR-GRT-1T-C -R,1 TB Graphite Bueno ,true,outofstock,no,,product-variant,9120
+9265,iP13PR-GRT-1T-B -R,1 TB Graphite Muy bueno ,true,outofstock,no,,product-variant,9120
+9266,iP13PR-GRT-1T-A -R,1 TB Graphite Como nuevo ,true,outofstock,no,,product-variant,9120
 9267,iP13P-EC,1 TB Graphite Premium ,true,outofstock,no,,product-variant,9120
-9268,iP13P-EC,1 TB Sierra blue Bueno ,true,outofstock,no,,product-variant,9120
-9269,iP13P-EC,1 TB Sierra blue Muy bueno ,true,outofstock,no,,product-variant,9120
-9270,iP13P-EC,1 TB Sierra blue Como nuevo ,true,outofstock,no,,product-variant,9120
+9268,iP13PR-SRBL-1T-C -R,1 TB Sierra blue Bueno ,true,outofstock,no,,product-variant,9120
+9269,iP13PR-SRBL-1T-B -R,1 TB Sierra blue Muy bueno ,true,outofstock,no,,product-variant,9120
+9270,iP13PR-SRBL-1T-A -R,1 TB Sierra blue Como nuevo ,true,outofstock,no,,product-variant,9120
 9271,iP13P-EC,1 TB Sierra blue Premium ,true,outofstock,no,,product-variant,9120
-9272,iP13P-EC,1 TB Silver Bueno ,true,outofstock,no,,product-variant,9120
-9273,iP13P-EC,1 TB Silver Muy bueno ,true,outofstock,no,,product-variant,9120
-9274,iP13P-EC,1 TB Silver Como nuevo ,true,outofstock,no,,product-variant,9120
+9272,iP13PR-SL-1T-C -R,1 TB Silver Bueno ,true,outofstock,no,,product-variant,9120
+9273,iP13PR-SL-1T-B -R,1 TB Silver Muy bueno ,true,outofstock,no,,product-variant,9120
+9274,iP13PR-SL-1T-A -R,1 TB Silver Como nuevo ,true,outofstock,no,,product-variant,9120
 9275,iP13P-EC,1 TB Silver Premium ,true,outofstock,no,,product-variant,9120
 9276,iP13PM-EC,iPhone 13 Pro Max,,outofstock,no,,variable,
 9277,iP13PM-EC,512 GB Graphite Como nuevo ,,outofstock,no,,product-variant,9276
@@ -913,13 +858,50 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 9354,iP13PM-EC,512 GB Gold Premium ,,outofstock,no,,product-variant,9276
 9355,iP13PM-EC,512 GB Graphite Bueno ,,outofstock,no,,product-variant,9276
 9356,iP13PM-EC,512 GB Graphite Muy bueno ,,outofstock,no,,product-variant,9276
+9360,iPSE2-EC,iPhone SE (2.ª gen),,outofstock,no,,variable,
+9412,iPSE2-EC,64 GB Black Bueno ,true,outofstock,no,,product-variant,9360
+9413,iPSE2-EC,64 GB Black Muy bueno ,true,outofstock,no,,product-variant,9360
+9414,iPSE2-EC,64 GB Black Como nuevo ,true,outofstock,no,,product-variant,9360
+9415,iPSE2-EC,64 GB Black Premium ,true,outofstock,no,,product-variant,9360
+9416,iPSE2-EC,64 GB Red Bueno ,true,outofstock,no,,product-variant,9360
+9417,iPSE2-EC,64 GB Red Muy bueno ,true,outofstock,no,,product-variant,9360
+9418,iPSE2-EC,64 GB Red Como nuevo ,true,outofstock,no,,product-variant,9360
+9419,iPSE2-EC,64 GB Red Premium ,true,outofstock,no,,product-variant,9360
+9420,iPSE2-EC,64 GB White Bueno ,true,outofstock,no,,product-variant,9360
+9421,iPSE2-EC,64 GB White Muy bueno ,true,outofstock,no,,product-variant,9360
+9422,iPSE2-EC,64 GB White Como nuevo ,true,outofstock,no,,product-variant,9360
+9423,iPSE2-EC,64 GB White Premium ,true,outofstock,no,,product-variant,9360
+9424,iPSE2-EC,128 GB Black Bueno ,true,outofstock,no,,product-variant,9360
+9425,iPSE2-EC,128 GB Black Muy bueno ,true,outofstock,no,,product-variant,9360
+9426,iPSE2-EC,128 GB Black Como nuevo ,true,outofstock,no,,product-variant,9360
+9427,iPSE2-EC,128 GB Black Premium ,true,outofstock,no,,product-variant,9360
+9428,iPSE2-EC,128 GB Red Bueno ,true,outofstock,no,,product-variant,9360
+9429,iPSE2-EC,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,9360
+9430,iPSE2-EC,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,9360
+9431,iPSE2-EC,128 GB Red Premium ,true,outofstock,no,,product-variant,9360
+9432,iPSE2-EC,128 GB White Bueno ,true,outofstock,no,,product-variant,9360
+9433,iPSE2-EC,128 GB White Muy bueno ,true,outofstock,no,,product-variant,9360
+9434,iPSE2-EC,128 GB White Como nuevo ,true,outofstock,no,,product-variant,9360
+9435,iPSE2-EC,128 GB White Premium ,true,outofstock,no,,product-variant,9360
+9436,iPSE2-EC,256 GB Black Bueno ,true,outofstock,no,,product-variant,9360
+9437,iPSE2-EC,256 GB Black Muy bueno ,true,outofstock,no,,product-variant,9360
+9438,iPSE2-EC,256 GB Black Como nuevo ,true,outofstock,no,,product-variant,9360
+9439,iPSE2-EC,256 GB Black Premium ,true,outofstock,no,,product-variant,9360
+9440,iPSE2-EC,256 GB Red Bueno ,true,outofstock,no,,product-variant,9360
+9441,iPSE2-EC,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,9360
+9442,iPSE2-EC,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,9360
+9443,iPSE2-EC,256 GB Red Premium ,true,outofstock,no,,product-variant,9360
+9444,iPSE2-EC,256 GB White Bueno ,true,outofstock,no,,product-variant,9360
+9445,iPSE2-EC,256 GB White Muy bueno ,true,outofstock,no,,product-variant,9360
+9446,iPSE2-EC,256 GB White Como nuevo ,true,outofstock,no,,product-variant,9360
+9447,iPSE2-EC,256 GB White Premium ,true,outofstock,no,,product-variant,9360
 9917,iP12PR-GD-128-C -R,128 GB Gold Bueno ,true,outofstock,no,,product-variant,8912
 9918,iP12PR-GD-128-B -R,128 GB Gold Muy bueno ,true,outofstock,no,,product-variant,8912
 9919,iP12PR-GD-128-A -R,128 GB Gold Como nuevo ,true,outofstock,no,,product-variant,8912
 9920,iP12PR-GD-128-A+ -R,128 GB Gold Premium ,true,outofstock,no,,product-variant,8912
 9921,iP12PR-GRT-128-C -R,128 GB Graphite Bueno ,true,outofstock,no,,product-variant,8912
 9922,iP12PR-GRT-128-B -R,128 GB Graphite Muy bueno ,true,outofstock,no,,product-variant,8912
-9923,iP12PR-GRT-128-A -R,128 GB Graphite Como nuevo ,true,outofstock,no,,product-variant,8912
+9923,iP12PR-GRT-128-A -R,128 GB Graphite Como nuevo ,true,instock,no,1,product-variant,8912
 9924,iP12PR-GRT-RP-128-A+ -R,128 GB Graphite Premium ,true,outofstock,no,,product-variant,8912
 9925,iP12PR-PCBL-128-C -R,128 GB Pacific Blue Bueno ,true,outofstock,no,,product-variant,8912
 9926,iP12PR-PCBL-128-B -R,128 GB Pacific Blue Muy bueno ,true,outofstock,no,,product-variant,8912
@@ -934,19 +916,19 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 9935,iP12PR-GD-256-A -R,256 GB Gold Como nuevo ,true,outofstock,no,,product-variant,8912
 9936,iP12PR-GD-256-A+ -R,256 GB Gold Premium ,true,outofstock,no,,product-variant,8912
 9937,iP12PR-GRT-256-C -R,256 GB Graphite Bueno ,true,outofstock,no,,product-variant,8912
-9938,iP12PR-GRT-256-B -R,256 GB Graphite Muy bueno ,true,instock,no,2,product-variant,8912
-9939,iP12PR-GRT-256-A -R,256 GB Graphite Como nuevo ,true,outofstock,no,,product-variant,8912
-9940,iP12PR-GRT-256-A+ -R,256 GB Graphite Premium ,true,outofstock,no,,product-variant,8912
+9938,iP12PR-GRT-256-B -R,256 GB Graphite Muy bueno ,true,outofstock,no,,product-variant,8912
+9939,iP12PR-GRT-256-A -R,256 GB Graphite Como nuevo ,true,instock,no,7,product-variant,8912
+9940,iP12PR-GRT-256-A+ -R,256 GB Graphite Premium ,true,instock,no,2,product-variant,8912
 9941,iP12PR-PCBL-256-C -R,256 GB Pacific Blue Bueno ,true,outofstock,no,,product-variant,8912
 9942,iP12PR-PCBL-256-B -R,256 GB Pacific Blue Muy bueno ,true,outofstock,no,,product-variant,8912
-9943,iP12PR-PCBL-256-A -R,256 GB Pacific Blue Como nuevo ,true,outofstock,no,,product-variant,8912
+9943,iP12PR-PCBL-256-A -R,256 GB Pacific Blue Como nuevo ,true,instock,no,1,product-variant,8912
 9944,iP12PR-PCBL-256-A+ -R,256 GB Pacific Blue Premium ,true,outofstock,no,,product-variant,8912
 9945,iP12PR-SL-256-C -R,256 GB Silver Bueno ,true,outofstock,no,,product-variant,8912
 9946,iP12PR-SL-256-B -R,256 GB Silver Muy bueno ,true,outofstock,no,,product-variant,8912
 9947,iP12PR-SL-256-A -R,256 GB Silver Como nuevo ,true,outofstock,no,,product-variant,8912
 9948,iP12PR-SL-256-A+ -R,256 GB Silver Premium ,true,outofstock,no,,product-variant,8912
 9949,iP12PR-GD-512-C -R,512 GB Gold Bueno ,true,outofstock,no,,product-variant,8912
-9950,iP12PR-GD-512-B -R,512 GB Gold Muy bueno ,true,instock,no,1,product-variant,8912
+9950,iP12PR-GD-512-B -R,512 GB Gold Muy bueno ,true,outofstock,no,,product-variant,8912
 9951,iP12PR-GD-512-A -R,512 GB Gold Como nuevo ,true,outofstock,no,,product-variant,8912
 9952,iP12PR-GD-512-A+ -R,512 GB Gold Premium ,true,outofstock,no,,product-variant,8912
 9953,iP12PR-GRT-512-C -R,512 GB Graphite Bueno ,true,outofstock,no,,product-variant,8912
@@ -961,9 +943,9 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 9962,iP12PR-SL-512-B -R,512 GB Silver Muy bueno ,true,outofstock,no,,product-variant,8912
 9963,iP12PR-SL-512-A -R,512 GB Silver Como nuevo ,true,outofstock,no,,product-variant,8912
 9964,iP12PR-SL-512-A+ -R,512 GB Silver Premium ,true,outofstock,no,,product-variant,8912
-36,iP13-EC,iPhone 13 Reacondicionado,,onbackorder,no,,variable,
+36,iP13-EC,iPhone 13 Reacondicionado,,instock,no,,variable,
 7928,iP13-BL-128-C -R,128 GB Blue Bueno ,true,outofstock,no,,product-variant,36
-7929,iP13-BL-128-A -R,128 GB Blue Como nuevo ,true,outofstock,no,,product-variant,36
+7929,iP13-BL-128-A -R,128 GB Blue Como nuevo ,true,instock,no,17,product-variant,36
 7930,iP13-BL-128-B -R,128 GB Blue Muy bueno ,true,outofstock,no,,product-variant,36
 7931,iP13-BL-128-A+ -R,128 GB Blue Premium ,true,outofstock,no,,product-variant,36
 7932,iP13-GR-128-C -R,128 GB Green Bueno ,true,outofstock,no,,product-variant,36
@@ -971,7 +953,7 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 7934,iP13-GR-128-B -R,128 GB Green Muy bueno ,true,outofstock,no,,product-variant,36
 7935,iP13-GR-128-A+ -R,128 GB Green Premium ,true,outofstock,no,,product-variant,36
 7936,iP13-MD-128-C -R,128 GB Midnight Bueno ,true,outofstock,no,,product-variant,36
-7937,iP13-MD-128-A -R,128 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,36
+7937,iP13-MD-128-A -R,128 GB Midnight Como nuevo ,true,instock,no,14,product-variant,36
 7938,iP13-MD-128-B -R,128 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,36
 7939,iP13-MD-128-A+ -R,128 GB Midnight Premium ,true,outofstock,no,,product-variant,36
 7940,iP13-PK-128-C -R,128 GB Pink Bueno ,true,outofstock,no,,product-variant,36
@@ -979,23 +961,23 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 7942,iP13-PK-128-B -R,128 GB Pink Muy bueno ,true,onbackorder,yes,,product-variant,36
 7943,iP13-PK-128-A+ -R,128 GB Pink Premium ,true,outofstock,no,,product-variant,36
 7944,iP13-RD-128-C -R,128 GB Red Bueno ,true,outofstock,no,,product-variant,36
-7945,iP13-RD-128-A -R,128 GB Red Como nuevo ,true,onbackorder,yes,,product-variant,36
+7945,iP13-RD-128-A -R,128 GB Red Como nuevo ,true,instock,yes,1,product-variant,36
 7946,iP13-RD-128-B -R,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,36
 7947,iP13-RD-128-A+ -R,128 GB Red Premium ,true,outofstock,no,,product-variant,36
 7948,iP13-STR-128-C -R,128 GB Starlight Bueno ,true,outofstock,no,,product-variant,36
 7949,iP13-STR-128-A -R,128 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,36
 7950,iP13-STR-128-B -R,128 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,36
-7951,iP13-STR-128-A+ -R,128 GB Starlight Premium ,true,outofstock,no,,product-variant,36
+7951,iP13-STR-128-A+ -R,128 GB Starlight ,true,outofstock,no,,product-variant,36
 7952,iP13-BL-256-C -R,256 GB Blue Bueno ,true,outofstock,no,,product-variant,36
-7953,iP13-BL-256-A -R,256 GB Blue Como nuevo ,true,outofstock,no,,product-variant,36
+7953,iP13-BL-256-A -R,256 GB Blue Como nuevo ,true,instock,no,12,product-variant,36
 7954,iP13-BL-256-B -R,256 GB Blue Muy bueno ,true,outofstock,no,,product-variant,36
 7955,iP13-BL-256-A+ -R,256 GB Blue Premium ,true,outofstock,no,,product-variant,36
 7956,iP13-GR-256-C -R,256 GB Green Bueno ,true,outofstock,no,,product-variant,36
-7957,iP13-GR-256-A -R,256 GB Green Como nuevo ,true,outofstock,no,,product-variant,36
+7957,iP13-GR-256-A -R,256 GB Green Como nuevo ,true,instock,no,3,product-variant,36
 7958,iP13-GR-256-B -R,256 GB Green Muy bueno ,true,outofstock,no,,product-variant,36
 7959,iP13-GR-256-A+ -R,256 GB Green Premium ,true,outofstock,no,,product-variant,36
 7960,iP13-MD-256-C -R,256 GB Midnight Bueno ,true,outofstock,no,,product-variant,36
-7961,iP13-MD-256-A -R,256 GB Midnight Como nuevo ,true,outofstock,no,,product-variant,36
+7961,iP13-MD-256-A -R,256 GB Midnight Como nuevo ,true,instock,no,8,product-variant,36
 7962,iP13-MD-256-B -R,256 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,36
 7963,iP13-MD-256-A+ -R,256 GB Midnight Premium ,true,outofstock,no,,product-variant,36
 7964,iP13-PK-256-C -R,256 GB Pink Bueno ,true,outofstock,no,,product-variant,36
@@ -1007,21 +989,21 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 7970,iP13-RD-256-B -R,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,36
 7971,iP13-RD-256-A+ -R,256 GB Red Premium ,true,outofstock,no,,product-variant,36
 7972,iP13-STR-256-C -R,256 GB Starlight Bueno ,true,outofstock,no,,product-variant,36
-7973,iP13-STR-256-A -R,256 GB Starlight Como nuevo ,true,outofstock,no,,product-variant,36
+7973,iP13-STR-256-A -R,256 GB Starlight Como nuevo ,true,instock,no,1,product-variant,36
 7974,iP13-STR-256-B -R,256 GB Starlight Muy bueno ,true,outofstock,no,,product-variant,36
 7975,iP13-STR-256-A+ -R,256 GB Starlight Premium ,true,outofstock,no,,product-variant,36
 7976,iP13-BL-512-C -R,512 GB Blue Bueno ,true,outofstock,no,,product-variant,36
 7977,iP13-BL-512-A -R,512 GB Blue Como nuevo ,true,outofstock,no,,product-variant,36
 7978,iP13-BL-512-B -R,512 GB Blue Muy bueno ,true,outofstock,no,,product-variant,36
-7979,iP13-BL-512-A+ -R,512 GB Blue Premium ,true,outofstock,no,,product-variant,36
+7979,iP13-BL-512-A+ -R,512 GB Blue ,true,outofstock,no,,product-variant,36
 7980,iP13-GR-512-C -R,512 GB Green Bueno ,true,outofstock,no,,product-variant,36
 7981,iP13-GR-512-A -R,512 GB Green Como nuevo ,true,outofstock,no,,product-variant,36
 7982,iP13-GR-512-B -R,512 GB Green Muy bueno ,true,outofstock,no,,product-variant,36
-7983,iP13-GR-512-A+ -R,512 GB Green Premium ,true,outofstock,no,,product-variant,36
+7983,iP13-GR-512-A+ -R,512 GB Green ,true,outofstock,no,,product-variant,36
 7984,iP13-MD-512-C -R,512 GB Midnight Bueno ,true,outofstock,no,,product-variant,36
 7985,iP13-MD-512-A -R,512 GB Midnight Como nuevo ,true,onbackorder,yes,,product-variant,36
 7986,iP13-MD-512-B -R,512 GB Midnight Muy bueno ,true,outofstock,no,,product-variant,36
-7987,iP13-MD-512-A+ -R,512 GB Midnight Premium ,true,outofstock,no,,product-variant,36
+7987,iP13-MD-512-A+ -R,512 GB Midnight ,true,outofstock,no,,product-variant,36
 7988,iP13-PK-512-C -R,512 GB Pink Bueno ,true,outofstock,no,,product-variant,36
 7989,iP13-PK-512-A -R,512 GB Pink Como nuevo ,true,onbackorder,yes,,product-variant,36
 7990,iP13-PK-512-B -R,512 GB Pink Muy bueno ,true,outofstock,no,,product-variant,36
@@ -1039,29 +1021,28 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 8385,iP12-MV-128-B -R,128 GB Malva Muy bueno ,true,outofstock,no,,product-variant,8311
 8386,iP12-MV-128-A -R,128 GB Malva Como nuevo ,true,outofstock,no,,product-variant,8311
 8387,iP12-MV-128-A+ -R,128 GB Malva Premium ,true,outofstock,no,,product-variant,8311
-8388,iP12-BK-128-C -R,128 GB Black Bueno ,true,instock,no,3,product-variant,8311
-8389,iP12-BK-128-B -R,128 GB Black Muy bueno ,true,outofstock,no,,product-variant,8311
-8390,iP12-BK-128-A -R,128 GB Black Como nuevo ,true,onbackorder,yes,-1,product-variant,8311
+8388,iP12-BK-128-C -R,128 GB Black Bueno ,true,instock,no,1,product-variant,8311
+8389,iP12-BK-128-B -R,128 GB Black Muy bueno ,true,instock,no,1,product-variant,8311
+8390,iP12-BK-128-A -R,128 GB Black Como nuevo ,true,instock,yes,2,product-variant,8311
 8391,iP12-BK-128-A+ -R,128 GB Black Premium ,true,outofstock,no,,product-variant,8311
-8392,iP12-BL-128-C -R,128 GB Blue Bueno ,true,instock,yes,3,product-variant,8311
-8393,iP12-BL-128-B -R,128 GB Blue Muy bueno ,true,instock,no,1,product-variant,8311
-8394,iP12-BL-128-A -R,128 GB Blue Como nuevo ,true,instock,yes,5,product-variant,8311
-8395,iP12-BL-128-A+ -R,128 GB Blue Premium ,true,outofstock,no,,product-variant,8311
-8396,iP12-GR-128-C -R,128 GB Green Bueno ,true,instock,no,1,product-variant,8311
+8392,iP12-BL-128-C -R,128 GB Blue Bueno ,true,outofstock,no,,product-variant,8311
+8393,iP12-BL-128-B -R,128 GB Blue Muy bueno ,true,outofstock,no,,product-variant,8311
+8394,iP12-BL-128-A -R,128 GB Blue Como nuevo ,true,outofstock,no,,product-variant,8311
+8396,iP12-GR-128-C -R,128 GB Green Bueno ,true,outofstock,no,,product-variant,8311
 8397,iP12-GR-128-B -R,128 GB Green Muy bueno ,true,outofstock,no,,product-variant,8311
-8398,iP12-GR-128-A -R,128 GB Green Como nuevo ,true,instock,no,1,product-variant,8311
+8398,iP12-GR-128-A -R,128 GB Green Como nuevo ,true,outofstock,no,,product-variant,8311
 8399,iP12-GR-128-A+ -R,128 GB Green Premium ,true,outofstock,no,,product-variant,8311
-8400,iP12-RD-128-C -R,128 GB Red Bueno ,true,instock,no,1,product-variant,8311
+8400,iP12-RD-128-C -R,128 GB Red Bueno ,true,outofstock,no,,product-variant,8311
 8401,iP12-RD-128-B -R,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,8311
 8402,iP12-RD-128-A -R,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,8311
 8403,iP12-RD-128-A+ -R,128 GB Red Premium ,true,outofstock,no,,product-variant,8311
 8404,iP12-WT-128-C -R,128 GB White Bueno ,true,outofstock,no,,product-variant,8311
 8405,iP12-WT-128-B -R,128 GB White Muy bueno ,true,outofstock,no,,product-variant,8311
-8406,iP12-WT-128-A -R,128 GB White Como nuevo ,true,instock,yes,2,product-variant,8311
+8406,iP12-WT-128-A -R,128 GB White Como nuevo ,true,outofstock,no,,product-variant,8311
 8407,iP12-WT-128-A+ -R,128 GB White Premium ,true,outofstock,no,,product-variant,8311
 8408,iP12-MV-256-C -R,256 GB Malva Bueno ,true,outofstock,no,,product-variant,8311
 8409,iP12-MV-256-B -R,256 GB Malva Muy bueno ,true,outofstock,no,,product-variant,8311
-8410,iP12-MV-256-A -R,256 GB Malva Como nuevo ,true,instock,no,2,product-variant,8311
+8410,iP12-MV-256-A -R,256 GB Malva Como nuevo ,true,outofstock,no,,product-variant,8311
 8411,iP12-MV-256-A+ -R,256 GB Malva Premium ,true,outofstock,no,,product-variant,8311
 8412,iP12-BK-256-C -R,256 GB Black Bueno ,true,outofstock,no,,product-variant,8311
 8413,iP12-BK-256-B -R,256 GB Black Muy bueno ,true,outofstock,no,,product-variant,8311
@@ -1080,19 +1061,19 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 8426,iP12-RD-256-A -R,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,8311
 8427,iP12-RD-256-A+ -R,256 GB Red Premium ,true,outofstock,no,,product-variant,8311
 8428,iP12-WT-256-C -R,256 GB White Bueno ,true,outofstock,no,,product-variant,8311
-8429,iP12-WT-256-B -R,256 GB White Muy bueno ,true,outofstock,no,,product-variant,8311
+8429,iP12-WT-256-B -R,256 GB White Muy bueno ,true,instock,no,1,product-variant,8311
 8430,iP12-WT-256-A -R,256 GB White Como nuevo ,true,outofstock,no,,product-variant,8311
 8431,iP12-WT-256-A+ -R,256 GB White Premium ,true,outofstock,no,,product-variant,8311
 8432,iP12-MV-64-C -R,64 GB Malva Bueno ,true,outofstock,no,,product-variant,8311
 8433,iP12-MV-64-B -R,64 GB Malva Muy bueno ,true,outofstock,no,,product-variant,8311
 8434,iP12-MV-64-A -R,64 GB Malva Como nuevo ,true,outofstock,no,,product-variant,8311
 8435,iP12-MV-64-A+ -R,64 GB Malva Premium ,true,outofstock,no,,product-variant,8311
-8436,iP12-BK-64-C -R,64 GB Black Bueno ,true,onbackorder,yes,,product-variant,8311
+8436,iP12-BK-64-C -R,64 GB Black Bueno ,true,outofstock,no,,product-variant,8311
 8437,iP12-BK-64-B -R,64 GB Black Muy bueno ,true,outofstock,no,,product-variant,8311
-8438,iP12-BK-64-A -R,64 GB Black Como nuevo ,true,onbackorder,yes,,product-variant,8311
+8438,iP12-BK-64-A -R,64 GB Black Como nuevo ,true,outofstock,no,,product-variant,8311
 8439,iP12-BK-64-A+ -R,64 GB Black Premium ,true,outofstock,no,,product-variant,8311
 8440,iP12-BL-64-C -R,64 GB Blue Bueno ,true,outofstock,no,,product-variant,8311
-8441,iP12-BL-64-B -R,64 GB Blue Muy bueno ,true,outofstock,no,,product-variant,8311
+8441,iP12-BL-64-B -R,64 GB Blue Muy bueno ,true,instock,no,1,product-variant,8311
 8442,iP12-BL-64-A -R,64 GB Blue Como nuevo ,true,outofstock,no,,product-variant,8311
 8443,iP12-BL-64-A+ -R,64 GB Blue Premium ,true,outofstock,no,,product-variant,8311
 8444,iP12-GR-64-C -R,64 GB Green Bueno ,true,outofstock,no,,product-variant,8311
@@ -1107,3 +1088,76 @@ Id,Sku,Product name,Manage stock,Stock status,Backorders,Stock,Type,Parent ID
 8453,iP12-WT-64-B -R,64 GB White Muy bueno ,true,outofstock,no,,product-variant,8311
 8454,iP12-WT-64-A -R,64 GB White Como nuevo ,true,outofstock,no,,product-variant,8311
 8455,iP12-WT-64-A+ -R,64 GB White Premium ,true,outofstock,no,,product-variant,8311
+8456,iP11-EC,iPhone 11 Reacondicionado,,instock,no,,variable,
+8529,iP11-MV-128-C -R,128 GB Malva Bueno ,true,outofstock,no,,product-variant,8456
+8530,iP11-MV-128-B -R,128 GB Malva Muy bueno ,true,outofstock,no,,product-variant,8456
+8531,iP11-MV-128-A -R,128 GB Malva Como nuevo ,true,outofstock,no,,product-variant,8456
+8532,iP11-MV-128-A+ -R,128 GB Malva Premium ,true,outofstock,no,,product-variant,8456
+8533,iP11-BK-128-C -R,128 GB Black Bueno ,true,onbackorder,yes,,product-variant,8456
+8534,iP11-BK-128-B -R,128 GB Black Muy bueno ,true,onbackorder,yes,,product-variant,8456
+8535,iP11-BK-128-A -R,128 GB Black Como nuevo ,true,instock,yes,1,product-variant,8456
+8536,iP11-BK-128-A+ -R,128 GB Black Premium ,true,onbackorder,yes,,product-variant,8456
+8537,iP11-GR-128-C -R,128 GB Green Bueno ,true,outofstock,no,,product-variant,8456
+8538,iP11-GR-128-B -R,128 GB Green Muy bueno ,true,outofstock,no,,product-variant,8456
+8539,iP11-GR-128-A -R,128 GB Green Como nuevo ,true,outofstock,no,,product-variant,8456
+8540,iP11-GR-128-A+ -R,128 GB Green Premium ,true,outofstock,no,,product-variant,8456
+8541,iP11-RD-128-C -R,128 GB Red Bueno ,true,outofstock,no,,product-variant,8456
+8542,iP11-RD-128-B -R,128 GB Red Muy bueno ,true,outofstock,no,,product-variant,8456
+8543,iP11-RD-128-A -R,128 GB Red Como nuevo ,true,outofstock,no,,product-variant,8456
+8544,iP11-RD-128-A+ -R,128 GB Red Premium ,true,outofstock,no,,product-variant,8456
+8545,iP11-WT-128-C -R,128 GB White Bueno ,true,outofstock,no,,product-variant,8456
+8546,iP11-WT-128-B -R,128 GB White Muy bueno ,true,outofstock,no,,product-variant,8456
+8547,iP11-WT-128-A -R,128 GB White Como nuevo ,true,onbackorder,yes,,product-variant,8456
+8548,iP11-WT-128-A+ -R,128 GB White Premium ,true,outofstock,no,,product-variant,8456
+8549,iP11-YW-128-C -R,128 GB Yellow Bueno ,true,outofstock,no,,product-variant,8456
+8550,iP11-YW-128-B -R,128 GB Yellow Muy bueno ,true,outofstock,no,,product-variant,8456
+8551,iP11-YW-128-A -R,128 GB Yellow Como nuevo ,true,outofstock,no,,product-variant,8456
+8552,iP11-YW-128-A+ -R,128 GB Yellow Premium ,true,outofstock,no,,product-variant,8456
+8553,iP11-MV-256-C -R,256 GB Malva Bueno ,true,outofstock,no,,product-variant,8456
+8554,iP11-MV-256-B -R,256 GB Malva Muy bueno ,true,outofstock,no,,product-variant,8456
+8555,iP11-MV-256-A -R,256 GB Malva Como nuevo ,true,outofstock,no,,product-variant,8456
+8556,iP11-MV-256-A+ -R,256 GB Malva Premium ,true,outofstock,no,,product-variant,8456
+8557,iP11-BK-256-C -R,256 GB Black Bueno ,true,outofstock,no,,product-variant,8456
+8558,iP11-BK-256-B -R,256 GB Black Muy bueno ,true,outofstock,no,,product-variant,8456
+8559,iP11-BK-256-A -R,256 GB Black Como nuevo ,true,outofstock,no,,product-variant,8456
+8560,iP11-BK-256-A+ -R,256 GB Black Premium ,true,outofstock,no,,product-variant,8456
+8561,iP11-GR-256-C -R,256 GB Green Bueno ,true,outofstock,no,,product-variant,8456
+8562,iP11-GR-256-B -R,256 GB Green Muy bueno ,true,outofstock,no,,product-variant,8456
+8563,iP11-GR-256-A -R,256 GB Green Como nuevo ,true,outofstock,no,,product-variant,8456
+8564,iP11-GR-256-A+ -R,256 GB Green Premium ,true,outofstock,no,,product-variant,8456
+8565,iP11-RD-256-C -R,256 GB Red Bueno ,true,outofstock,no,,product-variant,8456
+8566,iP11-RD-256-B -R,256 GB Red Muy bueno ,true,outofstock,no,,product-variant,8456
+8567,iP11-RD-256-A -R,256 GB Red Como nuevo ,true,outofstock,no,,product-variant,8456
+8568,iP11-RD-256-A+ -R,256 GB Red Premium ,true,outofstock,no,,product-variant,8456
+8569,iP11-WT-256-C -R,256 GB White Bueno ,true,outofstock,no,,product-variant,8456
+8570,iP11-WT-256-B -R,256 GB White Muy bueno ,true,outofstock,no,,product-variant,8456
+8571,iP11-WT-256-A -R,256 GB White Como nuevo ,true,outofstock,no,,product-variant,8456
+8572,iP11-WT-256-A+ -R,256 GB White Premium ,true,outofstock,no,,product-variant,8456
+8573,iP11-YW-256-C -R,256 GB Yellow Bueno ,true,outofstock,no,,product-variant,8456
+8574,iP11-YW-256-B -R,256 GB Yellow Muy bueno ,true,outofstock,no,,product-variant,8456
+8575,iP11-YW-256-A -R,256 GB Yellow Como nuevo ,true,outofstock,no,,product-variant,8456
+8576,iP11-YW-256-A+ -R,256 GB Yellow Premium ,true,outofstock,no,,product-variant,8456
+8577,iP11-MV-64-C -R,64 GB Malva Bueno ,true,outofstock,no,,product-variant,8456
+8578,iP11-MV-64-B -R,64 GB Malva Muy bueno ,true,outofstock,no,,product-variant,8456
+8579,iP11-MV-64-A -R,64 GB Malva Como nuevo ,true,outofstock,no,,product-variant,8456
+8580,iP11-MV-64-A+ -R,64 GB Malva Premium ,true,outofstock,no,,product-variant,8456
+8581,iP11-BK-64-C -R,64 GB Black Bueno ,true,outofstock,no,,product-variant,8456
+8582,iP11-BK-64-B -R,64 GB Black Muy bueno ,true,outofstock,no,,product-variant,8456
+8583,iP11-BK-64-A -R,64 GB Black Como nuevo ,true,outofstock,no,,product-variant,8456
+8584,iP11-BK-64-A+ -R,64 GB Black Premium ,true,outofstock,no,,product-variant,8456
+8585,iP11-GR-64-C -R,64 GB Green Bueno ,true,outofstock,no,,product-variant,8456
+8586,iP11-GR-64-B -R,64 GB Green Muy bueno ,true,outofstock,no,,product-variant,8456
+8587,iP11-GR-64-A -R,64 GB Green Como nuevo ,true,instock,no,1,product-variant,8456
+8588,iP11-GR-64-A+ -R,64 GB Green Premium ,true,outofstock,no,,product-variant,8456
+8589,iP11-RD-64-C -R,64 GB Red Bueno ,true,outofstock,no,,product-variant,8456
+8590,iP11-iP11-RD-64-B -REC,64 GB Red Muy bueno ,true,outofstock,no,,product-variant,8456
+8591,iP11-RD-64-A -R,64 GB Red Como nuevo ,true,outofstock,no,,product-variant,8456
+8592,iP11-RD-64-A+ -R,64 GB Red Premium ,true,outofstock,no,,product-variant,8456
+8593,iP11-WT-64-C -R,64 GB White Bueno ,true,outofstock,no,,product-variant,8456
+8594,iP11-WT-64-B -R,64 GB White Muy bueno ,true,outofstock,no,,product-variant,8456
+8595,iP11-WT-64-A -R,64 GB White Como nuevo ,true,outofstock,no,,product-variant,8456
+8596,iP11-WT-64-A+ -R,64 GB White Premium ,true,outofstock,no,,product-variant,8456
+8597,iP11-YW-64-C -R,64 GB Yellow Bueno ,true,outofstock,no,,product-variant,8456
+8598,iP11-YW-64-B -R,64 GB Yellow Muy bueno ,true,outofstock,no,,product-variant,8456
+8599,iP11-YW-64-A -R,64 GB Yellow Como nuevo ,true,instock,no,2,product-variant,8456
+8600,iP11-YW-64-A+ -R,64 GB Yellow Premium ,true,outofstock,no,,product-variant,8456

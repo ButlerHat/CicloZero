@@ -113,8 +113,8 @@ Click at "download" button at ${ordinal_num} row at Download Report table
 # ======================== Pendiente envios ========================
 # ==================================================================
 Click "Manage orders" submenu
-    AI.Click "Manage orders" submenu
-    # Click  //html/body/div/div[1]/div/div[1]/div[3]/div[3]/div/div[1]/div[2]/div/div[4]/div[2]/div[2]/a/div[1]
+    # AI.Click "Manage orders" submenu
+    Click  //*[text()="Manage Orders"]
 
 Click on "Pending" tab
     Click  //div[@class='myo-spa-tab '][.//a[@data-test-id='tab-/mfn/pending']]

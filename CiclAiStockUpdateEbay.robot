@@ -4,7 +4,7 @@ Library   OperatingSystem
 Library   Collections
 Library    robotframework/keywords/count_excel.py
 Resource   robotframework/modeling/resources/CrawlEbay.resource
-Suite Setup  Browser.Add Task Library    CrawlEbay
+Suite Setup  Setup Suite
 
 
 *** Variables ***
@@ -105,3 +105,8 @@ Update Ebay Stock
 
     END
 
+*** Keywords ***
+Setup Suite
+    [Tags]  no_record
+    Browser.Add Task Library  CrawlEbay
+    OperatingSystem.Remove Directory    path=${OUTPUT_DIR}${/}browser    recursive=${TRUE}    

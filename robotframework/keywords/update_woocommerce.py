@@ -26,6 +26,7 @@ def update_woocommerce_csv(products_csv, stock_excel, output_csv):
     # Update the stock and stock status columns
     woocommerce_df["Stock"] = 0
     woocommerce_df["Stock status"] = "outofstock"
+    woocommerce_df["Manage stock"] = False
 
     # Read excel
     stock_df = pd.read_excel(stock_excel)

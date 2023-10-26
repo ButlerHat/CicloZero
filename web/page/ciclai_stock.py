@@ -170,10 +170,10 @@ def ciclai_stock():
             f'RESULT_EXCEL_PATH:$excel_path',
             f'RESULT_CSV_PATH:$csv_path'
         ]
-        for i in range(1, 5):
-            robot_command = robot_handler.get_pabot_command(f"stock_{i}", args, "CiclAiStock.robot", [str(i)])
-            log_file_stock_path = os.path.join(results_path, f"stock_{i}", f'logfile_out_stock.txt')
-            html_file_stock_path = os.path.join(results_path, f"stock_{i}", f'log.html')
+        for i, id_stock in enumerate(STOCK_IDS, start=1):
+            robot_command = robot_handler.get_pabot_command(id_stock, args, "CiclAiStock.robot", [str(i)])
+            log_file_stock_path = os.path.join(results_path, id_stock, f'logfile_out_stock.txt')
+            html_file_stock_path = os.path.join(results_path, id_stock, f'log.html')
             script_robot = robot_command + f' > {log_file_stock_path} 2>&1'
             notification_sh = f""" || curl \
                     -T "{html_file_stock_path}" \
