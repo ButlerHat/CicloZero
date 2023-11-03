@@ -38,7 +38,8 @@ Click on menu icon at top left
     Sleep  1
 
 Click on "Orders" menu at the left
-    AI.Click on "Orders" menu at the left
+    Click  //*[text()='Orders']
+    # AI.Click on "Orders" menu at the left
     # Only works in flendu
     # Click  //html/body/div/div[1]/div/div[1]/div[3]/div[3]/div/div[1]/div[2]/div/div[4]
 

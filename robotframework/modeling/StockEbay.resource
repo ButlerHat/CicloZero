@@ -45,7 +45,7 @@ Ebay Get Stock ${unshipped_pending}
         Skip  Not logged in eBay
     END
 
-    Go to my ebay
+    # Go to my ebay
     Go to my ebay selling
     Click on orders tab
     
