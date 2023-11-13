@@ -1,0 +1,2 @@
+[MASTER]
+init-hook='import sys; sys.path.append("/workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/web")'

@@ -31,7 +31,7 @@ Update Ebay Stock
         Skip  Not logged in eBay
     END
 
-    Go to my ebay
+    # Go to my ebay
     Sleep  2  # Maybe already in my ebay and refresh
     Go to my ebay selling
     Click on Listings tab

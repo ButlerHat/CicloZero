@@ -174,17 +174,31 @@ def ciclai_stock():
             robot_command = robot_handler.get_pabot_command(id_stock, args, "CiclAiStock.robot", [str(i)])
             log_file_stock_path = os.path.join(results_path, id_stock, f'logfile_out_stock.txt')
             html_file_stock_path = os.path.join(results_path, id_stock, f'log.html')
-            script_robot = robot_command + f' > {log_file_stock_path} 2>&1'
-            notification_sh = f""" || curl \
+            script_robot = robot_command + f' > {log_file_stock_path} 2>&1\n'
+            exit_status = f'{id_stock}_exit_status=$?\n'
+            condition_if = f'if [ ${id_stock}_exit_status -ne 0 ]; then\n'
+            notification_sh = f"""\tcurl \
                     -T "{html_file_stock_path}" \
                     -H "X-Email: paipayainfo@gmail.com" \
                     -H "Tags: warning" \
                     -H "Filename: CiclAiStock_fail_auto_$(date +"%H-%M_%d-%m-%Y").html" \
-                    "https://notifications.paipaya.com/ciclai_fail"
+                    "https://notifications.paipaya.com/ciclai_fail" 
                 """
-            scripts_robot.append(script_robot + notification_sh)
+            condition_fi = f'fi\n'
+            scripts_robot.append(script_robot + exit_status + condition_if + notification_sh + condition_fi)
 
-        # CiclAI Stock Update
+        # CiclAI Stock Update if nothing fails
+        condition_stock_fails = 'if'
+        for id_stock in STOCK_IDS:
+            condition_if = f' [ ${id_stock}_exit_status -ne 0 ] ||'
+            condition_stock_fails += condition_if
+        condition_stock_fails = condition_stock_fails[:-2]
+        condition_stock_fails += '; then\n'
+        # fail
+        condition_stock_fails += 'exit 1\n'
+        condition_stock_fails += 'fi\n'
+        scripts_robot.append(condition_stock_fails)
+
         args_update = [
             'STOCK_EXCEL_PATH:$excel_path',
             f"COOKIES_DIR:{st.secrets.paths.cookies_dir}"

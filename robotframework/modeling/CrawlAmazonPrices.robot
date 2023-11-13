@@ -27,6 +27,7 @@ ComparePrices
     New Context    acceptDownloads=${TRUE}
     New Page   ${URL_AMAZON}
 
+    Click on log in at the top right
     Login with user ${amazon_user} and pass ${amazon_pass}
     AI.Click on Indicar contraseña de un solo uso desde la app de verificación
     AI.Click on "Enviar contraseña de un solo uso"

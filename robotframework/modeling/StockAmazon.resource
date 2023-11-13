@@ -1,5 +1,5 @@
 *** Settings ***
-Library    ButlerRobot.AIBrowserLibrary  stealth_mode=${True}  record=${False}  console=${False}  presentation_mode=${True}  fix_bbox=${TRUE}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
+Library    ButlerRobot.AIBrowserLibrary  stealth_mode=${True}  record=${False}  console=${False}  presentation_mode=${True}  fix_bbox=${False}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
 Library    OTP
 Library    Collections
 # Library   ButlerRobot.AILanguageLibrary
@@ -11,7 +11,7 @@ Variables  ../variables/credentials.py
 
 *** Variables ***
 # ${OUTPUT_DIR}  /workspaces/ai-butlerhat/data-butlerhat/robotframework-butlerhat/TestSuites/CicloZero/data
-${URL_AMAZON}  https://sellercentral.amazon.es/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fsellercentral.amazon.es%2Fhome&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=sc_es_amazon_v2&openid.mode=checkid_setup&language=es_ES&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=sc_es_amazon_v2&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&ssoResponse=eyJ6aXAiOiJERUYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiQTI1NktXIn0.u8j_3kfAPRO9oea7TATYwCAdOKehZfRhKktBjgJlntMm6nulCn1qEg.B2O2NQ1GNLUmz9NH.cjghNVWhLvzDMxogLdKHIvb87caY5OMLYZheHT6HHz3k088JtfZnEGHu8fk8e_IFDIpVNxqqHzR8JcyQjX1b5SwxquNbOpmt5cnMPZ5pgqpf0pbcHi8-TrhHtZ2XJjSDaSwqYkPTP6oEJKgc6fDOGcJsXOPPXTJc6ZT71ZHEX1R8j94ipHBM6qer4vruZRBYMAdZVaFP.K5bI5NZ7lJG0ObtQQymgtA
+${URL_AMAZON}  https://sellercentral.amazon.es
 
 
 *** Keywords ***
@@ -22,6 +22,7 @@ Get Unshipped Amazon
     ${old_timeout}  Set Browser Timeout    30
     Wait New Page   ${URL_AMAZON}  wait=${1}
 
+    Click on log in at the top right
     CrawlAmazon.Login with user ${amazon_user} and pass ${amazon_pass}
     Set Browser Timeout    timeout=${old_timeout}
     AI.Click on Indicar contraseña de un solo uso desde la app de verificación
@@ -82,6 +83,7 @@ Get Pending Amazon
     ${old_timeout}  Set Browser Timeout    30
     Wait New Page   ${URL_AMAZON}  wait=${1}
 
+    Click on log in at the top right
     CrawlAmazon.Login with user ${amazon_user} and pass ${amazon_pass}
     Set Browser Timeout    timeout=${old_timeout}
     AI.Click on Indicar contraseña de un solo uso desde la app de verificación
@@ -143,6 +145,7 @@ Get Pending Amazon
 
 Modelate Table
     Open Browser  ${URL_AMAZON}  pause_on_failure=${FALSE}
+    Click on log in at the top right
     Login with user ${amazon_user} and pass ${amazon_pass}
     ${otp_key}=    Get OTP    ${otp_amazon}
     Should Match Regexp       ${otp_key}        \\d{6}

@@ -1,5 +1,5 @@
 *** Settings ***
-Library    ButlerRobot.AIBrowserLibrary  stealth_mode=${True}  record=${False}  console=${False}  presentation_mode=${True}  fix_bbox=${TRUE}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
+Library    ButlerRobot.AIBrowserLibrary  stealth_mode=${True}  record=${False}  console=${False}  presentation_mode=${True}  fix_bbox=${False}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
 Variables  ../variables/credentials.py
 Resource   ./resources/CrawlOdoo.resource
 

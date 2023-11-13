@@ -1,5 +1,5 @@
 *** Settings ***
-Library    ButlerRobot.AIBrowserLibrary  stealth_mode=${True}  captcha_api_key=${0}  record=${False}  console=${False}  presentation_mode=${True}  fix_bbox=${TRUE}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
+Library    ButlerRobot.AIBrowserLibrary  stealth_mode=${True}  captcha_api_key=${0}  record=${False}  console=${False}  presentation_mode=${True}  fix_bbox=${False}  output_path=${OUTPUT_DIR}${/}data  WITH NAME  Browser 
 Library   OperatingSystem
 Library    ../keywords/count_excel.py
 Resource  ./resources/CrawlEbay.resource

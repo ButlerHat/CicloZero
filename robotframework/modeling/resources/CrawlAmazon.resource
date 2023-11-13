@@ -10,6 +10,9 @@ Library    OperatingSystem
 # ======================== Pendiente ========================
 # ===========================================================
 
+Click on log in at the top right
+    Click  (//a[contains(@href,'signin')])[1]
+
 Login with user ${user} and pass ${password}
     Click  //*[@id='ap_email']
     Keyboard Input    type    ${user}
