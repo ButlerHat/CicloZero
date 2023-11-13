@@ -28,49 +28,10 @@ ${URL_AMAZON}  https://sellercentral.amazon.es
 
 
 *** Test Cases ***
-UpdateAmazonWithFile
-    [Documentation]  Update Amazon with file. Not in production yet
-    [Tags]  robot:exclude
-
-    Log  Updating Amazon with file. Using file ${STOCK_EXCEL_PATH}.  console=${True}
-    Comment  Obtener inventario de Odoo
-    New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
-    New Context    acceptDownloads=${TRUE}
-    New Page   ${URL_AMAZON}
-
-    Click on log in at the top right
-    CrawlAmazon.Login with user ${amazon_user} and pass ${amazon_pass}
-    Sleep  1
-    AI.Click on Indicar contraseña de un solo uso desde la app de verificación
-    AI.Click on "Enviar contraseña de un solo uso"
-    
-    ${otp_key}=    Get OTP    ${otp_amazon}
-    Should Match Regexp       ${otp_key}        \\d{6}
-    Type number "${otp_key}" in field Indicar contraseña de un solo uso
-    # Check "No vuelvas a pedir un codigo en este navegador"
-    Click on "Iniciar sesion"
-    Scroll in Select Account until "Spain" is visible and click
-    Click on "Select Account"
-
-    Click on menu icon at top left
-    Go to Catalogue menu
-    Go to add products via upload submenu
-
-    # Generate tsv
-    &{sku_total}  Get All Sku And Total    excel_path=${STOCK_EXCEL_PATH}
-    ${warning_msg}  Write Tsv File All Skus    ${OUTPUT_TSV}    ${PRODUCTS_CSV}    ${sku_total}
-    # Warn if there are skus in excel that are not in woocommerce products
-    IF  "${warning_msg}"!=""
-        Create File    path=${RETURN_FILE}
-        Log  ${warning_msg}  console=${True}  level=WARN
-        Append To File  path=${RETURN_FILE}    content=${warning_msg}${\n}
-    END
-
-    # Upload tsv TODO: TEST
-    # Upload inventory file  ${OUTPUT_TSV}
-
 
 UpdateAmazon
+    Log  Updating Amazon with file. Using file ${STOCK_EXCEL_PATH}.  console=${True}
+
     Comment  Obtener inventario de Odoo
     New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
     New Context    acceptDownloads=${TRUE}
@@ -155,6 +116,48 @@ UpdateAmazon
     IF  "${status}"=="PASS"
         Remove File  ${RETURN_FILE}
     END
+
+
+UpdateAmazonWithFile
+    [Documentation]  Update Amazon with file. Not in production yet
+    [Tags]  robot:exclude
+
+    Log  Updating Amazon with file. Using file ${STOCK_EXCEL_PATH}.  console=${True}
+    Comment  Obtener inventario de Odoo
+    New Browser    chromium    headless=false  downloadsPath=${OUTPUT_DIR}${/}downloads
+    New Context    acceptDownloads=${TRUE}
+    New Page   ${URL_AMAZON}
+
+    Click on log in at the top right
+    CrawlAmazon.Login with user ${amazon_user} and pass ${amazon_pass}
+    Sleep  1
+    AI.Click on Indicar contraseña de un solo uso desde la app de verificación
+    AI.Click on "Enviar contraseña de un solo uso"
+    
+    ${otp_key}=    Get OTP    ${otp_amazon}
+    Should Match Regexp       ${otp_key}        \\d{6}
+    Type number "${otp_key}" in field Indicar contraseña de un solo uso
+    # Check "No vuelvas a pedir un codigo en este navegador"
+    Click on "Iniciar sesion"
+    Scroll in Select Account until "Spain" is visible and click
+    Click on "Select Account"
+
+    Click on menu icon at top left
+    Go to Catalogue menu
+    Go to add products via upload submenu
+
+    # Generate tsv
+    &{sku_total}  Get All Sku And Total    excel_path=${STOCK_EXCEL_PATH}
+    ${warning_msg}  Write Tsv File All Skus    ${OUTPUT_TSV}    ${PRODUCTS_CSV}    ${sku_total}
+    # Warn if there are skus in excel that are not in woocommerce products
+    IF  "${warning_msg}"!=""
+        Create File    path=${RETURN_FILE}
+        Log  ${warning_msg}  console=${True}  level=WARN
+        Append To File  path=${RETURN_FILE}    content=${warning_msg}${\n}
+    END
+
+    # Upload tsv TODO: TEST
+    # Upload inventory file  ${OUTPUT_TSV}
 
 
 *** Keywords ***

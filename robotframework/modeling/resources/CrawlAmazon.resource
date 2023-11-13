@@ -133,7 +133,7 @@ Change Results per page
 
 Click on Active in Listing status filter
     Sleep  2  # Wait page to load
-    Click  //*[@id="LISTINGS_VIEW_SECTION"]//*[contains(text(),"Active")]/../input[@type="radio"]
+    Click  //*[@id="LISTINGS_VIEW_SECTION"]//*[contains(text(),"Active")]/..
 
 Click on the dropdown of results per page at the bottom right
     [Documentation]  For CiclAI Update stock. The previous is for Stock
@@ -312,12 +312,12 @@ Select SKU radio button in filter
     Click  //li[@id="SearchType_SECTION"]//span[contains(text(),"SKU")][not(contains(text(),"FN"))]
 
 Select All in Listing status
-    Wait Until Keyword Succeeds  5  1  Click  //*[@id="LISTINGS_VIEW_SECTION"]//*[contains(text(),"All")]/../input[@type="radio"]
+    Wait Until Keyword Succeeds  5  1  Click  //*[@id="LISTINGS_VIEW_SECTION"]//*[contains(text(),"All")]/..
 
 Search for SKU ${sku}
     Click  //*[@id='myitable-search']
     Keyboard Input    type    ${sku}
-    Click  //*[@id='myitable-search-button-announce']
+    Click  //*[@id='myitable-search-button']
 
 Delete search box
     Wait Until Keyword Succeeds  10  1  Click  //*[@id='myitable-search']
